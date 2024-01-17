@@ -14,6 +14,7 @@
     "@astrojs/check": "^0.4.1",
     "@astrojs/starlight": "^0.15.3",
     "astro": "^4.0.1",
+    "hangeul": "^0.3.1",
     "prettier": "^3.2.2",
     "prettier-config-moon": "^1.1.2",
     "sharp": "^0.32.5",

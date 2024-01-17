@@ -19,6 +19,14 @@ export default defineConfig({
 					label: 'Adverbs',
 					autogenerate: { directory: 'adverbs' },
 				},
+				{
+					label: 'Particles',
+					autogenerate: { directory: 'particles' },
+				},
+				{
+					label: 'Pronouns',
+					autogenerate: { directory: 'pronouns' },
+				},
 			],
 		}),
 	],
