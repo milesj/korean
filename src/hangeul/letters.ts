@@ -1,3 +1,5 @@
+// https://www.loc.gov/marc/specifications/specchareacc/KoreanHangul.html
+
 export interface TranslateOptions {
 	startOfSyllable: boolean;
 	startOfWord: boolean;
@@ -5,217 +7,307 @@ export interface TranslateOptions {
 	endOfWord: boolean;
 }
 
+export type LetterType = 'vowel' | 'dipthong' | 'consonant' | 'double-consonant';
+
 export interface Letter {
-	char: string;
-	translateAs: (options: TranslateOptions) => string;
-	pronounceAs?: (options: TranslateOptions) => string;
+	char: string | string[];
+	type: LetterType;
+	translateAs: string | ((options: TranslateOptions) => string);
+	pronounceAs?: string | ((options: TranslateOptions) => string);
 }
 
 export const VOWELS: Letter[] = [
 	{
-		char: 'ㅏ',
-		translateAs: () => 'a',
-		pronounceAs: () => 'ah',
+		char: 'ᅡ',
+		type: 'vowel',
+		translateAs: 'a',
+		pronounceAs: 'ah',
 	},
 	{
-		char: 'ㅑ',
-		translateAs: () => 'ya',
-		pronounceAs: () => 'yah',
+		char: 'ᅣ',
+		type: 'vowel',
+		translateAs: 'ya',
+		pronounceAs: 'yah',
 	},
 	{
-		char: 'ㅓ',
-		translateAs: () => 'eo',
-		pronounceAs: () => 'uh',
+		char: 'ᅥ',
+		type: 'vowel',
+		translateAs: 'eo',
+		pronounceAs: 'uh',
 	},
 	{
-		char: 'ㅕ',
-		translateAs: () => 'yeo',
-		pronounceAs: () => 'yuh',
+		char: 'ᅧ',
+		type: 'vowel',
+		translateAs: 'yeo',
+		pronounceAs: 'yuh',
 	},
 	{
-		char: 'ㅗ',
-		translateAs: () => 'o',
-		pronounceAs: () => 'oh',
+		char: 'ᅩ',
+		type: 'vowel',
+		translateAs: 'o',
+		pronounceAs: 'oh',
 	},
 	{
-		char: 'ㅛ',
-		translateAs: () => 'yo',
-		pronounceAs: () => 'yoh',
+		char: 'ᅭ',
+		type: 'vowel',
+		translateAs: 'yo',
+		pronounceAs: 'yoh',
 	},
 	{
-		char: 'ㅜ',
-		translateAs: () => 'u',
-		pronounceAs: () => 'oo',
+		char: 'ᅮ',
+		type: 'vowel',
+		translateAs: 'u',
+		pronounceAs: 'oo',
 	},
 	{
-		char: 'ㅠ',
-		translateAs: () => 'yu',
-		pronounceAs: () => 'yoo',
+		char: 'ᅲ',
+		type: 'vowel',
+		translateAs: 'yu',
+		pronounceAs: 'yoo',
 	},
 	{
-		char: 'ㅡ',
-		translateAs: () => 'eu',
-		pronounceAs: () => 'eu',
+		char: 'ᅳ',
+		type: 'vowel',
+		translateAs: 'eu',
+		pronounceAs: 'eu',
 	},
 	{
-		char: 'ㅣ',
-		translateAs: () => 'i',
-		pronounceAs: () => 'ee',
+		char: 'ᅵ',
+		type: 'vowel',
+		translateAs: 'i',
+		pronounceAs: 'ee',
 	},
 	{
-		char: 'ㅐ',
-		translateAs: () => 'ae',
-		pronounceAs: () => 'ay',
+		char: 'ᅢ',
+		type: 'vowel',
+		translateAs: 'ae',
+		pronounceAs: 'ay',
 	},
 	{
-		char: 'ㅒ',
-		translateAs: () => 'yae',
-		pronounceAs: () => 'yay',
+		char: 'ᅤ',
+		type: 'vowel',
+		translateAs: 'yae',
+		pronounceAs: 'yay',
 	},
 	{
-		char: 'ㅔ',
-		translateAs: () => 'e',
-		pronounceAs: () => 'ey',
+		char: 'ᅦ',
+		type: 'vowel',
+		translateAs: 'e',
+		pronounceAs: 'ey',
 	},
 	{
-		char: 'ㅖ',
-		translateAs: () => 'ye',
-		pronounceAs: () => 'yey',
+		char: 'ᅨ',
+		type: 'vowel',
+		translateAs: 'ye',
+		pronounceAs: 'yey',
 	},
 ];
+
+export function isVowel(letter: string): boolean {
+	return VOWELS.some((vowel) => vowel.char === letter);
+}
 
 export const DIPTHONGS: Letter[] = [
 	{
-		char: 'ㅟ',
-		translateAs: () => 'wi',
-		pronounceAs: () => 'wee',
+		char: 'ᅱ',
+		type: 'dipthong',
+		translateAs: 'wi',
+		pronounceAs: 'wee',
 	},
 	{
-		char: 'ㅝ',
-		translateAs: () => 'weo',
-		pronounceAs: () => 'woh',
+		char: 'ᅯ',
+		type: 'dipthong',
+		translateAs: 'weo',
+		pronounceAs: 'woh',
 	},
 	{
-		char: 'ㅚ',
-		translateAs: () => 'oe',
-		pronounceAs: () => 'weh',
+		char: 'ᅬ',
+		type: 'dipthong',
+		translateAs: 'oe',
+		pronounceAs: 'weh',
 	},
 	{
-		char: 'ㅘ',
-		translateAs: () => 'wa',
-		pronounceAs: () => 'wah',
+		char: 'ᅪ',
+		type: 'dipthong',
+		translateAs: 'wa',
+		pronounceAs: 'wah',
 	},
 	{
-		char: 'ㅢ',
-		translateAs: () => 'ui',
-		pronounceAs: () => 'ooi',
+		char: 'ᅴ',
+		type: 'dipthong',
+		translateAs: 'ui',
+		pronounceAs: 'eui',
 	},
 	{
-		char: 'ㅙ',
-		translateAs: () => 'wae',
-		pronounceAs: () => 'way',
+		char: 'ᅫ',
+		type: 'dipthong',
+		translateAs: 'wae',
+		pronounceAs: 'way',
 	},
 	{
-		char: 'ㅞ',
-		translateAs: () => 'we',
-		pronounceAs: () => 'wey',
+		char: 'ᅰ',
+		type: 'dipthong',
+		translateAs: 'we',
+		pronounceAs: 'wey',
 	},
 ];
 
+export function createDipthong(a: string, b: string) {
+	if (a === 'ㅜ') {
+		if (b === 'ㅣ') {
+			return 'ㅟ';
+		} else if (b === 'ㅓ') {
+			return 'ㅝ';
+		} else if (b === 'ㅔ') {
+			return 'ㅞ';
+		}
+	} else if (a === 'ㅗ') {
+		if (b === 'ㅣ') {
+			return 'ㅚ';
+		} else if (b === 'ㅏ') {
+			return 'ㅘ';
+		} else if (b === 'ㅐ') {
+			return 'ㅙ';
+		}
+	} else if (a === 'ㅡ') {
+		if (b === 'ㅣ') {
+			return 'ㅢ';
+		}
+	}
+
+	throw new Error(`Unknown dipthong: ${a} + ${b}`);
+}
+
 export const CONSONANTS: Letter[] = [
 	{
-		char: 'ㅂ',
-		translateAs: () => 'b',
+		char: 'ᄇ',
+		type: 'consonant',
+		translateAs: 'b',
 		pronounceAs: (opts) => (opts.startOfWord ? 'p' : 'b'),
 	},
 	{
-		char: 'ㅈ',
-		translateAs: () => 'j',
+		char: 'ᄌ',
+		type: 'consonant',
+		translateAs: 'j',
 		pronounceAs: (opts) => (opts.startOfWord ? 'ch' : 'j'),
 	},
 	{
-		char: 'ㄷ',
-		translateAs: () => 'd',
+		char: 'ᄃ',
+		type: 'consonant',
+		translateAs: 'd',
 		pronounceAs: (opts) => (opts.startOfWord ? 't' : 'd'),
 	},
 	{
-		char: 'ㄱ',
+		char: 'ᄀ',
+		type: 'consonant',
 		translateAs: (opts) => (opts.endOfSyllable ? 'k' : 'g'),
 		pronounceAs: (opts) => (opts.startOfWord || opts.endOfSyllable ? 'k' : 'g'),
 	},
 	{
-		char: 'ㅅ',
-		translateAs: () => 's',
-		pronounceAs: (opts) => (opts.endOfSyllable ? 't' : 's'),
+		char: ['ᄉ', 'ᆺ'],
+		type: 'consonant',
+		translateAs: (opts) => (opts.endOfSyllable || opts.endOfWord ? 't' : 's'),
 	},
 	{
-		char: 'ㅎ',
-		translateAs: () => 'h',
+		char: 'ᄒ',
+		type: 'consonant',
+		translateAs: 'h',
 	},
 	{
-		char: 'ㄹ',
+		char: 'ᄅ',
+		type: 'consonant',
 		translateAs: (opts) => (opts.endOfSyllable ? 'r' : 'l'),
+		pronounceAs: (opts) => (opts.endOfSyllable ? 'r' : 'hl'),
 	},
 	{
-		char: 'ㅇ',
-		translateAs: (opts) => (opts.startOfSyllable ? '' : 'ng'),
+		char: 'ᄋ',
+		type: 'consonant',
+		translateAs: (opts) => (opts.endOfSyllable ? 'ng' : ''),
 	},
 	{
-		char: 'ㄴ',
-		translateAs: () => 'n',
+		char: 'ᆫ',
+		type: 'consonant',
+		translateAs: 'n',
 	},
 	{
-		char: 'ㅁ',
-		translateAs: () => 'm',
+		char: ['ᆷ', 'ᄆ'],
+		type: 'consonant',
+		translateAs: 'm',
 	},
 	{
-		char: 'ㅋ',
-		translateAs: () => 'k',
-		pronounceAs: () => 'K',
+		char: 'ᄏ',
+		type: 'consonant',
+		translateAs: 'k',
+		pronounceAs: 'K',
 	},
 	{
-		char: 'ㅌ',
-		translateAs: () => 't',
-		pronounceAs: () => 'T',
+		char: 'ᄐ',
+		type: 'consonant',
+		translateAs: 't',
+		pronounceAs: 'T',
 	},
 	{
-		char: 'ㅊ',
-		translateAs: () => 'ch',
-		pronounceAs: () => 'ch',
+		char: 'ᄎ',
+		type: 'consonant',
+		translateAs: 'ch',
+		pronounceAs: 'ch',
 	},
 	{
-		char: 'ㅍ',
-		translateAs: () => 'p',
-		pronounceAs: () => 'P',
+		char: 'ᄑ',
+		type: 'consonant',
+		translateAs: 'p',
+		pronounceAs: 'P',
 	},
 ];
 
 export const DOUBLE_CONSONANTS: Letter[] = [
 	{
-		char: 'ㅃ',
-		translateAs: () => 'bb',
-		pronounceAs: () => 'B',
+		char: 'ᄈ',
+		type: 'double-consonant',
+		translateAs: 'bb',
+		pronounceAs: 'B',
 	},
 	{
-		char: 'ㅉ',
-		translateAs: () => 'jj',
-		pronounceAs: () => 'J',
+		char: 'ᄍ',
+		type: 'double-consonant',
+		translateAs: 'jj',
+		pronounceAs: 'J',
 	},
 	{
-		char: 'ㄸ',
-		translateAs: () => 'dd',
-		pronounceAs: () => 'D',
+		char: 'ᄄ',
+		type: 'double-consonant',
+		translateAs: 'dd',
+		pronounceAs: 'D',
 	},
 	{
-		char: 'ㄲ',
-		translateAs: () => 'gg',
-		pronounceAs: () => 'G',
+		char: 'ᄁ',
+		type: 'double-consonant',
+		translateAs: 'gg',
+		pronounceAs: 'G',
 	},
 	{
-		char: 'ㅆ',
-		translateAs: () => 'ss',
-		pronounceAs: () => 'S',
+		char: 'ᄊ',
+		type: 'double-consonant',
+		translateAs: 'ss',
+		pronounceAs: 'S',
 	},
 ];
 
 export const LETTERS: Record<string, Letter> = {};
+
+function mapLetters(letters: Letter[]) {
+	for (const letter of letters) {
+		if (Array.isArray(letter.char)) {
+			for (const char of letter.char) {
+				LETTERS[char] = letter;
+			}
+		} else {
+			LETTERS[letter.char] = letter;
+		}
+	}
+}
+
+mapLetters(VOWELS);
+mapLetters(DIPTHONGS);
+mapLetters(CONSONANTS);
+mapLetters(DOUBLE_CONSONANTS);

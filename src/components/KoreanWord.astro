@@ -1,14 +1,13 @@
 ---
-import hangeul from 'hangeul';
 import { Icon } from '@astrojs/starlight/components';
+import { Word } from '@hangeul';
 
 interface Props {
 	word: string;
 }
 
 const { word } = Astro.props;
-
-console.log({ korean: word, english: hangeul.enname(word) });
+const inst = new Word(word);
 ---
 
 <div class="word not-content">
@@ -16,7 +15,10 @@ console.log({ korean: word, english: hangeul.enname(word) });
 		<code>{word}</code>
 	</div>
 
-	<div class="word-en">{hangeul.enname(word).toLocaleLowerCase() || '???'}</div>
+	<div class="word-en">
+		<div>{inst.translate()}</div>
+		<div class="word-en-sm">{inst.pronounce()}</div>
+	</div>
 
 	<div class="word-links">
 		<a href={`https://translate.google.com/?sl=ko&tl=en&op=translate&text=${word}`}>
@@ -40,10 +42,12 @@ console.log({ korean: word, english: hangeul.enname(word) });
 		background-color: var(--sl-color-black);
 		padding: clamp(1rem, calc(0.125rem + 3vw), 1.5rem);
 		gap: clamp(0.5rem, calc(0.125rem + 1vw), 3rem);
+		display: flex;
+		align-items: center;
 	}
 
 	.word-ko {
-		font-size: var(--sl-text-h2);
+		font-size: var(--sl-text-h1);
 		font-weight: bold;
 		color: var(--sl-color-white);
 		border-right: 0 !important;
@@ -55,6 +59,12 @@ console.log({ korean: word, english: hangeul.enname(word) });
 		font-size: var(--sl-text-h2);
 		border-right: 0 !important;
 		flex: 1;
+	}
+
+	.word-en-sm {
+		font-size: var(--sl-text-h5);
+		font-weight: normal;
+		margin-top: 5px;
 	}
 
 	.word-links {
