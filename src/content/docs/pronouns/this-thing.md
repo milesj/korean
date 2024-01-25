@@ -2,6 +2,8 @@
 title: This thing
 ---
 
-# `이것`
+# `이거` Casual
 
-- `거`
+# `이것` Formal
+
+# `이건` As a topic

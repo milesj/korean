@@ -1,0 +1,27 @@
+---
+import hangeul from 'hangeul';
+import { Icon } from '@astrojs/starlight/components';
+
+interface Props {
+	forms: [
+		{
+			word: string;
+			parts?: string[];
+			type: '';
+		},
+	];
+}
+
+const { forms } = Astro.props;
+---
+
+<table>
+	{
+		forms.map((form) => (
+			<tr>
+				<td>{form.word}</td>
+				<td>{hangeul.enname(form.word)}</td>
+			</tr>
+		))
+	}
+</table>
