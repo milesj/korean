@@ -1,6 +1,8 @@
 // https://www.loc.gov/marc/specifications/specchareacc/KoreanHangul.html
 
 export interface TranslateOptions {
+	next?: Letter;
+	prev?: Letter;
 	startOfSyllable: boolean;
 	startOfWord: boolean;
 	endOfSyllable: boolean;
@@ -206,18 +208,21 @@ export const CONSONANTS: Letter[] = [
 	{
 		char: ['ᄉ', 'ᆺ'],
 		type: 'consonant',
-		translateAs: (opts) => (opts.endOfSyllable || opts.endOfWord ? 't' : 's'),
+		translateAs: (opts) => {
+			console.log(opts);
+			return opts.endOfSyllable || opts.endOfWord ? 't' : 's';
+		},
 	},
 	{
-		char: 'ᄒ',
+		char: ['ᄒ', 'ᇂ'],
 		type: 'consonant',
 		translateAs: 'h',
 	},
 	{
-		char: 'ᄅ',
+		char: ['ᄅ', 'ᆯ'],
 		type: 'consonant',
-		translateAs: (opts) => (opts.endOfSyllable ? 'r' : 'l'),
-		pronounceAs: (opts) => (opts.endOfSyllable ? 'r' : 'hl'),
+		translateAs: 'l',
+		pronounceAs: 'hl',
 	},
 	{
 		char: 'ᄋ',
@@ -225,7 +230,7 @@ export const CONSONANTS: Letter[] = [
 		translateAs: (opts) => (opts.endOfSyllable ? 'ng' : ''),
 	},
 	{
-		char: 'ᆫ',
+		char: ['ᆫ', 'ᄂ'],
 		type: 'consonant',
 		translateAs: 'n',
 	},

@@ -75,21 +75,30 @@ export class Syllable {
 		this.characters = this.parts.map((part) => new Character(part));
 	}
 
-	options(): TranslateOptions {
+	options(index: number): TranslateOptions {
+		const startOfSyllable = index === 0;
+		const endOfSyllable = index === this.characters.length - 1;
+
 		return {
-			startOfSyllable: this.first && this.previous,
-			startOfWord: this.first && !this.previous,
-			endOfSyllable: this.last && this.next,
-			endOfWord: this.last && !this.next,
+			// next: this.next?.characters[0]?.letter,
+			// prev: this.previous?.characters[this.previous?.characters.length - 1]?.letter,
+			startOfSyllable,
+			startOfWord: startOfSyllable && this.first && !this.previous,
+			endOfSyllable,
+			endOfWord: endOfSyllable && this.last && !this.next,
 		};
 	}
 
 	pronounce(): string {
-		return this.characters.map((character) => character.pronounce(this.options())).join('');
+		return this.characters
+			.map((character, index) => character.pronounce(this.options(index)))
+			.join('');
 	}
 
 	translate(): string {
-		return this.characters.map((character) => character.translate(this.options())).join('');
+		return this.characters
+			.map((character, index) => character.translate(this.options(index)))
+			.join('');
 	}
 }
 

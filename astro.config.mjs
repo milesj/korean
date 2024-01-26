@@ -20,6 +20,10 @@ export default defineConfig({
 					autogenerate: { directory: 'adverbs' },
 				},
 				{
+					label: 'Conjunctions',
+					autogenerate: { directory: 'conjunctions' },
+				},
+				{
 					label: 'Particles',
 					autogenerate: { directory: 'particles' },
 				},
