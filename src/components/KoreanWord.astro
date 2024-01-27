@@ -10,9 +10,17 @@ const { word } = Astro.props;
 const inst = new Word(word);
 ---
 
+<script>
+	import { Word } from '@hangeul';
+	const w = new Word(document.getElementById('ko-word')!.innerText);
+	console.log(w);
+	console.log(w.translate());
+	console.log(w.pronounce());
+</script>
+
 <div class="word not-content">
 	<div class="word-ko">
-		<code>{word}</code>
+		<code id="ko-word">{word}</code>
 	</div>
 
 	<div class="word-en">

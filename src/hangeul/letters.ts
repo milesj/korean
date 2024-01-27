@@ -1,21 +1,27 @@
 // https://www.loc.gov/marc/specifications/specchareacc/KoreanHangul.html
 
+import * as soundChange from './rule-changes';
+
+export const HANGEUL = /[\u1100-\u11FF\u3130-\u318F\uA960-\uA97F\uAC00-\uD7AF\uD7B0-\uD7FF]/g;
+
 export interface TranslateOptions {
-	next?: Letter;
-	prev?: Letter;
+	nextLetter?: Letter;
+	prevLetter?: Letter;
 	startOfSyllable: boolean;
 	startOfWord: boolean;
 	endOfSyllable: boolean;
 	endOfWord: boolean;
 }
 
+export type TranslateFunc = (options: TranslateOptions) => string;
+
 export type LetterType = 'vowel' | 'dipthong' | 'consonant' | 'double-consonant';
 
 export interface Letter {
-	char: string | string[];
+	char: string;
 	type: LetterType;
-	translateAs: string | ((options: TranslateOptions) => string);
-	pronounceAs?: string | ((options: TranslateOptions) => string);
+	translateAs: string | TranslateFunc;
+	pronounceAs?: string | TranslateFunc;
 }
 
 export const VOWELS: Letter[] = [
@@ -35,7 +41,7 @@ export const VOWELS: Letter[] = [
 		char: 'ᅥ',
 		type: 'vowel',
 		translateAs: 'eo',
-		pronounceAs: 'uh',
+		pronounceAs: 'euh',
 	},
 	{
 		char: 'ᅧ',
@@ -119,7 +125,7 @@ export const DIPTHONGS: Letter[] = [
 	{
 		char: 'ᅯ',
 		type: 'dipthong',
-		translateAs: 'weo',
+		translateAs: 'wo',
 		pronounceAs: 'woh',
 	},
 	{
@@ -182,86 +188,168 @@ export function createDipthong(a: string, b: string) {
 
 export const CONSONANTS: Letter[] = [
 	{
-		char: 'ᄇ',
+		char: 'ㅂ',
 		type: 'consonant',
 		translateAs: 'b',
-		pronounceAs: (opts) => (opts.startOfWord ? 'p' : 'b'),
-	},
-	{
-		char: 'ᄌ',
-		type: 'consonant',
-		translateAs: 'j',
-		pronounceAs: (opts) => (opts.startOfWord ? 'ch' : 'j'),
-	},
-	{
-		char: 'ᄃ',
-		type: 'consonant',
-		translateAs: 'd',
-		pronounceAs: (opts) => (opts.startOfWord ? 't' : 'd'),
-	},
-	{
-		char: 'ᄀ',
-		type: 'consonant',
-		translateAs: (opts) => (opts.endOfSyllable ? 'k' : 'g'),
-		pronounceAs: (opts) => (opts.startOfWord || opts.endOfSyllable ? 'k' : 'g'),
-	},
-	{
-		char: ['ᄉ', 'ᆺ'],
-		type: 'consonant',
-		translateAs: (opts) => {
-			console.log(opts);
-			return opts.endOfSyllable || opts.endOfWord ? 't' : 's';
+		pronounceAs(opts) {
+			if (soundChange.isRule3(opts)) {
+				return 'B';
+			}
+
+			return opts.startOfWord ? 'p' : 'b';
 		},
 	},
 	{
-		char: ['ᄒ', 'ᇂ'],
+		char: 'ㅈ',
 		type: 'consonant',
-		translateAs: 'h',
+		translateAs: 'j',
+		pronounceAs(opts) {
+			if (soundChange.isRule3(opts)) {
+				return 'J';
+			}
+
+			if (soundChange.isRule1(opts)) {
+				return 't';
+			}
+
+			return opts.startOfWord ? 'ch' : 'j';
+		},
 	},
 	{
-		char: ['ᄅ', 'ᆯ'],
+		char: 'ㄷ',
+		type: 'consonant',
+		translateAs: 'd',
+		pronounceAs(opts) {
+			if (soundChange.isRule3(opts)) {
+				return 'D';
+			}
+
+			return opts.startOfWord ? 't' : 'd';
+		},
+	},
+	{
+		char: 'ㄱ',
+		type: 'consonant',
+		translateAs: (opts) => (opts.endOfSyllable ? 'k' : 'g'),
+		pronounceAs(opts) {
+			if (soundChange.isRule3(opts)) {
+				return 'G';
+			}
+
+			return opts.startOfWord || opts.endOfSyllable ? 'k' : 'g';
+		},
+	},
+	{
+		char: 'ㅅ',
+		type: 'consonant',
+		translateAs(opts) {
+			if (soundChange.isRule3(opts)) {
+				return 'S';
+			}
+
+			if (soundChange.isRule1(opts)) {
+				return 't';
+			}
+
+			return opts.endOfSyllable || opts.endOfWord ? 't' : 's';
+		},
+		pronounceAs(opts) {
+			const out = (this.translateAs as TranslateFunc)(opts);
+
+			// TODO
+			if (opts.nextLetter?.type === 'vowel') {
+				return `${out}h`;
+			}
+
+			return out;
+		},
+	},
+	{
+		char: 'ㅎ',
+		type: 'consonant',
+		translateAs: 'h',
+		pronounceAs(opts) {
+			if (soundChange.isRule1(opts)) {
+				return 't';
+			}
+
+			return 'h';
+		},
+	},
+	{
+		char: 'ㄹ',
 		type: 'consonant',
 		translateAs: 'l',
 		pronounceAs: 'hl',
 	},
 	{
-		char: 'ᄋ',
+		char: 'ㅇ',
 		type: 'consonant',
-		translateAs: (opts) => (opts.endOfSyllable ? 'ng' : ''),
+		translateAs(opts) {
+			if (opts.endOfSyllable) {
+				return 'ng';
+			}
+
+			return '';
+		},
 	},
 	{
-		char: ['ᆫ', 'ᄂ'],
+		char: 'ㄴ',
 		type: 'consonant',
 		translateAs: 'n',
 	},
 	{
-		char: ['ᆷ', 'ᄆ'],
+		char: 'ㅁ',
 		type: 'consonant',
 		translateAs: 'm',
 	},
 	{
-		char: 'ᄏ',
+		char: 'ㅋ',
 		type: 'consonant',
 		translateAs: 'k',
-		pronounceAs: 'K',
+		pronounceAs(opts) {
+			if (soundChange.isRule2(opts)) {
+				return 'k';
+			}
+
+			return 'K';
+		},
 	},
 	{
-		char: 'ᄐ',
+		char: 'ㅌ',
 		type: 'consonant',
 		translateAs: 't',
-		pronounceAs: 'T',
+		pronounceAs(opts) {
+			if (soundChange.isRule1(opts)) {
+				return 't';
+			}
+
+			return 'T';
+		},
 	},
 	{
-		char: 'ᄎ',
+		char: 'ㅊ',
 		type: 'consonant',
 		translateAs: 'ch',
-		pronounceAs: 'ch',
+		pronounceAs(opts) {
+			if (soundChange.isRule1(opts)) {
+				return 't';
+			}
+
+			return 'ch';
+		},
 	},
 	{
-		char: 'ᄑ',
+		char: 'ㅍ',
 		type: 'consonant',
 		translateAs: 'p',
-		pronounceAs: 'P',
+		pronounceAs(opts) {
+			if (soundChange.isRule2(opts)) {
+				return 'p';
+			}
+
+			return 'P';
+		},
 	},
 ];
 
@@ -288,13 +376,31 @@ export const DOUBLE_CONSONANTS: Letter[] = [
 		char: 'ᄁ',
 		type: 'double-consonant',
 		translateAs: 'gg',
-		pronounceAs: 'G',
+		pronounceAs(opts) {
+			if (soundChange.isRule2(opts)) {
+				return 'k';
+			}
+
+			return 'G';
+		},
 	},
 	{
 		char: 'ᄊ',
 		type: 'double-consonant',
-		translateAs: 'ss',
-		pronounceAs: 'S',
+		translateAs(opts) {
+			if (soundChange.isRule1(opts)) {
+				return 't';
+			}
+
+			return 'ss';
+		},
+		pronounceAs(opts) {
+			if (soundChange.isRule1(opts)) {
+				return 't';
+			}
+
+			return 'S';
+		},
 	},
 ];
 
@@ -316,3 +422,25 @@ mapLetters(VOWELS);
 mapLetters(DIPTHONGS);
 mapLetters(CONSONANTS);
 mapLetters(DOUBLE_CONSONANTS);
+
+// Normalize returns different characters than what my
+// macbook keyboard produces, so this maps the normalized
+// form to the macbook ones. I'm assuming this is an NFC/NFD
+// related problem.
+export const NORMALIZE: Record<string, string> = {
+	ᄀ: 'ㄱ',
+	ᆫ: 'ㄴ',
+	ᄂ: 'ㄴ',
+	ᄋ: 'ㅇ',
+	ᆯ: 'ㄹ',
+	ᄅ: 'ㄹ',
+	ᄉ: 'ㅅ',
+	ᆺ: 'ㅅ',
+	ᄌ: 'ㅈ',
+	ᄎ: 'ㅊ',
+	ᆷ: 'ㅁ',
+	ᄆ: 'ㅁ',
+	ᄃ: 'ㄷ',
+	ᄒ: 'ㅎ',
+	ᇂ: 'ㅎ',
+};
