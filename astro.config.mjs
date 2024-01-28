@@ -24,6 +24,10 @@ export default defineConfig({
 					autogenerate: { directory: 'conjunctions' },
 				},
 				{
+					label: 'Nouns',
+					autogenerate: { directory: 'nouns' },
+				},
+				{
 					label: 'Particles',
 					autogenerate: { directory: 'particles' },
 				},

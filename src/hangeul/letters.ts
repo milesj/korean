@@ -429,9 +429,11 @@ mapLetters(DOUBLE_CONSONANTS);
 // related problem.
 export const NORMALIZE: Record<string, string> = {
 	ᄀ: 'ㄱ',
+	ᆨ: 'ㄱ',
 	ᆫ: 'ㄴ',
 	ᄂ: 'ㄴ',
 	ᄋ: 'ㅇ',
+	ᆼ: 'ㅇ',
 	ᆯ: 'ㄹ',
 	ᄅ: 'ㄹ',
 	ᄉ: 'ㅅ',
@@ -441,6 +443,11 @@ export const NORMALIZE: Record<string, string> = {
 	ᆷ: 'ㅁ',
 	ᄆ: 'ㅁ',
 	ᄃ: 'ㄷ',
+	ᄐ: 'ㅌ',
+	ᇀ: 'ㅌ',
 	ᄒ: 'ㅎ',
 	ᇂ: 'ㅎ',
+	ᄇ: 'ㅂ',
+	ᆸ: 'ㅂ',
+	ᄑ: 'ㅍ',
 };

@@ -1,0 +1,66 @@
+---
+import { Word } from '@hangeul';
+
+interface Props {
+	sort?: boolean;
+	words: {
+		word: string | string[];
+		meaning: string;
+	}[];
+}
+
+const { words, sort } = Astro.props;
+
+if (sort) {
+	words.sort((a, d) => a.meaning.localeCompare(d.meaning));
+}
+---
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>Word</th>
+			<th>Translation</th>
+			<th>Pronunciation</th>
+		</tr>
+	</thead>
+	<tbody>
+		{
+			words.map((word) => {
+				if (Array.isArray(word.word)) {
+					const insts = word.word.map((w) => new Word(w));
+
+					return (
+						<tr>
+							<td>{word.meaning}</td>
+							<td>
+								{word.word.map((w, index) => (
+									<>
+										{index != 0 ? ' / ' : ''}
+										<code>{w}</code>
+									</>
+								))}
+							</td>
+							<td>{insts.map((i) => i.translate()).join(' / ')}</td>
+							<td>{insts.map((i) => i.pronounce()).join(' / ')}</td>
+						</tr>
+					);
+				}
+
+				const inst = new Word(word.word);
+
+				return (
+					<tr>
+						<td>{word.meaning}</td>
+						<td>
+							<code>{word.word}</code>
+						</td>
+						<td>{inst.translate()}</td>
+						<td>{inst.pronounce()}</td>
+					</tr>
+				);
+			})
+		}
+	</tbody>
+</table>
