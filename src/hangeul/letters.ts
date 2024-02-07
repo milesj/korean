@@ -256,8 +256,10 @@ export const CONSONANTS: Letter[] = [
 		pronounceAs(opts) {
 			const out = (this.translateAs as TranslateFunc)(opts);
 
-			// TODO
-			if (opts.nextLetter?.type === 'vowel') {
+			if (
+				opts.nextLetter?.type === 'vowel' &&
+				soundChange.inList(opts.nextLetter.char, ['ᅣ', 'ᅧ', 'ᅭ', 'ᅲ', 'ᅵ', 'ᅤ', 'ᅨ'])
+			) {
 				return `${out}h`;
 			}
 

@@ -14,10 +14,30 @@ export class Character {
 	punctuation?: Punctuation;
 	text: string;
 
-	constructor(text: string) {
+	// Position within the syllable
+	index: number = 0;
+
+	constructor(text: string, index: number) {
 		this.letter = LETTERS[text];
 		this.punctuation = PUNCTUATION[text];
 		this.text = text;
+		this.index = index;
+	}
+
+	isConsonant(): boolean {
+		return this.letter?.type === 'consonant';
+	}
+
+	isDipthong(): boolean {
+		return this.letter?.type === 'dipthong';
+	}
+
+	isSilent(): boolean {
+		return this.index === 0 && this.letter?.char === 'ㅇ';
+	}
+
+	isVowel(): boolean {
+		return this.letter?.type === 'vowel';
 	}
 
 	pronounce(options: TranslateOptions): string {
@@ -84,7 +104,7 @@ export class Syllable {
 		}
 
 		this.rawParts = parts;
-		this.characters = this.parts.map((part) => new Character(part));
+		this.characters = this.parts.map((part, index) => new Character(part, index));
 		// }
 	}
 
@@ -104,14 +124,12 @@ export class Syllable {
 		};
 	}
 
-	pronounce(): string {
+	pronounce(): string | string[] {
 		if (!this.characters) {
 			return this.text;
 		}
 
-		return this.characters
-			.map((character, index) => character.pronounce(this.options(index)))
-			.join('');
+		return this.characters.map((character, index) => character.pronounce(this.options(index)));
 	}
 
 	translate(): string {
@@ -159,7 +177,42 @@ export class Word {
 	}
 
 	pronounce(): string {
-		return this.syllables.map((syllable) => syllable.pronounce()).join('-');
+		let result = '';
+		const lastIndex = this.syllables.length - 1;
+
+		this.syllables.forEach((syllable, index) => {
+			const parts = syllable.pronounce();
+
+			if (typeof parts === 'string') {
+				result += parts;
+				return;
+			}
+
+			const nextSyllable = this.syllables[index + 1];
+			let movedOver = false;
+
+			if (
+				// Current syllable ends in a consonant
+				syllable.characters?.[syllable.characters.length - 1].isConsonant() &&
+				// Next syllable starts with a silent ㅇ character
+				nextSyllable?.characters?.[0]?.isSilent() &&
+				// And also isn't followed by a dipthong
+				!nextSyllable?.characters?.[1]?.isDipthong()
+			) {
+				parts.splice(parts.length - 1, 0, '-');
+				movedOver = true;
+			}
+
+			result += parts.join('');
+
+			if (!movedOver && index !== lastIndex) {
+				result += '-';
+			}
+		});
+
+		result += '';
+
+		return result;
 	}
 
 	translate(): string {

@@ -35,6 +35,10 @@ export default defineConfig({
 					label: 'Pronouns',
 					autogenerate: { directory: 'pronouns' },
 				},
+				{
+					label: 'Suffixes',
+					autogenerate: { directory: 'suffixes' },
+				},
 			],
 		}),
 	],

@@ -4,7 +4,7 @@
 
 import type { TranslateOptions } from './letters';
 
-function inList(char: string | string[], allowed: string[]): boolean {
+export function inList(char: string | string[], allowed: string[]): boolean {
 	const chars = Array.isArray(char) ? char : [char];
 
 	return allowed.some((item) => chars.includes(item));
