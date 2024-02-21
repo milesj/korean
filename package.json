@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "korean",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -8,16 +8,19 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "gen": "tsx ./src/scripts/generateContent.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/starlight": "^0.15.3",
+    "@types/lodash": "^4.14.202",
     "astro": "^4.0.1",
-    "hangeul": "^0.3.1",
+    "lodash": "^4.17.21",
     "prettier": "^3.2.2",
     "prettier-config-moon": "^1.1.2",
     "sharp": "^0.32.5",
+    "tsx": "^4.7.1",
     "typescript": "^5.3.3"
   }
 }

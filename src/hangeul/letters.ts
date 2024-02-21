@@ -445,6 +445,7 @@ export const NORMALIZE: Record<string, string> = {
 	ᆷ: 'ㅁ',
 	ᄆ: 'ㅁ',
 	ᄃ: 'ㄷ',
+	ᄏ: 'ㅋ',
 	ᄐ: 'ㅌ',
 	ᇀ: 'ㅌ',
 	ᄒ: 'ㅎ',
