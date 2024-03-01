@@ -1,10 +1,22 @@
 import fs from 'node:fs';
 import upperFirst from 'lodash/upperFirst';
-import { NOUNS_MAP, type Noun } from '../data/nouns';
+import { NOUNS_MAP, type Noun, type NounCategory } from '../data/nouns';
 
-function genNounPage(category: string, entries: Record<string, Noun>) {
+const CATEGORIES: Record<NounCategory, string> = {
+	object: 'Objects & items',
+	activity: 'Activities',
+	datetime: 'Date & time',
+	education: 'Education',
+	entertainment: 'Entertainment',
+	leisure: 'Leisure',
+	nature: 'Nature',
+	place: 'Places',
+	weather: 'Weather',
+};
+
+function genNounPage(category: NounCategory, entries: Record<string, Noun>) {
 	let content = `---
-title: ${upperFirst(category)}
+title: ${CATEGORIES[category] || upperFirst(category)}
 ---
 
 import KoreanWords from '@components/KoreanWords.astro';
@@ -18,15 +30,18 @@ import KoreanWords from '@components/KoreanWords.astro';
 	return content;
 }
 
-const categories: Record<string, Record<string, Noun>> = {};
+const categories: { [K in NounCategory]?: Record<string, Noun> } = {};
 
 Object.entries(NOUNS_MAP).forEach(([key, entry]) => {
 	(Array.isArray(entry.category) ? entry.category : [entry.category]).forEach((category) => {
 		categories[category] ||= {};
-		categories[category][key] = entry;
+		categories[category]![key] = entry;
 	});
 });
 
 Object.entries(categories).forEach(([category, entries]) => {
-	fs.writeFileSync(`src/content/docs/nouns/${category}.mdx`, genNounPage(category, entries));
+	fs.writeFileSync(
+		`src/content/docs/nouns/${category}.mdx`,
+		genNounPage(category as NounCategory, entries),
+	);
 });
