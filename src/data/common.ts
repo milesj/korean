@@ -1,6 +1,16 @@
-export function generateMap<
-	T extends { meaning: string | string[]; keys?: string[]; related?: string[] },
->(data: T[], map: Record<string, T>) {
+export interface Word {
+	description?: string;
+	guidelines?: string[];
+	meaning: string | string[];
+	word: string | string[];
+	wordPronounced?: string;
+
+	// internal
+	keys?: string[];
+	related?: string[];
+}
+
+export function generateMap<T extends Word>(data: T[], map: Record<string, T>) {
 	data.forEach((item) => {
 		const meanings = Array.isArray(item.meaning) ? item.meaning : [item.meaning];
 

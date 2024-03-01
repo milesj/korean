@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "gen": "tsx ./src/scripts/generateContent.ts"
+    "gen": "tsx ./src/scripts/generate.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",

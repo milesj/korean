@@ -1,16 +1,6 @@
-import { generateMap } from './common';
+import { generateMap, type Word } from './common';
 
-export interface Adverb {
-	description?: string;
-	guidelines?: string[];
-	meaning: string | string[];
-	word: string | string[];
-	wordPronounced?: string;
-
-	// internal
-	keys?: string[];
-	related?: string[];
-}
+export interface Adverb extends Word {}
 
 export const ADVERBS: Adverb[] = [
 	// a
@@ -67,6 +57,16 @@ export const ADVERBS: Adverb[] = [
 		meaning: ['often', 'frequently'],
 		word: '자주',
 	},
+	// p
+	{
+		meaning: ['perhaps', 'probably'],
+		word: '아마',
+	},
+	// r
+	{
+		meaning: ['really'],
+		word: ['진짜', '정말'],
+	},
 	// t
 	{
 		meaning: 'these days',
@@ -117,6 +117,6 @@ export const ADVERBS: Adverb[] = [
 	},
 ];
 
-export const ADVERBS_MAP = {};
+export const ADVERBS_MAP: Record<string, Adverb> = {};
 
 generateMap(ADVERBS, ADVERBS_MAP);

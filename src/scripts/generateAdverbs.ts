@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import upperFirst from 'lodash/upperFirst';
 import { ADVERBS_MAP, type Adverb } from '../data/adverbs';
 
-function formatPage(entry: Adverb) {
+function genAdverbPage(entry: Adverb) {
 	const meanings = Array.isArray(entry.meaning) ? entry.meaning : [entry.meaning];
 	const words = Array.isArray(entry.word) ? entry.word : [entry.word];
 
@@ -45,5 +45,5 @@ import KoreanWord from '@components/KoreanWord.astro';`;
 }
 
 Object.entries(ADVERBS_MAP).forEach(([key, entry]) => {
-	fs.writeFileSync(`src/content/docs/adverbs/${key}.mdx`, formatPage(entry as Adverb));
+	fs.writeFileSync(`src/content/docs/adverbs/${key}.mdx`, genAdverbPage(entry));
 });

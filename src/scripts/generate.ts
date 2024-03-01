@@ -1,0 +1,2 @@
+import './generateAdverbs';
+import './generateNouns';

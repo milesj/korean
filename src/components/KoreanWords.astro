@@ -1,18 +1,21 @@
 ---
 import { Word } from '@hangeul';
+import type { Word as WordShape } from '../data/common';
 
 interface Props {
 	sort?: boolean;
-	words: {
-		word: string | string[];
-		meaning: string;
-	}[];
+	words: WordShape[];
 }
 
 const { words, sort } = Astro.props;
 
 if (sort) {
-	words.sort((a, d) => a.meaning.localeCompare(d.meaning));
+	words.sort((a, d) => {
+		const a1 = Array.isArray(a.meaning) ? a.meaning[0] : a.meaning;
+		const d1 = Array.isArray(d.meaning) ? d.meaning[0] : d.meaning;
+
+		return a1.localeCompare(d1);
+	});
 }
 ---
 
@@ -28,12 +31,14 @@ if (sort) {
 	<tbody>
 		{
 			words.map((word) => {
+				const meaning = Array.isArray(word.meaning) ? word.meaning.join(', ') : word.meaning;
+
 				if (Array.isArray(word.word)) {
 					const insts = word.word.map((w) => new Word(w));
 
 					return (
 						<tr>
-							<td>{word.meaning}</td>
+							<td>{meaning}</td>
 							<td>
 								{word.word.map((w, index) => (
 									<>
@@ -52,7 +57,7 @@ if (sort) {
 
 				return (
 					<tr>
-						<td>{word.meaning}</td>
+						<td>{meaning}</td>
 						<td>
 							<code>{word.word}</code>
 						</td>

@@ -1,6 +1,5 @@
 ---
-import hangeul from 'hangeul';
-import { Icon } from '@astrojs/starlight/components';
+import { Word } from '@hangeul';
 
 interface Props {
 	forms: [
@@ -20,7 +19,7 @@ const { forms } = Astro.props;
 		forms.map((form) => (
 			<tr>
 				<td>{form.word}</td>
-				<td>{hangeul.enname(form.word)}</td>
+				<td>{new Word(form.word).translate()}</td>
 			</tr>
 		))
 	}

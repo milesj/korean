@@ -41,7 +41,7 @@ export const VOWELS: Letter[] = [
 		char: 'ᅥ',
 		type: 'vowel',
 		translateAs: 'eo',
-		pronounceAs: 'euh',
+		pronounceAs: 'uh',
 	},
 	{
 		char: 'ᅧ',
@@ -441,7 +441,9 @@ export const NORMALIZE: Record<string, string> = {
 	ᄉ: 'ㅅ',
 	ᆺ: 'ㅅ',
 	ᄌ: 'ㅈ',
+	ᆽ: 'ㅈ',
 	ᄎ: 'ㅊ',
+	ᆾ: 'ㅊ',
 	ᆷ: 'ㅁ',
 	ᄆ: 'ㅁ',
 	ᄃ: 'ㄷ',

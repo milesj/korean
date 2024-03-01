@@ -17,7 +17,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Adverbs',
-					autogenerate: { directory: 'adverbs' },
+					autogenerate: { directory: 'adverbs', collapsed: true },
 				},
 				{
 					label: 'Conjunctions',
@@ -25,7 +25,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Nouns',
-					autogenerate: { directory: 'nouns' },
+					autogenerate: { directory: 'nouns', collapsed: true },
 				},
 				{
 					label: 'Particles',
