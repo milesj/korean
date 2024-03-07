@@ -44,6 +44,24 @@ import KoreanWord from '@components/KoreanWord.astro';`;
 	return content;
 }
 
+if (fs.existsSync('src/content/docs/adverbs')) {
+	fs.rmSync('src/content/docs/adverbs', { recursive: true });
+}
+
+fs.mkdirSync('src/content/docs/adverbs', { recursive: true });
+
 Object.entries(ADVERBS_MAP).forEach(([key, entry]) => {
-	fs.writeFileSync(`src/content/docs/adverbs/${key}.mdx`, genAdverbPage(entry));
+	if (entry.duplicate) {
+		return;
+	}
+
+	const meanings = Array.isArray(entry.meaning) ? entry.meaning : [entry.meaning];
+	meanings.sort();
+
+	const name = meanings
+		.map((meaning) => meaning.replace(' ', '-'))
+		.join('_')
+		.toLowerCase();
+
+	fs.writeFileSync(`src/content/docs/adverbs/${name}.mdx`, genAdverbPage(entry), 'utf8');
 });

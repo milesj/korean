@@ -2,12 +2,13 @@ export interface Word {
 	description?: string;
 	guidelines?: string[];
 	meaning: string | string[];
+	related?: string[];
 	word: string | string[];
 	wordPronounced?: string;
 
 	// internal
+	duplicate?: boolean;
 	keys?: string[];
-	related?: string[];
 }
 
 export function generateMap<T extends Word>(data: T[], map: Record<string, T>) {
@@ -36,5 +37,40 @@ export function generateMap<T extends Word>(data: T[], map: Record<string, T>) {
 				};
 			}
 		});
+	});
+}
+
+export function expandMap<T extends Word>(
+	data: Record<string, T | string>,
+	map: Record<string, T>,
+) {
+	Object.entries(data).forEach(([key, item]) => {
+		if (typeof item === 'string') {
+			if (!data[item]) {
+				throw new Error(`Base word "${item}" does not exist for key "${key}"`);
+			} else if (typeof data[item] === 'string') {
+				throw new Error(`Key "${key}" cannot reference "${item}" because it is a string`);
+			}
+
+			map[key] = {
+				...(data[item] as T),
+				duplicate: true,
+			};
+
+			return;
+		}
+
+		map[key] = item;
+	});
+
+	// Verify related
+	Object.entries(map).forEach(([key, item]) => {
+		if (item.related) {
+			item.related.forEach((rel) => {
+				if (!map[rel]) {
+					throw new Error(`Related word "${rel}" does not exist for key "${key}"`);
+				}
+			});
+		}
 	});
 }
