@@ -244,7 +244,7 @@ export const CONSONANTS: Letter[] = [
 		type: 'consonant',
 		translateAs(opts) {
 			if (soundChange.isRule3(opts)) {
-				return 'S';
+				return 's';
 			}
 
 			if (soundChange.isRule1(opts)) {
@@ -447,6 +447,7 @@ export const NORMALIZE: Record<string, string> = {
 	ᆷ: 'ㅁ',
 	ᄆ: 'ㅁ',
 	ᄃ: 'ㄷ',
+	ᆮ: 'ㄷ',
 	ᄏ: 'ㅋ',
 	ᄐ: 'ㅌ',
 	ᇀ: 'ㅌ',
@@ -455,4 +456,5 @@ export const NORMALIZE: Record<string, string> = {
 	ᄇ: 'ㅂ',
 	ᆸ: 'ㅂ',
 	ᄑ: 'ㅍ',
+	ㅆ: 'ㅆ',
 };

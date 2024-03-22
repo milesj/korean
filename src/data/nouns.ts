@@ -79,7 +79,8 @@ export const NOUNS = {
 	freshman: {
 		category: 'education',
 		meaning: 'freshman',
-		word: '1학년',
+		word: '일학년',
+		wordPronounced: '일한년',
 	},
 	friend: {
 		category: 'human',
@@ -122,7 +123,8 @@ export const NOUNS = {
 	junior: {
 		category: 'education',
 		meaning: 'junior',
-		word: '3학년',
+		word: '삼학년',
+		wordPronounced: '삼한년',
 	},
 	// k
 	korea: {
@@ -221,12 +223,14 @@ export const NOUNS = {
 	senior: {
 		category: 'education',
 		meaning: 'senior',
-		word: '4학년',
+		word: '사학년',
+		wordPronounced: '사한년',
 	},
 	sophomore: {
 		category: 'education',
 		meaning: 'sophomore',
-		word: '2학년',
+		word: '이학년',
+		wordPronounced: '이한년',
 	},
 	student: {
 		category: 'education',

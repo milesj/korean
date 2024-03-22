@@ -54,7 +54,7 @@ export const ADJECTIVES = {
 		word: '재미있다',
 	},
 	to_not_be_interesting: {
-		meaning: 'to not be interesting / to be uninteresting',
+		meaning: 'to not be interesting / uninteresting',
 		opposite: 'to_be_interesting',
 		word: '재미없다',
 	},

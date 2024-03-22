@@ -16,28 +16,44 @@ export default defineConfig({
 			},
 			sidebar: [
 				{
+					label: 'Adjectives',
+					collapsed: true,
+					autogenerate: { directory: 'adjectives' },
+				},
+				{
 					label: 'Adverbs',
-					autogenerate: { directory: 'adverbs', collapsed: true },
+					collapsed: true,
+					autogenerate: { directory: 'adverbs' },
 				},
 				{
 					label: 'Conjunctions',
+					collapsed: true,
 					autogenerate: { directory: 'conjunctions' },
 				},
 				{
+					label: 'Interjections',
+					collapsed: true,
+					autogenerate: { directory: 'interjections' },
+				},
+				{
 					label: 'Nouns',
-					autogenerate: { directory: 'nouns', collapsed: true },
+					collapsed: true,
+					autogenerate: { directory: 'nouns' },
 				},
 				{
 					label: 'Particles',
+					collapsed: true,
 					autogenerate: { directory: 'particles' },
 				},
 				{
 					label: 'Pronouns',
+					collapsed: true,
 					autogenerate: { directory: 'pronouns' },
 				},
 				{
-					label: 'Suffixes',
-					autogenerate: { directory: 'suffixes' },
+					label: 'Verbs',
+					collapsed: true,
+					autogenerate: { directory: 'verbs' },
 				},
 			],
 		}),
