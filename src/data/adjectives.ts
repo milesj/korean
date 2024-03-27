@@ -7,6 +7,7 @@ export interface Adjective extends Word {
 
 export const ADJECTIVES = {
 	to_be: {
+		class: 101.1,
 		meaning: 'to be',
 		opposite: 'to_not_be',
 		word: '이다',
@@ -18,11 +19,13 @@ export const ADJECTIVES = {
 	},
 	// c
 	to_be_cheap: {
+		class: 101.2,
 		meaning: 'to be cheap',
 		word: '싸다',
 	},
 	// b
 	to_be_big: {
+		class: 101.2,
 		meaning: 'to be big',
 		word: '크다',
 	},
@@ -33,6 +36,7 @@ export const ADJECTIVES = {
 		word: '맛있다',
 	},
 	to_not_be_delicious: {
+		class: 101.2,
 		meaning: 'to not be delicious / tasteless',
 		opposite: 'to_be_delicious',
 		word: '맛없다',
@@ -54,6 +58,7 @@ export const ADJECTIVES = {
 		word: '재미있다',
 	},
 	to_not_be_interesting: {
+		class: 101.2,
 		meaning: 'to not be interesting / uninteresting',
 		opposite: 'to_be_interesting',
 		word: '재미없다',
@@ -75,6 +80,7 @@ export const ADJECTIVES = {
 	},
 	// w
 	to_be_well: {
+		class: 101.1,
 		meaning: 'to be well',
 		word: '안녱하다',
 		phrases: ['Hi', 'Hello', 'How are you?'],

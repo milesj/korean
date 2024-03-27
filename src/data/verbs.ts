@@ -14,6 +14,7 @@ export const VERBS: Record<string, Verb> = {
 	},
 	// d
 	to_do: {
+		class: 101.2,
 		meaning: 'to do',
 		word: '하다',
 	},
@@ -24,6 +25,7 @@ export const VERBS: Record<string, Verb> = {
 	},
 	// g
 	to_get_along: {
+		class: 101.2,
 		meaning: 'to get along',
 		word: '지내다',
 	},
@@ -34,6 +36,7 @@ export const VERBS: Record<string, Verb> = {
 	},
 	// m
 	to_meet: {
+		class: 101.2,
 		meaning: 'to meet',
 		word: '만나다',
 	},
@@ -44,6 +47,7 @@ export const VERBS: Record<string, Verb> = {
 	},
 	// s
 	to_see: {
+		class: 101.2,
 		meaning: 'to see, look, watch',
 		word: '보다',
 	},
@@ -64,6 +68,7 @@ export const VERBS: Record<string, Verb> = {
 	},
 	// w
 	to_write: {
+		class: 101.2,
 		meaning: 'to write',
 		word: '쓰다',
 	},

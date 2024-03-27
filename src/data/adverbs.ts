@@ -41,6 +41,7 @@ export const ADVERBS = {
 	frequently: 'often',
 	// h
 	how: {
+		class: 101.2,
 		meaning: 'how',
 		word: '어떻게',
 		wordPronounced: '어떠케',
@@ -62,6 +63,7 @@ export const ADVERBS = {
 		word: '아니요',
 	},
 	now: {
+		class: 101.2,
 		meaning: 'now',
 		word: '지금',
 	},
@@ -94,6 +96,7 @@ export const ADVERBS = {
 	sometimes: 'occasionally',
 	// t
 	these_days: {
+		class: 101.2,
 		meaning: 'these days',
 		word: '요즘',
 	},
@@ -130,6 +133,7 @@ export const ADVERBS = {
 		word: '언제',
 	},
 	well: {
+		class: 101.2,
 		meaning: 'well',
 		word: '잘',
 	},

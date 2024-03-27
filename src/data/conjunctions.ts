@@ -4,6 +4,7 @@ export interface Conjunction extends Word {}
 
 export const CONJUNCTIONS = {
 	and: {
+		class: 101.2,
 		meaning: 'and',
 		word: '그리고',
 	},

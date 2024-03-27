@@ -7,6 +7,11 @@ export const INTERJECTIONS = {
 		meaning: 'oh',
 		word: '어',
 	},
+	uh: {
+		class: 101.3,
+		meaning: 'uh',
+		word: '저',
+	},
 } satisfies Record<string, Interjection>;
 
 export type InterjectionKey = keyof typeof INTERJECTIONS;

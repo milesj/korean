@@ -8,6 +8,7 @@ export interface Pronoun extends Word {
 
 export const PRONOUNS = {
 	i: {
+		class: 101.1,
 		meaning: 'I',
 		word: '저',
 		forms: {

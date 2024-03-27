@@ -7,6 +7,7 @@ export type NounCategory =
 	| 'counter'
 	| 'country'
 	| 'datetime'
+	| 'direction'
 	| 'education'
 	| 'entertainment'
 	| 'food-drink'
@@ -15,7 +16,8 @@ export type NounCategory =
 	| 'nature'
 	| 'object'
 	| 'place'
-	| 'weather';
+	| 'weather'
+	| 'w4';
 
 export interface Noun extends Word {
 	category: NounCategory | NounCategory[];
@@ -23,36 +25,115 @@ export interface Noun extends Word {
 
 export const NOUNS = {
 	// a
-	action_move: {
+	above: {
+		class: 101.3,
+		category: 'direction',
+		meaning: ['above', 'top'],
+		word: '위',
+	},
+	action_movie: {
 		category: ['entertainment', 'object'],
 		meaning: 'action movie',
 		word: '액션 영화',
 		related: ['movie'],
 	},
 	america: {
+		class: 101.1,
 		category: 'country',
 		meaning: 'United States of America',
 		word: '미국',
 	},
 	// b
+	back: {
+		class: 101.3,
+		category: 'direction',
+		meaning: ['back', 'behind'],
+		word: '뒤',
+	},
+	bag: {
+		class: 101.3,
+		category: 'object',
+		meaning: 'bag',
+		word: '가방',
+	},
+	behind: 'back',
+	below: 'bottom',
+	beside: {
+		class: 101.3,
+		category: 'direction',
+		meaning: ['beside', 'side'],
+		word: '옆',
+	},
+	book: {
+		class: 101.3,
+		category: 'object',
+		meaning: 'book',
+		word: '책',
+	},
+	bookstore: {
+		class: 101.3,
+		category: 'place',
+		meaning: 'bookstore',
+		word: '서점',
+	},
+	bottom: {
+		class: 101.3,
+		category: 'direction',
+		meaning: ['bottom', 'below'],
+		word: ['아래', '밑'],
+	},
 	breakfast: {
+		class: 101.2,
 		category: ['datetime', 'food-drink'],
 		meaning: ['breakfast', 'morning'],
 		word: '아침',
 	},
+	building: {
+		class: 101.3,
+		category: 'place',
+		meaning: 'building',
+		word: '빌딩',
+	},
 	// c
+	campus: {
+		class: 101.3,
+		category: 'place',
+		meaning: 'campus',
+		word: '캠퍼스',
+	},
 	chapter: 'lesson',
+	chair: {
+		class: 101.3,
+		category: 'object',
+		meaning: 'chair',
+		word: '의자',
+	},
 	class: {
+		class: 101.2,
 		category: 'education',
 		meaning: ['class', 'course'],
 		word: '수업',
 	},
+	clock: {
+		class: 101.3,
+		category: ['datetime', 'object'],
+		meaning: ['clock', 'watch'],
+		word: '시계',
+	},
 	coffee: {
+		class: 101.2,
 		category: ['food-drink', 'object'],
 		meaning: 'coffee',
 		word: '커피',
 	},
+	college: {
+		class: 101.3,
+		category: ['education', 'place'],
+		meaning: 'college',
+		word: '대학교',
+	},
 	college_student: {
+		class: 101.1,
 		category: 'education',
 		meaning: 'college student',
 		word: '대학생',
@@ -63,9 +144,28 @@ export const NOUNS = {
 		word: '코미디',
 	},
 	course: 'class',
+	// d
+	desk: {
+		class: 101.3,
+		category: 'object',
+		meaning: 'desk',
+		word: '책상',
+	},
+	dormitory: {
+		class: 101.3,
+		category: ['education', 'place'],
+		meaning: 'dormitory',
+		word: '기숙사',
+	},
 	// e
 	exam: 'test',
 	// f
+	floor: {
+		class: 101.3,
+		category: 'counter',
+		meaning: ['floor', 'layer'],
+		word: '층',
+	},
 	flower: {
 		category: 'nature',
 		meaning: 'flower',
@@ -77,15 +177,23 @@ export const NOUNS = {
 		word: '음식',
 	},
 	freshman: {
+		class: 101.1,
 		category: 'education',
 		meaning: 'freshman',
 		word: '일학년',
 		wordPronounced: '일한년',
 	},
 	friend: {
+		class: 101.2,
 		category: 'human',
 		meaning: 'friend',
 		word: '친구',
+	},
+	front: {
+		class: 101.3,
+		category: 'direction',
+		meaning: 'front',
+		word: '앞',
 	},
 	// g
 	grade: {
@@ -99,12 +207,14 @@ export const NOUNS = {
 		word: '대학원',
 	},
 	greeting: {
+		class: 101.1,
 		category: 'action',
 		meaning: 'greeting',
 		word: '인사',
 	},
 	// h
 	homework: {
+		class: 101.2,
 		category: 'education',
 		meaning: 'homework',
 		word: '숙제',
@@ -114,6 +224,13 @@ export const NOUNS = {
 		meaning: 'history',
 		word: '역사',
 	},
+	// i
+	inside: {
+		class: 101.3,
+		category: 'direction',
+		meaning: 'inside',
+		word: '안',
+	},
 	// j
 	juice: {
 		category: ['food-drink', 'object'],
@@ -121,6 +238,7 @@ export const NOUNS = {
 		word: '주스',
 	},
 	junior: {
+		class: 101.1,
 		category: 'education',
 		meaning: 'junior',
 		word: '삼학년',
@@ -128,17 +246,21 @@ export const NOUNS = {
 	},
 	// k
 	korea: {
+		class: 101.1,
 		category: 'country',
 		meaning: 'Korea',
 		word: '한국',
 	},
 	// l
+	layer: 'floor',
 	lesson: {
+		class: 101.1,
 		category: 'counter',
 		meaning: 'lesson',
 		word: '과',
 	},
 	library: {
+		class: 101.2,
 		category: ['education', 'place'],
 		meaning: 'library',
 		word: '도서관',
@@ -193,14 +315,22 @@ export const NOUNS = {
 		meaning: ['person', 'people'],
 		word: '사람',
 	},
+	post_office: {
+		class: 101.2,
+		category: 'place',
+		meaning: 'post office',
+		word: '우체국',
+	},
 	// r
 	restaurant: {
+		class: 101.2,
 		category: ['food-drink', 'place'],
 		meaning: 'restaurant',
 		word: '식당',
 	},
 	// s
 	school: {
+		class: 101.2,
 		category: ['education', 'place'],
 		meaning: 'school',
 		word: '학교',
@@ -211,6 +341,7 @@ export const NOUNS = {
 		word: '방학',
 	},
 	school_year: {
+		class: 101.1,
 		category: ['education', 'datetime'],
 		meaning: 'school year',
 		word: '학년',
@@ -221,21 +352,31 @@ export const NOUNS = {
 		word: '계절',
 	},
 	senior: {
+		class: 101.1,
 		category: 'education',
 		meaning: 'senior',
 		word: '사학년',
 		wordPronounced: '사한년',
 	},
+	side: 'beside',
 	sophomore: {
+		class: 101.1,
 		category: 'education',
 		meaning: 'sophomore',
 		word: '이학년',
 		wordPronounced: '이한년',
 	},
 	student: {
+		class: 101.1,
 		category: 'education',
 		meaning: 'student',
 		word: '학생',
+	},
+	student_center: {
+		class: 101.3,
+		category: ['education', 'place'],
+		meaning: 'student center',
+		word: '학생회관',
 	},
 	study: {
 		category: ['education', 'action'],
@@ -277,6 +418,16 @@ export const NOUNS = {
 		category: ['activity', 'leisure'],
 		meaning: 'travel',
 		word: '여행',
+	},
+	// u
+	university: 'college',
+	// w
+	watch: 'clock',
+	where: {
+		class: 101.3,
+		category: ['direction', 'w4'],
+		meaning: 'where',
+		word: '어디',
 	},
 } satisfies Record<string, Noun | string>;
 

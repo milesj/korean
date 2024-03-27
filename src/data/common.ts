@@ -1,4 +1,7 @@
+export type ClassChapter = 101.1 | 101.2 | 101.3;
+
 export interface Word {
+	class: ClassChapter;
 	description?: string;
 	guidelines?: string[];
 	meaning: string | string[];
