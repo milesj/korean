@@ -4,11 +4,12 @@ export interface Interjection extends Word {}
 
 export const INTERJECTIONS = {
 	oh: {
+		class: '101-2.1',
 		meaning: 'oh',
 		word: '어',
 	},
 	uh: {
-		class: 101.3,
+		class: '101-3.1',
 		meaning: 'uh',
 		word: '저',
 	},

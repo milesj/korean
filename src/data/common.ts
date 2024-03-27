@@ -1,4 +1,4 @@
-export type ClassChapter = 101.1 | 101.2 | 101.3;
+export type ClassChapter = '101-1.1' | '101-1.2' | '101-2.1' | '101-2.2' | '101-3.1' | '101-3.2';
 
 export interface Word {
 	class: ClassChapter;
