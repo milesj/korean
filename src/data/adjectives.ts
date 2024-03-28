@@ -46,9 +46,15 @@ export const ADJECTIVES = {
 	// e
 	to_exist: {
 		class: '101-3.1',
-		meaning: 'to exist',
+		meaning: ['to exist', 'to have'],
 		opposite: 'to_not_exist',
 		word: '있다',
+	},
+	to_not_exist: {
+		class: '101-3.2',
+		meaning: ['to not exist', 'to not have'],
+		opposite: 'to_exist',
+		word: '없다',
 	},
 	// g
 	to_be_glad: {
@@ -63,6 +69,8 @@ export const ADJECTIVES = {
 		word: '좋다',
 	},
 	// h
+	to_have: 'to_exist',
+	to_not_have: 'to_not_exist',
 	to_be_how: {
 		class: '101-2.1',
 		meaning: 'to be how',
@@ -112,10 +120,10 @@ export const ADJECTIVES = {
 		word: '안녱하다',
 		phrases: ['Hi', 'Hello', 'How are you?'],
 	},
-} satisfies Record<string, Adjective>;
+} satisfies Record<string, Adjective | string>;
 
 export type AdjectiveKey = keyof typeof ADJECTIVES;
 
 export const ADJECTIVES_MAP: Record<string, Adjective> = {};
 
-expandMap(ADJECTIVES as Record<string, Adjective>, ADJECTIVES_MAP);
+expandMap(ADJECTIVES as Record<string, Adjective | string>, ADJECTIVES_MAP);

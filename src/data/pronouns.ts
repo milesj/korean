@@ -1,6 +1,6 @@
 import { expandMap, type Word } from './common';
 
-export type PronounForm = 'humble' | 'plain';
+export type PronounForm = 'humble' | 'plain' | 'subject';
 
 export interface Pronoun extends Word {
 	forms?: Partial<Record<PronounForm, string>>;
@@ -20,6 +20,14 @@ export const PRONOUNS = {
 		class: '101-1.2',
 		meaning: 'what',
 		word: ['뭐', '무엇'],
+	},
+	who: {
+		class: '101-3.2',
+		meaning: 'who',
+		word: '누구',
+		forms: {
+			subject: '누가',
+		},
 	},
 } satisfies Record<string, Pronoun>;
 

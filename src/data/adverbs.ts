@@ -21,6 +21,7 @@ export const ADVERBS = {
 	},
 	// d
 	diligently: {
+		class: '101-3.2',
 		meaning: 'diligently',
 		word: '열심히',
 	},
@@ -34,6 +35,7 @@ export const ADVERBS = {
 		word: '서로',
 	},
 	every_day: {
+		class: '101-3.2',
 		meaning: 'every day',
 		word: '매일',
 	},

@@ -12,6 +12,11 @@ export const PARTICLES = {
 		meaning: ['also', 'too'],
 		word: '도',
 	},
+	and: {
+		class: '101-4.1',
+		meaning: 'and (with nouns)',
+		word: '하고',
+	},
 	as_for: {
 		class: '101-1.1',
 		meaning: 'as for',

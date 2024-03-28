@@ -24,11 +24,27 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to eat',
 		word: '먹다',
 	},
+	to_exist: {
+		class: '101-4.1',
+		meaning: ['to exist at', 'to stay'],
+		word: '계시다',
+	},
 	// g
 	to_get_along: {
 		class: '101-2.2',
 		meaning: 'to get along',
 		word: '지내다',
+	},
+	to_go: {
+		class: '101-3.2',
+		meaning: 'to go',
+		word: '가다',
+	},
+	to_greet: {
+		class: '101-3.2',
+		meaning: 'to greet',
+		noun: 'greeting',
+		word: '인사하다',
 	},
 	// k
 	to_know: {
@@ -42,7 +58,19 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to meet',
 		word: '만나다',
 	},
+	// q
+	to_question: {
+		class: '101-3.2',
+		meaning: 'to question',
+		noun: 'question',
+		word: '질문하다',
+	},
 	// r
+	to_read: {
+		class: '101-3.2',
+		meaning: 'to read',
+		word: '읽다',
+	},
 	to_receive: {
 		meaning: 'to receive',
 		word: '받다',
@@ -58,6 +86,7 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to sit',
 		word: '앉다',
 	},
+	to_stay: 'to_exist',
 	to_study: {
 		meaning: 'to study',
 		noun: 'study',
@@ -75,10 +104,10 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to write',
 		word: '쓰다',
 	},
-} satisfies Record<string, Verb>;
+} satisfies Record<string, Verb | string>;
 
 export type PronounKey = keyof typeof VERBS;
 
 export const VERBS_MAP: Record<string, Verb> = {};
 
-expandMap(VERBS as Record<string, Verb>, VERBS_MAP);
+expandMap(VERBS as Record<string, Verb | string>, VERBS_MAP);

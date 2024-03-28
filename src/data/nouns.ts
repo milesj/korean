@@ -3,6 +3,7 @@ import { expandMap, type Word } from './common';
 export type NounCategory =
 	| 'activity'
 	| 'action'
+	| 'animal'
 	| 'classification'
 	| 'counter'
 	| 'country'
@@ -10,17 +11,20 @@ export type NounCategory =
 	| 'direction'
 	| 'education'
 	| 'entertainment'
+	| 'family'
+	| 'finance'
 	| 'food-drink'
 	| 'human'
+	| 'language'
 	| 'leisure'
 	| 'nature'
 	| 'object'
 	| 'place'
-	| 'weather'
-	| 'w4';
+	| 'weather';
 
 export interface Noun extends Word {
 	category: NounCategory | NounCategory[];
+	prenoun?: boolean;
 }
 
 export const NOUNS = {
@@ -42,6 +46,12 @@ export const NOUNS = {
 		category: 'country',
 		meaning: 'United States of America',
 		word: '미국',
+	},
+	animal: {
+		class: '101-4.1',
+		category: ['animal', 'counter'],
+		meaning: 'animal',
+		word: '마리',
 	},
 	// b
 	back: {
@@ -75,6 +85,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'bookstore',
 		word: '서점',
+	},
+	boston: {
+		class: '101-4.1',
+		category: 'place',
+		meaning: 'Boston',
+		word: '보스턴',
 	},
 	bottom: {
 		class: '101-3.1',
@@ -118,7 +134,13 @@ export const NOUNS = {
 		class: '101-2.1',
 		category: 'education',
 		meaning: ['class', 'course'],
-		word: ['수업'],
+		word: ['수업', '반'],
+	},
+	classroom: {
+		class: '101-3.2',
+		category: ['education', 'place'],
+		meaning: 'classroom',
+		word: '교실',
 	},
 	clock: {
 		class: '101-3.1',
@@ -149,13 +171,49 @@ export const NOUNS = {
 		meaning: 'comedy',
 		word: '코미디',
 	},
+	computer: {
+		class: '101-3.2',
+		category: ['entertainment', 'object'],
+		meaning: 'computer',
+		word: '컴퓨터',
+	},
 	course: 'class',
 	// d
+	dad: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'father',
+		word: '아빠',
+	},
+	day: {
+		class: '101-4.1',
+		category: ['datetime', 'counter'],
+		meaning: 'day',
+		word: '일',
+	},
 	desk: {
 		class: '101-3.1',
 		category: 'object',
 		meaning: 'desk',
 		word: '책상',
+	},
+	dictionary: {
+		class: '101-3.2',
+		category: ['education', 'object'],
+		meaning: 'dictionary',
+		word: '사전',
+	},
+	dog: {
+		class: '101-4.1',
+		category: 'animal',
+		meaning: 'dog',
+		word: '개',
+	},
+	dollar: {
+		class: '101-4.1',
+		category: ['finance', 'counter'],
+		meaning: 'dollar',
+		word: ['달러', '불'],
 	},
 	dormitory: {
 		class: '101-3.1',
@@ -164,14 +222,26 @@ export const NOUNS = {
 		word: '기숙사',
 	},
 	// e
+	economics: {
+		class: '101-3.2',
+		category: 'education',
+		meaning: 'economics',
+		word: '경제학',
+	},
 	english: {
 		class: '101-1.2',
-		category: 'education',
+		category: ['education', 'language'],
 		meaning: 'English',
 		word: '영어',
 	},
 	exam: 'test',
 	// f
+	father: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'father',
+		word: '아버지',
+	},
 	floor: {
 		class: '101-3.1',
 		category: 'counter',
@@ -219,6 +289,12 @@ export const NOUNS = {
 		meaning: 'graduate school',
 		word: '대학원',
 	},
+	graduate_student: {
+		class: '101-4.1',
+		category: 'education',
+		meaning: 'graduate student',
+		word: '대학원생',
+	},
 	greeting: {
 		class: '101-1.1',
 		category: 'action',
@@ -226,11 +302,17 @@ export const NOUNS = {
 		word: '인사',
 	},
 	// h
-	homework: {
-		class: '101-2.1',
+	hall: {
+		class: '101-3.2',
+		category: 'place',
+		meaning: 'hall',
+		word: '홀',
+	},
+	high_school_student: {
+		class: '101-4.1',
 		category: 'education',
-		meaning: 'homework',
-		word: '숙제',
+		meaning: 'high school student',
+		word: '고등학생',
 	},
 	history: {
 		class: '101-2.2',
@@ -238,12 +320,50 @@ export const NOUNS = {
 		meaning: 'history',
 		word: '역사',
 	},
+	home: {
+		class: '101-3.2',
+		category: 'place',
+		meaning: ['home', 'house'],
+		word: '집',
+	},
+	homework: {
+		class: '101-2.1',
+		category: 'education',
+		meaning: 'homework',
+		word: '숙제',
+	},
+	hong_kong: {
+		class: '101-4.1',
+		category: 'place',
+		meaning: 'Hong Kong',
+		word: '홍콩',
+	},
+	hour_duration: {
+		class: '101-4.1',
+		category: ['datetime', 'counter'],
+		meaning: 'hour',
+		word: '시간',
+	},
+	house: 'home',
+	how_many: {
+		class: '101-4.1',
+		category: ['language', 'counter'],
+		meaning: 'how many',
+		word: '몇',
+		prenoun: true,
+	},
 	// i
 	inside: {
 		class: '101-3.1',
 		category: 'direction',
 		meaning: 'inside',
 		word: '안',
+	},
+	item: {
+		class: '101-4.1',
+		category: ['object', 'counter'],
+		meaning: 'item',
+		word: '개',
 	},
 	// j
 	japan: {
@@ -274,7 +394,7 @@ export const NOUNS = {
 	},
 	korean: {
 		class: '101-1.2',
-		category: 'education',
+		category: ['education', 'language'],
 		meaning: 'Korean',
 		word: ['한국어', '한국말'],
 	},
@@ -298,6 +418,24 @@ export const NOUNS = {
 		category: ['human', 'classification'],
 		meaning: ['man', 'male'],
 		word: '남자',
+	},
+	mom: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'mom',
+		word: '엄마',
+	},
+	month: {
+		class: '101-4.1',
+		category: ['datetime', 'counter'],
+		meaning: 'month',
+		word: ['달', '월'],
+	},
+	mother: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'mother',
+		word: '어머니',
 	},
 	morning: 'breakfast',
 	movie: {
@@ -336,13 +474,38 @@ export const NOUNS = {
 		meaning: 'noon',
 		word: '낮',
 	},
+	// o
+	older_brother_boy: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'older brother (for boy)',
+		word: '형',
+	},
+	older_brother_girl: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'older brother (for girl)',
+		word: '오빠',
+	},
 	// p
+	parents: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'parents',
+		word: '부모님',
+	},
 	piano: {
 		category: ['entertainment', 'object'],
 		meaning: 'piano',
 		word: '피아노',
 	},
 	people: 'person',
+	people_counter: {
+		class: '101-4.1',
+		category: ['human', 'counter'],
+		meaning: 'people',
+		word: '명',
+	},
 	person: {
 		category: 'human',
 		meaning: ['person', 'people'],
@@ -353,6 +516,13 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'post office',
 		word: '우체국',
+	},
+	// q
+	question: {
+		class: '101-3.2',
+		category: 'language',
+		meaning: 'question',
+		word: '질문',
 	},
 	// r
 	restaurant: {
@@ -441,10 +611,22 @@ export const NOUNS = {
 		meaning: ['test', 'exam'],
 		word: '시험',
 	},
+	textbook: {
+		class: '101-3.2',
+		category: ['education', 'object'],
+		meaning: 'textbook',
+		word: '교과서',
+	},
 	theater: {
 		category: 'place',
 		meaning: 'theater',
 		word: '극장',
+	},
+	time: {
+		class: '101-3.2',
+		category: 'datetime',
+		meaning: 'time',
+		word: '시간',
 	},
 	today: {
 		class: '101-2.2',
@@ -464,6 +646,12 @@ export const NOUNS = {
 		word: '여행',
 	},
 	// u
+	umbrella: {
+		class: '101-3.2',
+		category: 'object',
+		meaning: 'umbrella',
+		word: '우산',
+	},
 	university: 'college',
 	united_kingdom: {
 		class: '101-1.2',
@@ -472,13 +660,57 @@ export const NOUNS = {
 		word: '영국',
 	},
 	united_states: 'america',
+	// v
+	volume: {
+		class: '101-4.1',
+		category: 'counter',
+		meaning: 'volume',
+		word: '권',
+	},
 	// w
 	watch: 'clock',
 	where: {
 		class: '101-3.1',
-		category: ['direction', 'w4'],
+		category: ['direction', 'language'],
 		meaning: 'where',
 		word: '어디',
+	},
+	woman: {
+		class: '101-3.2',
+		category: ['human', 'classification'],
+		meaning: 'woman',
+		word: '여자',
+	},
+	won_currency: {
+		class: '101-4.1',
+		category: ['finance', 'counter'],
+		meaning: 'won (currency)',
+		word: '원',
+	},
+	// y
+	year: {
+		class: '101-4.1',
+		category: ['datetime', 'counter'],
+		meaning: 'year',
+		word: '년',
+	},
+	younger_brother: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'younger brother',
+		word: '남동생',
+	},
+	younger_sister: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'younger sister',
+		word: '여동생',
+	},
+	younger_sibling: {
+		class: '101-4.1',
+		category: 'family',
+		meaning: 'younger sibling',
+		word: '동생',
 	},
 } satisfies Record<string, Noun | string>;
 
