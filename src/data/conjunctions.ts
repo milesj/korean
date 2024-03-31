@@ -9,8 +9,8 @@ export const CONJUNCTIONS = {
 		word: '그리고',
 	},
 	but: {
-		class: '101-3.2',
-		meaning: ['but', 'however'],
+		class: ['101-3.2', '102-5.1'],
+		meaning: ['but', 'by the way', 'however'],
 		word: ['그런데', '하지만'],
 	},
 	however: 'but',
@@ -18,6 +18,11 @@ export const CONJUNCTIONS = {
 		class: '101-3.2',
 		meaning: ['so', 'therefore'],
 		word: '그래서',
+	},
+	then: {
+		class: '102-5.1',
+		meaning: 'if so, then',
+		word: '그럼',
 	},
 	therefore: 'so',
 } satisfies Record<string, Conjunction | string>;

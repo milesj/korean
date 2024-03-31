@@ -11,6 +11,7 @@ export const ADVERBS = {
 			'The form `좀` is a contraction of `조금`, both of which mean "a little" of something.',
 	},
 	again: {
+		class: '102-5.1',
 		meaning: 'again',
 		word: '또',
 	},

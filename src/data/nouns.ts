@@ -20,11 +20,13 @@ export type NounCategory =
 	| 'nature'
 	| 'object'
 	| 'place'
+	| 'sport'
 	| 'weather';
 
 export interface Noun extends Word {
 	category: NounCategory | NounCategory[];
 	prenoun?: boolean;
+	phrases?: string[];
 }
 
 export const NOUNS = {
@@ -40,6 +42,13 @@ export const NOUNS = {
 		meaning: 'action movie',
 		word: '액션 영화',
 		related: ['movie'],
+	},
+	after_a_long_time: {
+		class: '102-5.1',
+		category: 'activity',
+		meaning: 'after a long time',
+		word: ['오래간만', '오랜만'],
+		phrases: ['Long time no see', "It's been a while"],
 	},
 	america: {
 		class: '101-1.1',
@@ -92,6 +101,12 @@ export const NOUNS = {
 		meaning: 'biology',
 		word: '생물학',
 	},
+	birthday: {
+		class: '102-5.1',
+		category: ['human', 'datetime'],
+		meaning: 'birthday',
+		word: '생일',
+	},
 	book: {
 		class: '101-3.1',
 		category: 'object',
@@ -129,6 +144,7 @@ export const NOUNS = {
 		word: '빌딩',
 	},
 	// c
+	cafe: 'coffee_shop',
 	campus: {
 		class: '101-3.1',
 		category: 'place',
@@ -172,6 +188,12 @@ export const NOUNS = {
 		meaning: 'coffee',
 		word: '커피',
 	},
+	coffee_shop: {
+		class: '102-5.1',
+		category: ['place', 'food-drink'],
+		meaning: ['coffee shop', 'cafe'],
+		word: ['커피숍', '카페'],
+	},
 	college: {
 		class: '101-3.1',
 		category: ['education', 'place'],
@@ -209,6 +231,12 @@ export const NOUNS = {
 		meaning: 'day',
 		word: '일',
 	},
+	department_store: {
+		class: '102-5.1',
+		category: ['entertainment', 'place'],
+		meaning: 'department store',
+		word: '백화점',
+	},
 	desk: {
 		class: '101-3.1',
 		category: 'object',
@@ -220,6 +248,12 @@ export const NOUNS = {
 		category: ['education', 'object'],
 		meaning: 'dictionary',
 		word: '사전',
+	},
+	dinner: {
+		class: '102-5.1',
+		category: ['datetime', 'food-drink'],
+		meaning: ['dinner', 'evening'],
+		word: '저녁',
 	},
 	dog: {
 		class: '101-4.1',
@@ -252,7 +286,14 @@ export const NOUNS = {
 		meaning: 'English',
 		word: '영어',
 	},
+	evening: 'dinner',
 	exam: 'test',
+	exercise: {
+		class: '102-5.1',
+		category: 'activity',
+		meaning: 'exercise',
+		word: '운동',
+	},
 	// f
 	father: {
 		class: '101-4.1',
@@ -271,6 +312,7 @@ export const NOUNS = {
 		meaning: 'flower',
 		word: '꽃',
 	},
+	following: 'next',
 	food: {
 		class: '101-2.2',
 		category: ['food-drink', 'object'],
@@ -297,6 +339,7 @@ export const NOUNS = {
 		word: '앞',
 	},
 	// g
+	gift: 'present',
 	grade: {
 		category: 'education',
 		meaning: 'grade',
@@ -325,6 +368,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'hall',
 		word: '홀',
+	},
+	hamburger: {
+		class: '102-5.1',
+		category: 'food-drink',
+		meaning: 'hamburger',
+		word: '햄버거',
 	},
 	hawaii: {
 		class: '101-4.2',
@@ -423,6 +472,12 @@ export const NOUNS = {
 		word: ['한국어', '한국말'],
 	},
 	// l
+	lab: {
+		class: '102-5.1',
+		category: 'place',
+		meaning: 'lab',
+		word: '랩',
+	},
 	layer: 'floor',
 	lesson: {
 		class: '101-1.1',
@@ -441,6 +496,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'Los Angeles',
 		word: '로스앤젤레스',
+	},
+	lunch: {
+		class: '102-5.1',
+		category: 'food-drink',
+		meaning: 'lunch',
+		word: '점심',
 	},
 	// m
 	man: {
@@ -488,6 +549,12 @@ export const NOUNS = {
 		category: 'human',
 		meaning: 'name',
 		word: '이름',
+	},
+	next: {
+		class: '102-5.1',
+		category: 'direction',
+		meaning: 'next',
+		word: '다음',
 	},
 	next_year: {
 		category: 'datetime',
@@ -542,6 +609,12 @@ export const NOUNS = {
 		meaning: 'parents',
 		word: '부모님',
 	},
+	park: {
+		class: '102-5.1',
+		category: ['leisure', 'place'],
+		meaning: 'park',
+		word: '공원',
+	},
 	piano: {
 		category: ['entertainment', 'object'],
 		meaning: 'piano',
@@ -559,11 +632,29 @@ export const NOUNS = {
 		meaning: ['person', 'people'],
 		word: '사람',
 	},
+	phone_call: {
+		class: '102-5.1',
+		category: 'activity',
+		meaning: 'phone call',
+		word: '전화',
+	},
 	post_office: {
 		class: 101.2,
 		category: 'place',
 		meaning: 'post office',
 		word: '우체국',
+	},
+	practice: {
+		class: '102-5.1',
+		category: 'activity',
+		meaning: 'practice',
+		word: '연습',
+	},
+	present: {
+		class: '102-5.1',
+		category: 'object',
+		meaning: ['present', 'gift'],
+		word: '선물',
 	},
 	// q
 	question: {
@@ -622,6 +713,12 @@ export const NOUNS = {
 		word: '사학년',
 		wordPronounced: '사한년',
 	},
+	shopping: {
+		class: '102-5.1',
+		category: 'activity',
+		meaning: 'shopping',
+		word: '쇼핑',
+	},
 	side: 'beside',
 	sophomore: {
 		class: '101-1.1',
@@ -665,6 +762,12 @@ export const NOUNS = {
 		category: ['entertainment', 'object'],
 		meaning: 'television',
 		word: ['텔레비전', '티비'],
+	},
+	tennis: {
+		class: '102-5.1',
+		category: ['entertainment', 'sport'],
+		meaning: 'tennis',
+		word: '테니스',
 	},
 	test: {
 		class: '101-2.2',
@@ -753,6 +856,12 @@ export const NOUNS = {
 		category: ['finance', 'counter'],
 		meaning: 'won (currency)',
 		word: '원',
+	},
+	work: {
+		class: '102-5.1',
+		category: 'activity',
+		meaning: 'work',
+		word: '일',
 	},
 	// y
 	year: {

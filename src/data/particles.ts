@@ -1,8 +1,15 @@
 import { expandMap, type Word } from './common';
 
-export type ParticleType = 'topic' | 'object' | 'subject' | 'plural' | 'static-location';
+export type ParticleType =
+	| 'topic'
+	| 'object'
+	| 'subject'
+	| 'plural'
+	| 'static-location'
+	| 'dynamic-location';
 
 export interface Particle extends Word {
+	forms?: Partial<Record<ParticleType, string>>;
 	type?: ParticleType;
 }
 
@@ -26,9 +33,17 @@ export const PARTICLES = {
 	at: 'location',
 	location: {
 		class: '101-3.1',
-		meaning: ['at', 'in', 'on'],
+		meaning: ['at', 'in', 'on', 'to'],
 		word: '에',
 		type: 'static-location',
+		related: ['location_dynamic'],
+	},
+	location_dynamic: {
+		class: '102-5.1',
+		meaning: ['at', 'in'],
+		word: '에서',
+		type: 'dynamic-location',
+		related: ['location'],
 	},
 	in: 'location',
 	object: {
@@ -61,6 +76,7 @@ export const PARTICLES = {
 		word: ['이', '가'],
 		type: 'subject',
 	},
+	to: 'location',
 	too: 'also',
 } satisfies Record<string, Particle | string>;
 
