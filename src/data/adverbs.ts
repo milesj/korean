@@ -115,6 +115,7 @@ export const ADVERBS = {
 		word: '너무',
 	},
 	truly: {
+		class: '101-4.2',
 		meaning: 'truly',
 		word: '참',
 		related: ['really', 'very'],

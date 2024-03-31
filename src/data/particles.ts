@@ -37,7 +37,18 @@ export const PARTICLES = {
 		word: ['을', '를'],
 		type: 'object',
 	},
+	of: {
+		class: '101-4.2',
+		meaning: 'of',
+		word: '의',
+		wordPronounced: '에',
+	},
 	on: 'location',
+	only: {
+		class: '101-4.2',
+		meaning: 'only',
+		word: '만',
+	},
 	plural: {
 		class: '101-2.1',
 		meaning: '(plural marker)',

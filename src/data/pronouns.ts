@@ -15,6 +15,33 @@ export const PRONOUNS = {
 			humble: '저',
 			plain: '나',
 		},
+		related: ['my'],
+	},
+	my: {
+		class: '101-4.2',
+		meaning: 'my',
+		word: '제',
+		forms: {
+			humble: '제',
+			plain: '내',
+		},
+		related: ['i'],
+	},
+	our: 'we',
+	this_thing: {
+		class: '101-4.2',
+		meaning: 'this thing',
+		word: ['이것', '이거'],
+	},
+	us: 'we',
+	we: {
+		class: '101-4.2',
+		meaning: ['we', 'us', 'our'],
+		word: '저희',
+		forms: {
+			humble: '저희',
+			plain: '우리',
+		},
 	},
 	what: {
 		class: '101-1.2',
@@ -29,10 +56,10 @@ export const PRONOUNS = {
 			subject: '누가',
 		},
 	},
-} satisfies Record<string, Pronoun>;
+} satisfies Record<string, Pronoun | string>;
 
 export type PronounKey = keyof typeof PRONOUNS;
 
 export const PRONOUNS_MAP: Record<string, Pronoun> = {};
 
-expandMap(PRONOUNS as Record<string, Pronoun>, PRONOUNS_MAP);
+expandMap(PRONOUNS as Record<string, Pronoun | string>, PRONOUNS_MAP);

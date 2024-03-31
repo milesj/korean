@@ -53,6 +53,12 @@ export const NOUNS = {
 		meaning: 'animal',
 		word: '마리',
 	},
+	apartment: {
+		class: '101-4.2',
+		category: 'place',
+		meaning: 'apartment',
+		word: '아파트',
+	},
 	// b
 	back: {
 		class: '101-3.1',
@@ -73,6 +79,18 @@ export const NOUNS = {
 		category: 'direction',
 		meaning: ['beside', 'side'],
 		word: '옆',
+	},
+	between: {
+		class: '101-4.2',
+		category: 'classification',
+		meaning: ['between', 'relationship'],
+		word: '사이',
+	},
+	biology: {
+		class: '101-4.2',
+		category: 'education',
+		meaning: 'biology',
+		word: '생물학',
 	},
 	book: {
 		class: '101-3.1',
@@ -308,6 +326,12 @@ export const NOUNS = {
 		meaning: 'hall',
 		word: '홀',
 	},
+	hawaii: {
+		class: '101-4.2',
+		category: 'place',
+		meaning: 'Hawaii',
+		word: '하와이',
+	},
 	high_school_student: {
 		class: '101-4.1',
 		category: 'education',
@@ -412,6 +436,12 @@ export const NOUNS = {
 		meaning: 'library',
 		word: '도서관',
 	},
+	los_angeles: {
+		class: '101-4.2',
+		category: 'place',
+		meaning: 'Los Angeles',
+		word: '로스앤젤레스',
+	},
 	// m
 	man: {
 		class: '101-2.2',
@@ -464,6 +494,12 @@ export const NOUNS = {
 		meaning: 'next year',
 		word: '내년',
 	},
+	new_york: {
+		class: '101-4.2',
+		category: 'place',
+		meaning: 'New York',
+		word: '뉴욕',
+	},
 	night: {
 		category: 'datetime',
 		meaning: 'night',
@@ -486,6 +522,18 @@ export const NOUNS = {
 		category: 'family',
 		meaning: 'older brother (for girl)',
 		word: '오빠',
+	},
+	older_sister_boy: {
+		class: '101-4.2',
+		category: 'family',
+		meaning: 'older sister (for boy)',
+		word: '누나',
+	},
+	older_sister_girl: {
+		class: '101-4.2',
+		category: 'family',
+		meaning: 'older sister (for girl)',
+		word: '언니',
 	},
 	// p
 	parents: {
@@ -525,11 +573,24 @@ export const NOUNS = {
 		word: '질문',
 	},
 	// r
+	relationship: 'between',
 	restaurant: {
 		class: '101-2.1',
 		category: ['food-drink', 'place'],
 		meaning: 'restaurant',
 		word: '식당',
+	},
+	room: {
+		class: '101-4.2',
+		category: 'place',
+		meaning: 'room',
+		word: '방',
+	},
+	roommate: {
+		class: '101-4.2',
+		category: 'human',
+		meaning: 'roommate',
+		word: '룸메이트',
 	},
 	// s
 	school: {
@@ -621,6 +682,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'theater',
 		word: '극장',
+	},
+	thing: {
+		class: '101-4.2',
+		category: 'classification',
+		meaning: 'thing',
+		word: ['것', '거'],
 	},
 	time: {
 		class: '101-3.2',

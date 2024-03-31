@@ -25,6 +25,11 @@ export const ADJECTIVES = {
 		word: '싸다',
 	},
 	// b
+	to_be_bad: {
+		class: '101-4.2',
+		meaning: 'to be bad',
+		word: '나쁘다',
+	},
 	to_be_big: {
 		class: '101-2.2',
 		meaning: 'to be big',
@@ -49,6 +54,11 @@ export const ADJECTIVES = {
 		meaning: ['to exist', 'to have'],
 		opposite: 'to_not_exist',
 		word: '있다',
+	},
+	to_be_expensive: {
+		class: '101-4.2',
+		meaning: 'to be expensive',
+		word: '비싸다',
 	},
 	to_not_exist: {
 		class: '101-3.2',
@@ -101,7 +111,18 @@ export const ADJECTIVES = {
 		meaning: 'to be okay, all right',
 		word: '괜찮다',
 	},
+	// p
+	to_be_pretty: {
+		class: '101-4.2',
+		meaning: 'to be pretty',
+		word: '예쁘다',
+	},
 	// s
+	to_be_small: {
+		class: '101-4.2',
+		meaning: 'to be small (in size)',
+		word: '작다',
+	},
 	to_be_so: {
 		class: '101-1.2',
 		meaning: 'to be so',
@@ -112,6 +133,12 @@ export const ADJECTIVES = {
 		class: '101-2.1',
 		meaning: 'to be spacious / wide',
 		word: '넓다',
+	},
+	// t
+	to_be_thankful: {
+		class: '101-4.2',
+		meaning: 'to be thankful',
+		word: '고맙다',
 	},
 	// w
 	to_be_well: {

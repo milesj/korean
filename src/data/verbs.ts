@@ -7,6 +7,11 @@ export interface Verb extends Word {
 
 export const VERBS: Record<string, Verb> = {
 	// c
+	to_come: {
+		class: '101-4.2',
+		meaning: 'to come',
+		word: '오다',
+	},
 	to_congratulate: {
 		meaning: 'to congratulate',
 		// noun: 'celebration',
@@ -17,6 +22,11 @@ export const VERBS: Record<string, Verb> = {
 		class: '101-2.2',
 		meaning: 'to do',
 		word: '하다',
+	},
+	to_drink: {
+		class: '101-4.2',
+		meaning: 'to drink',
+		word: '마시다',
 	},
 	// e
 	to_eat: {
@@ -35,6 +45,11 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to get along',
 		word: '지내다',
 	},
+	to_give: {
+		class: '101-4.2',
+		meaning: 'to give',
+		word: '주다',
+	},
 	to_go: {
 		class: '101-3.2',
 		meaning: 'to go',
@@ -51,6 +66,12 @@ export const VERBS: Record<string, Verb> = {
 		class: '101-2.1',
 		meaning: 'to know',
 		word: '알다',
+	},
+	// l
+	to_learn: {
+		class: '101-4.2',
+		meaning: 'to learn',
+		word: '배우다',
 	},
 	// m
 	to_meet: {
@@ -80,6 +101,11 @@ export const VERBS: Record<string, Verb> = {
 		class: '101-2.2',
 		meaning: 'to see, look, watch',
 		word: '보다',
+	},
+	to_sleep: {
+		class: '101-4.2',
+		meaning: 'to sleep',
+		word: '자다',
 	},
 	to_sit: {
 		class: '101-2.1',
