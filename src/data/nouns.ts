@@ -50,6 +50,13 @@ export const NOUNS = {
 		word: ['오래간만', '오랜만'],
 		phrases: ['Long time no see', "It's been a while"],
 	},
+	afternoon: 'pm',
+	am: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: ['a.m.', 'beforenoon'],
+		word: '오전',
+	},
 	america: {
 		class: '101-1.1',
 		category: 'country',
@@ -81,6 +88,7 @@ export const NOUNS = {
 		meaning: 'bag',
 		word: '가방',
 	},
+	beforenoon: 'am',
 	behind: 'back',
 	below: 'bottom',
 	beside: {
@@ -182,6 +190,12 @@ export const NOUNS = {
 		meaning: ['clock', 'watch'],
 		word: '시계',
 	},
+	clothes: {
+		class: '102-5.2',
+		category: 'object',
+		meaning: 'clothes',
+		word: '옷',
+	},
 	coffee: {
 		class: '101-2.1',
 		category: ['food-drink', 'object'],
@@ -217,7 +231,7 @@ export const NOUNS = {
 		meaning: 'computer',
 		word: '컴퓨터',
 	},
-	course: 'class',
+	course: 'subject',
 	// d
 	dad: {
 		class: '101-4.1',
@@ -326,6 +340,12 @@ export const NOUNS = {
 		word: '일학년',
 		wordPronounced: '일한년',
 	},
+	friday: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'Friday',
+		word: '금요일',
+	},
 	friend: {
 		class: '101-2.1',
 		category: 'human',
@@ -411,10 +431,16 @@ export const NOUNS = {
 		meaning: 'Hong Kong',
 		word: '홍콩',
 	},
+	hour: {
+		class: '102-5.2',
+		category: ['datetime', 'counter'],
+		meaning: 'hour',
+		word: '시',
+	},
 	hour_duration: {
 		class: '101-4.1',
 		category: ['datetime', 'counter'],
-		meaning: 'hour',
+		meaning: 'hour (duration)',
 		word: '시간',
 	},
 	house: 'home',
@@ -510,11 +536,23 @@ export const NOUNS = {
 		meaning: ['man', 'male'],
 		word: '남자',
 	},
+	minute: {
+		class: '102-5.2',
+		category: ['datetime', 'counter'],
+		meaning: 'minute',
+		word: '분',
+	},
 	mom: {
 		class: '101-4.1',
 		category: 'family',
 		meaning: 'mom',
 		word: '엄마',
+	},
+	monday: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'Monday',
+		word: '월요일',
 	},
 	month: {
 		class: '101-4.1',
@@ -638,6 +676,18 @@ export const NOUNS = {
 		meaning: 'phone call',
 		word: '전화',
 	},
+	pm: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: ['p.m.', 'afternoon'],
+		word: '오후',
+	},
+	political_science: {
+		class: '102-5.2',
+		category: 'education',
+		meaning: 'political science',
+		word: '정치학',
+	},
 	post_office: {
 		class: 101.2,
 		category: 'place',
@@ -684,6 +734,12 @@ export const NOUNS = {
 		word: '룸메이트',
 	},
 	// s
+	saturday: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'Saturday',
+		word: '토요일',
+	},
 	school: {
 		class: '101-2.1',
 		category: ['education', 'place'],
@@ -706,6 +762,12 @@ export const NOUNS = {
 		meaning: 'season',
 		word: '계절',
 	},
+	semester: {
+		class: '102-5.2',
+		category: ['education', 'datetime'],
+		meaning: ['semester', 'term'],
+		word: '학기',
+	},
 	senior: {
 		class: '101-1.1',
 		category: 'education',
@@ -727,6 +789,12 @@ export const NOUNS = {
 		word: '이학년',
 		wordPronounced: '이한년',
 	},
+	store: {
+		class: '102-5.2',
+		category: 'place',
+		meaning: 'store',
+		word: '가게',
+	},
 	student: {
 		class: '101-1.1',
 		category: 'education',
@@ -745,10 +813,22 @@ export const NOUNS = {
 		meaning: 'study',
 		word: '공부',
 	},
+	subject: {
+		class: '102-5.2',
+		category: ['education', 'counter'],
+		meaning: ['subject', 'course'],
+		word: '과목',
+	},
 	summer: {
 		category: ['weather', 'datetime'],
 		meaning: 'summer',
 		word: '여름',
+	},
+	sunday: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'Sunday',
+		word: '일요일',
 	},
 	// t
 	teacher: {
@@ -769,6 +849,7 @@ export const NOUNS = {
 		meaning: 'tennis',
 		word: '테니스',
 	},
+	term: 'semester',
 	test: {
 		class: '101-2.2',
 		category: ['education', 'object'],
@@ -792,6 +873,18 @@ export const NOUNS = {
 		meaning: 'thing',
 		word: ['것', '거'],
 	},
+	this_time: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'this (time)',
+		word: '이번',
+	},
+	thursday: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'Thursday',
+		word: '목요일',
+	},
 	time: {
 		class: '101-3.2',
 		category: 'datetime',
@@ -814,6 +907,12 @@ export const NOUNS = {
 		category: ['activity', 'leisure'],
 		meaning: 'travel',
 		word: '여행',
+	},
+	tuesday: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'Tuesday',
+		word: '화요일',
 	},
 	// u
 	umbrella: {
@@ -839,6 +938,12 @@ export const NOUNS = {
 	},
 	// w
 	watch: 'clock',
+	wednesday: {
+		class: '102-5.2',
+		category: 'datetime',
+		meaning: 'Wednesday',
+		word: '수요일',
+	},
 	where: {
 		class: '101-3.1',
 		category: ['direction', 'language'],

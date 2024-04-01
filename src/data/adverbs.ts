@@ -105,6 +105,7 @@ export const ADVERBS = {
 		word: '요즘',
 	},
 	together: {
+		class: '102-5.2',
 		meaning: 'together',
 		word: '같이',
 		wordPronounced: '가치',
@@ -135,6 +136,7 @@ export const ADVERBS = {
 	},
 	// w
 	when: {
+		class: '102-5.2',
 		meaning: 'when',
 		word: '언제',
 	},

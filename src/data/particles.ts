@@ -21,7 +21,7 @@ export const PARTICLES = {
 	},
 	and: {
 		class: '101-4.1',
-		meaning: 'and (with nouns)',
+		meaning: ['and (with nouns)', 'with'],
 		word: '하고',
 	},
 	as_for: {
@@ -46,6 +46,11 @@ export const PARTICLES = {
 		related: ['location'],
 	},
 	in: 'location',
+	in_order_to: {
+		class: '102-5.2',
+		meaning: '(in order to)',
+		word: ['으러', '러'],
+	},
 	object: {
 		class: '101-2.2',
 		meaning: '(object marker)',
@@ -78,6 +83,7 @@ export const PARTICLES = {
 	},
 	to: 'location',
 	too: 'also',
+	with: 'and',
 } satisfies Record<string, Particle | string>;
 
 export type ParticleKey = keyof typeof PARTICLES;
