@@ -21,6 +21,7 @@ export type NounCategory =
 	| 'object'
 	| 'place'
 	| 'sport'
+	| 'vehicle'
 	| 'weather';
 
 export interface Noun extends Word {
@@ -51,6 +52,12 @@ export const NOUNS = {
 		phrases: ['Long time no see', "It's been a while"],
 	},
 	afternoon: 'pm',
+	airplane: {
+		class: '102-6.1',
+		category: 'vehicle',
+		meaning: 'airplane',
+		word: '비행기',
+	},
 	am: {
 		class: '102-5.2',
 		category: 'datetime',
@@ -88,6 +95,12 @@ export const NOUNS = {
 		meaning: 'bag',
 		word: '가방',
 	},
+	ballpoint_pen: {
+		class: '102-6.1',
+		category: 'object',
+		meaning: 'ballpoint pen',
+		word: '볼펜',
+	},
 	beforenoon: 'am',
 	behind: 'back',
 	below: 'bottom',
@@ -102,6 +115,12 @@ export const NOUNS = {
 		category: 'classification',
 		meaning: ['between', 'relationship'],
 		word: '사이',
+	},
+	bicycle: {
+		class: '102-6.1',
+		category: 'vehicle',
+		meaning: 'bicycle',
+		word: '자전거',
 	},
 	biology: {
 		class: '101-4.2',
@@ -151,6 +170,12 @@ export const NOUNS = {
 		meaning: 'building',
 		word: '빌딩',
 	},
+	bus: {
+		class: '102-6.1',
+		category: 'vehicle',
+		meaning: 'bus',
+		word: '버스',
+	},
 	// c
 	cafe: 'coffee_shop',
 	campus: {
@@ -158,6 +183,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'campus',
 		word: '캠퍼스',
+	},
+	car: {
+		class: '102-6.1',
+		category: 'vehicle',
+		meaning: 'car',
+		word: '차',
 	},
 	chapter: 'lesson',
 	chair: {
@@ -497,6 +528,12 @@ export const NOUNS = {
 		meaning: 'Korean',
 		word: ['한국어', '한국말'],
 	},
+	koreatown: {
+		class: '102-6.1',
+		category: 'place',
+		meaning: 'Koreatown',
+		word: '한인타운',
+	},
 	// l
 	lab: {
 		class: '102-5.1',
@@ -640,6 +677,12 @@ export const NOUNS = {
 		meaning: 'older sister (for girl)',
 		word: '언니',
 	},
+	one_day: {
+		class: '102-6.1',
+		category: 'datetime',
+		meaning: '(one) day',
+		word: '하루',
+	},
 	// p
 	parents: {
 		class: '101-4.1',
@@ -657,6 +700,12 @@ export const NOUNS = {
 		category: ['entertainment', 'object'],
 		meaning: 'piano',
 		word: '피아노',
+	},
+	pencil: {
+		class: '102-6.1',
+		category: 'object',
+		meaning: 'pencil',
+		word: '연필',
 	},
 	people: 'person',
 	people_counter: {
@@ -789,6 +838,12 @@ export const NOUNS = {
 		word: '이학년',
 		wordPronounced: '이한년',
 	},
+	speech: {
+		class: '102-6.1',
+		category: 'language',
+		meaning: ['speech', 'words'],
+		word: '말',
+	},
 	store: {
 		class: '102-5.2',
 		category: 'place',
@@ -818,6 +873,12 @@ export const NOUNS = {
 		category: ['education', 'counter'],
 		meaning: ['subject', 'course'],
 		word: '과목',
+	},
+	subway: {
+		class: '102-6.1',
+		category: 'vehicle',
+		meaning: 'subway',
+		word: '지하철',
 	},
 	summer: {
 		category: ['weather', 'datetime'],
@@ -908,6 +969,12 @@ export const NOUNS = {
 		meaning: 'travel',
 		word: '여행',
 	},
+	truck: {
+		class: '102-6.1',
+		category: 'vehicle',
+		meaning: 'truck',
+		word: '트럭',
+	},
 	tuesday: {
 		class: '102-5.2',
 		category: 'datetime',
@@ -938,6 +1005,12 @@ export const NOUNS = {
 	},
 	// w
 	watch: 'clock',
+	weather: {
+		class: '102-6.1',
+		category: 'weather',
+		meaning: 'weather',
+		word: '날씨',
+	},
 	wednesday: {
 		class: '102-5.2',
 		category: 'datetime',
@@ -962,6 +1035,7 @@ export const NOUNS = {
 		meaning: 'won (currency)',
 		word: '원',
 	},
+	words: 'speech',
 	work: {
 		class: '102-5.1',
 		category: 'activity',

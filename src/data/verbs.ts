@@ -107,6 +107,11 @@ export const VERBS: Record<string, Verb> = {
 		meaning: ['to listen', 'to take (a course)'],
 		word: '듣다',
 	},
+	to_live: {
+		class: '102-6.1',
+		meaning: 'to live',
+		word: '살다',
+	},
 	// m
 	to_meet: {
 		class: '101-2.2',
@@ -164,6 +169,12 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to sit',
 		word: '앉다',
 	},
+	to_speak: {
+		class: '102-6.1',
+		meaning: 'to speak',
+		word: '말하다',
+		noun: 'speech',
+	},
 	to_stay: 'to_exist',
 	to_study: {
 		meaning: 'to study',
@@ -172,6 +183,11 @@ export const VERBS: Record<string, Verb> = {
 	},
 	// t
 	to_take_a_course: 'to_listen',
+	to_take_time: {
+		class: '102-6.1',
+		meaning: 'to take time',
+		word: '걸리다',
+	},
 	to_teach: {
 		class: '102-5.1',
 		meaning: 'to teach',

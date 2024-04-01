@@ -14,6 +14,11 @@ export interface Particle extends Word {
 }
 
 export const PARTICLES = {
+	about: {
+		class: '102-6.1',
+		meaning: ['about', 'around'],
+		word: '쯤',
+	},
 	also: {
 		class: '101-1.1',
 		meaning: ['also', 'too'],
@@ -24,6 +29,7 @@ export const PARTICLES = {
 		meaning: ['and (with nouns)', 'with'],
 		word: '하고',
 	},
+	around: 'about',
 	as_for: {
 		class: '101-1.1',
 		meaning: 'as for',
@@ -31,6 +37,11 @@ export const PARTICLES = {
 		type: 'topic',
 	},
 	at: 'location',
+	from: {
+		class: '102-6.1',
+		meaning: 'from (location)',
+		word: '부터',
+	},
 	location: {
 		class: '101-3.1',
 		meaning: ['at', 'in', 'on', 'to'],
@@ -83,6 +94,11 @@ export const PARTICLES = {
 	},
 	to: 'location',
 	too: 'also',
+	up_to: {
+		class: '102-6.1',
+		meaning: 'to (location)',
+		word: '까지',
+	},
 	with: 'and',
 } satisfies Record<string, Particle | string>;
 

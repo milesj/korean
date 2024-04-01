@@ -5,6 +5,7 @@ export interface Adverb extends Word {}
 export const ADVERBS = {
 	// a
 	a_little: {
+		class: '102-6.1',
 		meaning: 'a little',
 		word: ['조금', '좀'],
 		description:
@@ -50,6 +51,7 @@ export const ADVERBS = {
 		wordPronounced: '어떠케',
 	},
 	how_long: {
+		class: '102-6.1',
 		meaning: ['how long', 'how much'],
 		word: ['얼마나', '얼마'],
 	},
@@ -124,6 +126,7 @@ export const ADVERBS = {
 	},
 	// u
 	usually: {
+		class: '102-6.1',
 		meaning: 'usually',
 		word: '보통',
 	},

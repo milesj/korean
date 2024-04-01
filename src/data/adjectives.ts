@@ -18,12 +18,6 @@ export const ADJECTIVES = {
 		opposite: 'to_be',
 		word: '아니다',
 	},
-	// c
-	to_be_cheap: {
-		class: '101-2.2',
-		meaning: 'to be cheap',
-		word: '싸다',
-	},
 	// b
 	to_be_bad: {
 		class: '101-4.2',
@@ -34,6 +28,22 @@ export const ADJECTIVES = {
 		class: '101-2.2',
 		meaning: 'to be big',
 		word: '크다',
+	},
+	// c
+	to_be_cheap: {
+		class: '101-2.2',
+		meaning: 'to be cheap',
+		word: '싸다',
+	},
+	to_be_close: {
+		class: '102-6.1',
+		meaning: 'to be close, near',
+		word: '가깝다',
+	},
+	to_be_cold: {
+		class: '102-6.1',
+		meaning: 'to be cold',
+		word: '춥다',
 	},
 	// d
 	to_be_delicious: {
@@ -48,7 +58,17 @@ export const ADJECTIVES = {
 		opposite: 'to_be_delicious',
 		word: '맛없다',
 	},
+	to_be_difficult: {
+		class: '102-6.1',
+		meaning: 'to be difficult',
+		word: '어렵다',
+	},
 	// e
+	to_be_easy: {
+		class: '102-6.1',
+		meaning: 'to be easy',
+		word: '쉽다',
+	},
 	to_exist: {
 		class: '101-3.1',
 		meaning: ['to exist', 'to have'],
@@ -66,6 +86,12 @@ export const ADJECTIVES = {
 		opposite: 'to_exist',
 		word: '없다',
 	},
+	// f
+	to_be_far: {
+		class: '102-6.1',
+		meaning: 'to be far',
+		word: '멀다',
+	},
 	// g
 	to_be_glad: {
 		class: '101-1.2',
@@ -81,6 +107,11 @@ export const ADJECTIVES = {
 	// h
 	to_have: 'to_exist',
 	to_not_have: 'to_not_exist',
+	to_be_hot: {
+		class: '102-6.1',
+		meaning: 'to be hot',
+		word: '덥다',
+	},
 	to_be_how: {
 		class: '101-2.1',
 		meaning: 'to be how',
@@ -104,6 +135,11 @@ export const ADJECTIVES = {
 		class: '101-2.1',
 		meaning: 'to be many, much',
 		word: '많다',
+	},
+	to_be_narrow: {
+		class: '102-6.1',
+		meaning: 'to be narrow',
+		word: '좁다',
 	},
 	// o
 	to_be_okay: {
