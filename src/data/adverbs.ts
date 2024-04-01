@@ -18,6 +18,7 @@ export const ADVERBS = {
 	},
 	// c
 	cannot: {
+		class: '102-6.2',
 		meaning: 'cannot',
 		word: '못',
 	},
@@ -28,6 +29,7 @@ export const ADVERBS = {
 		word: '열심히',
 	},
 	do_not: {
+		class: '102-6.2',
 		meaning: 'do not',
 		word: '안',
 	},
@@ -79,6 +81,7 @@ export const ADVERBS = {
 		word: '가끔',
 	},
 	often: {
+		class: '102-6.2',
 		meaning: ['often', 'frequently'],
 		word: '자주',
 	},
@@ -115,6 +118,7 @@ export const ADVERBS = {
 			'The adverd `같이` means "together" or "with". It is used to describe an action that is done with someone else, or some thing.',
 	},
 	too_much: {
+		class: '102-6.2',
 		meaning: 'too much',
 		word: '너무',
 	},
@@ -149,6 +153,7 @@ export const ADVERBS = {
 		word: '잘',
 	},
 	why: {
+		class: '102-6.2',
 		meaning: 'why',
 		word: '왜',
 	},

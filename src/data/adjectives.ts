@@ -29,6 +29,11 @@ export const ADJECTIVES = {
 		meaning: 'to be big',
 		word: '크다',
 	},
+	to_be_busy: {
+		class: '102-6.2',
+		meaning: 'to be busy',
+		word: '바쁘다',
+	},
 	// c
 	to_be_cheap: {
 		class: '101-2.2',

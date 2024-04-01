@@ -9,7 +9,8 @@ export type ClassChapter =
 	| '101-4.2'
 	| '102-5.1'
 	| '102-5.2'
-	| '102-6.1';
+	| '102-6.1'
+	| '102-6.2';
 
 export interface Word {
 	class: ClassChapter | ClassChapter[];

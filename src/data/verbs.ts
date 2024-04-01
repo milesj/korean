@@ -2,10 +2,17 @@ import { expandMap, type Word } from './common';
 import type { NounKey } from './nouns';
 
 export interface Verb extends Word {
+	opposite?: string;
 	noun?: NounKey;
 }
 
 export const VERBS: Record<string, Verb> = {
+	// a
+	to_answer: {
+		class: '102-6.2',
+		meaning: 'to answer',
+		word: '대답하다',
+	},
 	// b
 	to_buy: {
 		class: '102-5.1',
@@ -63,6 +70,11 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to get along',
 		word: '지내다',
 	},
+	to_get_up: {
+		class: '102-6.2',
+		meaning: 'to get up',
+		word: '일어나다',
+	},
 	to_gift: {
 		class: '102-5.1',
 		meaning: 'to gift',
@@ -90,6 +102,13 @@ export const VERBS: Record<string, Verb> = {
 		class: '101-2.1',
 		meaning: 'to know',
 		word: '알다',
+		opposite: 'to_not_know',
+	},
+	to_not_know: {
+		class: '102-6.2',
+		meaning: 'to not know',
+		word: '모르다',
+		opposite: 'to_know',
 	},
 	// l
 	to_learn: {
@@ -123,6 +142,11 @@ export const VERBS: Record<string, Verb> = {
 		class: '102-5.1',
 		meaning: 'to play (a sport)',
 		word: '치다',
+	},
+	to_play_soccer: {
+		class: '102-6.2',
+		meaning: 'to play soccer',
+		word: '축구하다',
 	},
 	to_practice: {
 		class: '102-5.1',
@@ -180,6 +204,11 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to study',
 		noun: 'study',
 		word: '공부하다',
+	},
+	to_swim: {
+		class: '102-6.2',
+		meaning: 'to swim',
+		word: '수영하다',
 	},
 	// t
 	to_take_a_course: 'to_listen',

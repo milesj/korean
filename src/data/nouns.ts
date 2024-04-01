@@ -76,6 +76,12 @@ export const NOUNS = {
 		meaning: 'animal',
 		word: '마리',
 	},
+	answer: {
+		class: '102-6.2',
+		category: 'language',
+		meaning: 'answer',
+		word: '대답',
+	},
 	apartment: {
 		class: '101-4.2',
 		category: 'place',
@@ -208,6 +214,12 @@ export const NOUNS = {
 		category: 'education',
 		meaning: ['class', 'course'],
 		word: ['수업', '반'],
+	},
+	classical: {
+		class: '102-6.2',
+		category: 'classification',
+		meaning: 'classical',
+		word: '클래식',
 	},
 	classroom: {
 		class: '101-3.2',
@@ -541,6 +553,13 @@ export const NOUNS = {
 		meaning: 'lab',
 		word: '랩',
 	},
+	last: {
+		class: '102-6.2',
+		category: 'datetime',
+		meaning: ['last', 'past'],
+		word: '지난',
+		prenoun: true,
+	},
 	layer: 'floor',
 	lesson: {
 		class: '101-1.1',
@@ -572,6 +591,12 @@ export const NOUNS = {
 		category: ['human', 'classification'],
 		meaning: ['man', 'male'],
 		word: '남자',
+	},
+	middle_school: {
+		class: '102-6.2',
+		category: ['education', 'place'],
+		meaning: 'middle school',
+		word: '중학교',
 	},
 	minute: {
 		class: '102-5.2',
@@ -613,6 +638,12 @@ export const NOUNS = {
 		category: ['entertainment', 'place'],
 		meaning: 'movie theatre',
 		word: '영화관',
+	},
+	music: {
+		class: '102-6.2',
+		category: 'entertainment',
+		meaning: 'music',
+		word: '음악',
 	},
 	musical_instrument: {
 		category: ['entertainment', 'object'],
@@ -695,6 +726,12 @@ export const NOUNS = {
 		category: ['leisure', 'place'],
 		meaning: 'park',
 		word: '공원',
+	},
+	party: {
+		class: '102-6.2',
+		category: ['entertainment', 'leisure'],
+		meaning: 'party',
+		word: '파티',
 	},
 	piano: {
 		category: ['entertainment', 'object'],
@@ -831,6 +868,12 @@ export const NOUNS = {
 		word: '쇼핑',
 	},
 	side: 'beside',
+	soccer: {
+		class: '102-6.2',
+		category: 'sport',
+		meaning: 'soccer',
+		word: '축구',
+	},
 	sophomore: {
 		class: '101-1.1',
 		category: 'education',
@@ -891,7 +934,25 @@ export const NOUNS = {
 		meaning: 'Sunday',
 		word: '일요일',
 	},
+	swimming: {
+		class: '102-6.2',
+		category: 'activity',
+		meaning: 'swimming',
+		word: '수영',
+	},
+	swimming_pool: {
+		class: '102-6.2',
+		category: 'place',
+		meaning: 'swimming pool',
+		word: '수영장',
+	},
 	// t
+	taekwondo: {
+		class: '102-6.2',
+		category: 'sport',
+		meaning: 'Taekwondo',
+		word: '태권도',
+	},
 	teacher: {
 		class: '101-1.2',
 		category: ['education', 'human'],
@@ -909,6 +970,12 @@ export const NOUNS = {
 		category: ['entertainment', 'sport'],
 		meaning: 'tennis',
 		word: '테니스',
+	},
+	tennis_court: {
+		class: '102-6.2',
+		category: 'place',
+		meaning: 'tennis court',
+		word: '테니스장',
 	},
 	term: 'semester',
 	test: {
@@ -947,9 +1014,15 @@ export const NOUNS = {
 		word: '목요일',
 	},
 	time: {
-		class: '101-3.2',
+		class: '102-6.2',
 		category: 'datetime',
 		meaning: 'time',
+		word: '때',
+	},
+	time_duration: {
+		class: '101-3.2',
+		category: 'datetime',
+		meaning: 'time (duration)',
 		word: '시간',
 	},
 	today: {
@@ -1017,6 +1090,12 @@ export const NOUNS = {
 		meaning: 'Wednesday',
 		word: '수요일',
 	},
+	weekend: {
+		class: '102-6.2',
+		category: 'datetime',
+		meaning: 'weekend',
+		word: '주말',
+	},
 	where: {
 		class: '101-3.1',
 		category: ['direction', 'language'],
@@ -1048,6 +1127,12 @@ export const NOUNS = {
 		category: ['datetime', 'counter'],
 		meaning: 'year',
 		word: '년',
+	},
+	yesterday: {
+		class: '102-6.2',
+		category: 'datetime',
+		meaning: 'yesterday',
+		word: '어제',
 	},
 	younger_brother: {
 		class: '101-4.1',
