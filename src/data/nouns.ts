@@ -439,6 +439,7 @@ export const NOUNS = {
 	// g
 	gift: 'present',
 	grade: {
+		class: '101-1.1',
 		category: 'education',
 		meaning: 'grade',
 		word: '학년',
@@ -697,7 +698,8 @@ export const NOUNS = {
 	},
 	// n
 	name: {
-		category: 'human',
+		class: '101-1.2',
+		category: 'classification',
 		meaning: 'name',
 		word: '이름',
 	},
@@ -726,11 +728,13 @@ export const NOUNS = {
 		word: '신문',
 	},
 	night: {
+		class: 'other',
 		category: 'datetime',
 		meaning: 'night',
 		word: '밤',
 	},
 	noon: {
+		class: 'other',
 		category: 'datetime',
 		meaning: 'noon',
 		word: '낮',
@@ -805,6 +809,7 @@ export const NOUNS = {
 		word: '명',
 	},
 	person: {
+		class: '101-1.1',
 		category: 'human',
 		meaning: ['person', 'people'],
 		word: '사람',
@@ -828,7 +833,7 @@ export const NOUNS = {
 		word: '정치학',
 	},
 	post_office: {
-		class: 101.2,
+		class: '101-3.1',
 		category: 'place',
 		meaning: 'post office',
 		word: '우체국',

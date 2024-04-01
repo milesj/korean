@@ -229,6 +229,7 @@ export const VERBS: Record<string, Verb | string> = {
 	},
 	to_stay: 'to_exist',
 	to_study: {
+		class: '101-2.2',
 		meaning: 'to study',
 		noun: 'study',
 		word: '공부하다',
@@ -263,6 +264,7 @@ export const VERBS: Record<string, Verb | string> = {
 		word: '가르치다',
 	},
 	to_travel: {
+		class: '102-7.1',
 		meaning: 'to travel',
 		noun: 'travel',
 		word: '여행하다',

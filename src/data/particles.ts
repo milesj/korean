@@ -45,6 +45,11 @@ export const PARTICLES = {
 	from: {
 		class: '102-6.1',
 		meaning: 'from (location)',
+		word: '에서',
+	},
+	from_time: {
+		class: '102-6.1',
+		meaning: 'from (time)',
 		word: '부터',
 	},
 	location: {
