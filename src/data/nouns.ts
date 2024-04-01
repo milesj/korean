@@ -39,6 +39,7 @@ export const NOUNS = {
 		word: '위',
 	},
 	action_movie: {
+		class: '102-7.1',
 		category: ['entertainment', 'object'],
 		meaning: 'action movie',
 		word: '액션 영화',
@@ -87,6 +88,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'apartment',
 		word: '아파트',
+	},
+	autumn: {
+		class: '102-7.2',
+		category: ['datetime', 'weather'],
+		meaning: ['autumn', 'fall'],
+		word: '가을',
 	},
 	// b
 	back: {
@@ -203,6 +210,7 @@ export const NOUNS = {
 		meaning: 'chair',
 		word: '의자',
 	},
+	chat: 'talk',
 	china: {
 		class: '101-1.1',
 		category: 'country',
@@ -226,6 +234,12 @@ export const NOUNS = {
 		category: ['education', 'place'],
 		meaning: 'classroom',
 		word: '교실',
+	},
+	cleaning: {
+		class: '102-7.2',
+		category: 'activity',
+		meaning: 'cleaning',
+		word: '청소',
 	},
 	clock: {
 		class: '101-3.1',
@@ -264,6 +278,7 @@ export const NOUNS = {
 		word: '대학생',
 	},
 	comedy: {
+		class: '102-7.1',
 		category: ['activity', 'entertainment'],
 		meaning: 'comedy',
 		word: '코미디',
@@ -273,6 +288,12 @@ export const NOUNS = {
 		category: ['entertainment', 'object'],
 		meaning: 'computer',
 		word: '컴퓨터',
+	},
+	country: {
+		class: '102-7.1',
+		category: ['place', 'classification'],
+		meaning: 'country',
+		word: '나라',
 	},
 	course: 'subject',
 	// d
@@ -312,6 +333,12 @@ export const NOUNS = {
 		meaning: ['dinner', 'evening'],
 		word: '저녁',
 	},
+	dishwashing: {
+		class: '102-7.2',
+		category: 'activity',
+		meaning: 'dishwashing',
+		word: '설거지',
+	},
 	dog: {
 		class: '101-4.1',
 		category: 'animal',
@@ -337,6 +364,12 @@ export const NOUNS = {
 		meaning: 'economics',
 		word: '경제학',
 	},
+	end_of_semester: {
+		class: '102-7.2',
+		category: 'datetime',
+		meaning: 'end of semester',
+		word: '학기말',
+	},
 	english: {
 		class: '101-1.2',
 		category: ['education', 'language'],
@@ -352,6 +385,7 @@ export const NOUNS = {
 		word: '운동',
 	},
 	// f
+	fall: 'autumn',
 	father: {
 		class: '101-4.1',
 		category: 'family',
@@ -365,6 +399,7 @@ export const NOUNS = {
 		word: '층',
 	},
 	flower: {
+		class: '102-7.1',
 		category: 'nature',
 		meaning: 'flower',
 		word: '꽃',
@@ -409,6 +444,7 @@ export const NOUNS = {
 		word: '학년',
 	},
 	graduate_school: {
+		class: '102-7.1',
 		category: 'education',
 		meaning: 'graduate school',
 		word: '대학원',
@@ -586,6 +622,12 @@ export const NOUNS = {
 		word: '점심',
 	},
 	// m
+	major: {
+		class: '102-7.2',
+		category: 'education',
+		meaning: 'major (school)',
+		word: '전공',
+	},
 	man: {
 		class: '101-2.2',
 		category: ['human', 'classification'],
@@ -630,11 +672,13 @@ export const NOUNS = {
 	},
 	morning: 'breakfast',
 	movie: {
+		class: '102-7.1',
 		category: ['entertainment', 'object'],
 		meaning: 'movie',
 		word: '영화',
 	},
 	movie_theatre: {
+		class: '102-7.1',
 		category: ['entertainment', 'place'],
 		meaning: 'movie theatre',
 		word: '영화관',
@@ -646,6 +690,7 @@ export const NOUNS = {
 		word: '음악',
 	},
 	musical_instrument: {
+		class: '102-7.1',
 		category: ['entertainment', 'object'],
 		meaning: 'musical instrument',
 		word: '악기',
@@ -663,6 +708,7 @@ export const NOUNS = {
 		word: '다음',
 	},
 	next_year: {
+		class: '102-7.1',
 		category: 'datetime',
 		meaning: 'next year',
 		word: '내년',
@@ -672,6 +718,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'New York',
 		word: '뉴욕',
+	},
+	newspaper: {
+		class: '102-7.2',
+		category: 'object',
+		meaning: 'newspaper',
+		word: '신문',
 	},
 	night: {
 		category: 'datetime',
@@ -734,6 +786,7 @@ export const NOUNS = {
 		word: '파티',
 	},
 	piano: {
+		class: '102-7.1',
 		category: ['entertainment', 'object'],
 		meaning: 'piano',
 		word: '피아노',
@@ -786,11 +839,23 @@ export const NOUNS = {
 		meaning: 'practice',
 		word: '연습',
 	},
+	preparation: {
+		class: '102-7.2',
+		category: 'activity',
+		meaning: 'preparation',
+		word: '준비',
+	},
 	present: {
 		class: '102-5.1',
 		category: 'object',
 		meaning: ['present', 'gift'],
 		word: '선물',
+	},
+	psychology: {
+		class: '102-7.2',
+		category: 'education',
+		meaning: 'psychology',
+		word: '심리학',
 	},
 	// q
 	question: {
@@ -833,6 +898,7 @@ export const NOUNS = {
 		word: '학교',
 	},
 	school_vacation: {
+		class: '102-7.1',
 		category: ['education', 'leisure'],
 		meaning: 'school vacation',
 		word: '방학',
@@ -844,6 +910,7 @@ export const NOUNS = {
 		word: '학년',
 	},
 	season: {
+		class: '102-7.1',
 		category: ['weather', 'datetime'],
 		meaning: 'season',
 		word: '계절',
@@ -887,6 +954,12 @@ export const NOUNS = {
 		meaning: ['speech', 'words'],
 		word: '말',
 	},
+	spring: {
+		class: '102-7.2',
+		category: ['weather', 'datetime'],
+		meaning: 'spring',
+		word: '봄',
+	},
 	store: {
 		class: '102-5.2',
 		category: 'place',
@@ -924,6 +997,7 @@ export const NOUNS = {
 		word: '지하철',
 	},
 	summer: {
+		class: '102-7.1',
 		category: ['weather', 'datetime'],
 		meaning: 'summer',
 		word: '여름',
@@ -933,6 +1007,12 @@ export const NOUNS = {
 		category: 'datetime',
 		meaning: 'Sunday',
 		word: '일요일',
+	},
+	supermarket: {
+		class: '102-7.2',
+		category: 'place',
+		meaning: 'supermarket',
+		word: ['슈퍼마켓', '마트'],
 	},
 	swimming: {
 		class: '102-6.2',
@@ -952,6 +1032,12 @@ export const NOUNS = {
 		category: 'sport',
 		meaning: 'Taekwondo',
 		word: '태권도',
+	},
+	talk: {
+		class: '102-7.2',
+		category: 'activity',
+		meaning: ['talk', 'chat'],
+		word: ['이야기', '얘기'],
 	},
 	teacher: {
 		class: '101-1.2',
@@ -991,6 +1077,7 @@ export const NOUNS = {
 		word: '교과서',
 	},
 	theater: {
+		class: '102-7.1',
 		category: 'place',
 		meaning: 'theater',
 		word: '극장',
@@ -1038,6 +1125,7 @@ export const NOUNS = {
 		word: '내일',
 	},
 	travel: {
+		class: '102-7.1',
 		category: ['activity', 'leisure'],
 		meaning: 'travel',
 		word: '여행',
@@ -1090,17 +1178,43 @@ export const NOUNS = {
 		meaning: 'Wednesday',
 		word: '수요일',
 	},
+	week: {
+		class: '102-7.2',
+		category: 'datetime',
+		meaning: 'week',
+		word: '주',
+	},
 	weekend: {
 		class: '102-6.2',
 		category: 'datetime',
 		meaning: 'weekend',
 		word: '주말',
 	},
+	what_kind: {
+		class: '102-7.1',
+		category: 'language',
+		meaning: 'what kind',
+		word: '무슨',
+		prenoun: true,
+	},
 	where: {
 		class: '101-3.1',
 		category: ['direction', 'language'],
 		meaning: 'where',
 		word: '어디',
+	},
+	which: {
+		class: '102-7.1',
+		category: 'language',
+		meaning: 'which',
+		word: '어느',
+		prenoun: true,
+	},
+	winter: {
+		class: '102-7.2',
+		category: ['datetime', 'weather'],
+		meaning: 'winter',
+		word: '겨울',
 	},
 	woman: {
 		class: '101-3.2',

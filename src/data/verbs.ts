@@ -6,7 +6,7 @@ export interface Verb extends Word {
 	noun?: NounKey;
 }
 
-export const VERBS: Record<string, Verb> = {
+export const VERBS: Record<string, Verb | string> = {
 	// a
 	to_answer: {
 		class: '102-6.2',
@@ -19,6 +19,11 @@ export const VERBS: Record<string, Verb> = {
 		meaning: 'to buy',
 		word: '사다',
 	},
+	to_buy_groceries: {
+		class: '102-7.2',
+		meaning: "to buy one's groceries",
+		word: '장보다',
+	},
 	// c
 	to_call_phone: {
 		class: '102-5.1',
@@ -26,14 +31,20 @@ export const VERBS: Record<string, Verb> = {
 		word: '전화하다',
 		noun: 'phone_call',
 	},
+	to_clean: {
+		class: '102-7.2',
+		meaning: 'to clean',
+		word: '청소하다',
+		noun: 'cleaning',
+	},
 	to_come: {
 		class: '101-4.2',
 		meaning: 'to come',
 		word: '오다',
 	},
 	to_congratulate: {
+		class: '102-7.1',
 		meaning: 'to congratulate',
-		// noun: 'celebration',
 		word: '축하하다',
 	},
 	// d
@@ -132,6 +143,11 @@ export const VERBS: Record<string, Verb> = {
 		word: '살다',
 	},
 	// m
+	to_make: {
+		class: '102-7.2',
+		meaning: 'to make',
+		word: '만들다',
+	},
 	to_meet: {
 		class: '101-2.2',
 		meaning: 'to meet',
@@ -154,6 +170,12 @@ export const VERBS: Record<string, Verb> = {
 		word: '연습하다',
 		noun: 'practice',
 	},
+	to_prepare: {
+		class: '102-7.2',
+		meaning: 'to prepare',
+		word: '준비하다',
+		noun: 'preparation',
+	},
 	// q
 	to_question: {
 		class: '101-3.2',
@@ -168,6 +190,7 @@ export const VERBS: Record<string, Verb> = {
 		word: '읽다',
 	},
 	to_receive: {
+		class: '102-7.1',
 		meaning: 'to receive',
 		word: '받다',
 	},
@@ -199,6 +222,11 @@ export const VERBS: Record<string, Verb> = {
 		word: '말하다',
 		noun: 'speech',
 	},
+	to_spend_time: {
+		class: '102-7.2',
+		meaning: 'to spend time',
+		word: '보내다',
+	},
 	to_stay: 'to_exist',
 	to_study: {
 		meaning: 'to study',
@@ -212,10 +240,22 @@ export const VERBS: Record<string, Verb> = {
 	},
 	// t
 	to_take_a_course: 'to_listen',
+	to_take_a_major: {
+		class: '102-7.2',
+		meaning: 'to take a major',
+		word: '전공하다',
+		noun: 'major',
+	},
 	to_take_time: {
 		class: '102-6.1',
 		meaning: 'to take time',
 		word: '걸리다',
+	},
+	to_talk: {
+		class: '102-7.2',
+		meaning: 'to talk / chat',
+		word: '이야기하다',
+		noun: 'talk',
 	},
 	to_teach: {
 		class: '102-5.1',
@@ -232,6 +272,12 @@ export const VERBS: Record<string, Verb> = {
 		class: '102-5.2',
 		meaning: 'to walk',
 		word: '걷다',
+	},
+	to_wash_dishes: {
+		class: '102-7.2',
+		meaning: 'to wash dishes',
+		word: '설거지하다',
+		noun: 'dishwashing',
 	},
 	to_work: {
 		class: '102-5.1',

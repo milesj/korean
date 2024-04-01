@@ -45,6 +45,11 @@ export const ADJECTIVES = {
 		meaning: 'to be close, near',
 		word: '가깝다',
 	},
+	to_be_cloudy: {
+		class: '102-7.2',
+		meaning: 'to be cloudy',
+		word: '흐리다',
+	},
 	to_be_cold: {
 		class: '102-6.1',
 		meaning: 'to be cold',
@@ -157,6 +162,12 @@ export const ADJECTIVES = {
 		class: '101-4.2',
 		meaning: 'to be pretty',
 		word: '예쁘다',
+	},
+	// q
+	to_be_quiet: {
+		class: '102-7.2',
+		meaning: 'to be quiet',
+		word: '조용하다',
 	},
 	// s
 	to_be_small: {

@@ -29,6 +29,11 @@ export const PARTICLES = {
 		meaning: ['and (with nouns)', 'with'],
 		word: '하고',
 	},
+	and_connective: {
+		class: '102-7.2',
+		meaning: 'and (clausal connective)',
+		word: '고',
+	},
 	around: 'about',
 	as_for: {
 		class: '101-1.1',

@@ -35,6 +35,7 @@ export const ADVERBS = {
 	},
 	// e
 	each_other: {
+		class: '102-7.2',
 		meaning: 'each other',
 		word: '서로',
 	},
@@ -60,6 +61,7 @@ export const ADVERBS = {
 	how_much: 'how_long',
 	// m
 	many: {
+		class: '102-7.2',
 		meaning: ['many', 'much'],
 		word: '많이',
 	},
@@ -77,6 +79,7 @@ export const ADVERBS = {
 	},
 	// o
 	occasionally: {
+		class: '102-7.2',
 		meaning: ['occasionally', 'sometimes'],
 		word: '가끔',
 	},
@@ -87,16 +90,19 @@ export const ADVERBS = {
 	},
 	// p
 	particularly: {
+		class: '102-7.2',
 		meaning: 'particularly',
 		word: '특히',
 	},
 	perhaps: {
+		class: '102-7.1',
 		meaning: ['perhaps', 'probably'],
 		word: '아마',
 	},
 	probably: 'perhaps',
 	// r
 	really: {
+		class: '102-7.1',
 		meaning: 'really',
 		word: ['진짜', '정말'],
 		related: ['very', 'truly'],
