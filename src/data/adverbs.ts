@@ -109,6 +109,11 @@ export const ADVERBS = {
 	},
 	// s
 	sometimes: 'occasionally',
+	straight: {
+		class: '103-8.2',
+		meaning: 'straight',
+		word: '쭉',
+	},
 	// t
 	these_days: {
 		class: '101-2.2',

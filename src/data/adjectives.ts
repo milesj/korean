@@ -186,6 +186,11 @@ export const ADJECTIVES = {
 		word: '그렇다',
 		phrases: ['Is that right?', 'Really?'],
 	},
+	to_be_sorry: {
+		class: '103-8.2',
+		meaning: 'to be sorry',
+		word: ['미안하다', '죄송하다'],
+	},
 	to_be_spacious: {
 		class: '101-2.1',
 		meaning: 'to be spacious / wide',
@@ -193,9 +198,9 @@ export const ADJECTIVES = {
 	},
 	// t
 	to_be_thankful: {
-		class: '101-4.2',
+		class: ['101-4.2', '103-8.2'],
 		meaning: 'to be thankful',
-		word: '고맙다',
+		word: ['고맙다', '감사하다'],
 	},
 	// w
 	to_be_warm: {

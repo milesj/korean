@@ -42,6 +42,11 @@ export const PARTICLES = {
 		type: 'topic',
 	},
 	at: 'location',
+	by_means_of: {
+		class: ['102-6.1', '103-8.2'],
+		meaning: ['(by means of)', 'toward to'],
+		word: ['으로', '로'],
+	},
 	from: {
 		class: '102-6.1',
 		meaning: 'from (location)',
@@ -104,6 +109,7 @@ export const PARTICLES = {
 	},
 	to: 'location',
 	too: 'also',
+	toward_to: 'by_means_of',
 	up_to: {
 		class: '102-6.1',
 		meaning: 'to (location)',

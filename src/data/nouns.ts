@@ -114,6 +114,12 @@ export const NOUNS = {
 		meaning: 'ballpoint pen',
 		word: '볼펜',
 	},
+	bank: {
+		class: '103-8.2',
+		category: 'place',
+		meaning: 'bank',
+		word: '은행',
+	},
 	beforenoon: 'am',
 	behind: 'back',
 	below: 'bottom',
@@ -228,6 +234,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'church',
 		word: '교회',
+	},
+	city_hall: {
+		class: '103-8.2',
+		category: 'place',
+		meaning: 'city hall',
+		word: '시청',
 	},
 	class: {
 		class: '101-2.1',
@@ -357,6 +369,12 @@ export const NOUNS = {
 		meaning: 'dishwashing',
 		word: '설거지',
 	},
+	doctor_medical: {
+		class: '103-8.2',
+		category: ['classification', 'human'],
+		meaning: 'doctor (medical)',
+		word: '의사',
+	},
 	dog: {
 		class: '101-4.1',
 		category: 'animal',
@@ -421,6 +439,12 @@ export const NOUNS = {
 		category: 'family',
 		meaning: 'father',
 		word: '아버지',
+	},
+	first_time: {
+		class: '103-8.2',
+		category: 'datetime',
+		meaning: 'first time',
+		word: '처음',
 	},
 	floor: {
 		class: '101-3.1',
@@ -634,6 +658,18 @@ export const NOUNS = {
 		prenoun: true,
 	},
 	layer: 'floor',
+	left: {
+		class: 'other',
+		category: 'direction',
+		meaning: 'left',
+		word: '왼',
+	},
+	left_side: {
+		class: '103-8.2',
+		category: 'direction',
+		meaning: 'left side',
+		word: '왼쪽',
+	},
 	lesson: {
 		class: '101-1.1',
 		category: 'counter',
@@ -745,6 +781,12 @@ export const NOUNS = {
 		category: 'classification',
 		meaning: 'name',
 		word: '이름',
+	},
+	nearby: {
+		class: '103-8.2',
+		category: 'direction',
+		meaning: ['nearby', 'vicinity'],
+		word: '근처',
 	},
 	neighborhood: {
 		class: '103-8.1',
@@ -906,6 +948,12 @@ export const NOUNS = {
 		meaning: 'post office',
 		word: '우체국',
 	},
+	postage_stamp: {
+		class: '103-8.2',
+		category: 'object',
+		meaning: 'postage stamp',
+		word: '우표',
+	},
 	practice: {
 		class: '102-5.1',
 		category: 'activity',
@@ -944,6 +992,18 @@ export const NOUNS = {
 		category: ['food-drink', 'place'],
 		meaning: 'restaurant',
 		word: '식당',
+	},
+	right: {
+		class: 'other',
+		category: 'direction',
+		meaning: 'right',
+		word: '오른',
+	},
+	right_side: {
+		class: '103-8.2',
+		category: 'direction',
+		meaning: 'right side',
+		word: '오른쪽',
 	},
 	room: {
 		class: '101-4.2',
@@ -1028,10 +1088,10 @@ export const NOUNS = {
 		wordPronounced: '이한년',
 	},
 	speech: {
-		class: '102-6.1',
+		class: ['102-6.1', '103-8.2'],
 		category: 'language',
 		meaning: ['speech', 'words'],
-		word: '말',
+		word: ['말씀', '말'],
 	},
 	spot: 'place',
 	spring: {
@@ -1039,6 +1099,12 @@ export const NOUNS = {
 		category: ['weather', 'datetime'],
 		meaning: 'spring',
 		word: '봄',
+	},
+	station: {
+		class: '103-8.2',
+		category: 'place',
+		meaning: 'station',
+		word: '역',
 	},
 	store: {
 		class: '102-5.2',
@@ -1075,6 +1141,12 @@ export const NOUNS = {
 		category: 'vehicle',
 		meaning: 'subway',
 		word: '지하철',
+	},
+	subway_line: {
+		class: '103-8.2',
+		category: 'counter',
+		meaning: 'subway line',
+		word: '호선',
 	},
 	summer: {
 		class: '102-7.1',
@@ -1259,6 +1331,7 @@ export const NOUNS = {
 	},
 	united_states: 'america',
 	// v
+	vicinity: 'nearby',
 	volume: {
 		class: '101-4.1',
 		category: 'counter',

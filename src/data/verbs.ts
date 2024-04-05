@@ -13,6 +13,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to answer',
 		word: '대답하다',
 	},
+	to_ask: {
+		class: '103-8.2',
+		meaning: 'to ask',
+		word: '묻다',
+	},
 	// b
 	to_buy: {
 		class: '102-5.1',
@@ -208,9 +213,19 @@ export const VERBS: Record<string, Verb | string> = {
 	},
 	// s
 	to_see: {
-		class: '101-2.2',
+		class: ['101-2.2', '103-8.2'],
 		meaning: 'to see, look, watch',
-		word: '보다',
+		word: ['보다', '뵙다'],
+	},
+	to_be_seen: {
+		class: '103-8.2',
+		meaning: 'to be seen, visible',
+		word: '보이다',
+	},
+	to_sell: {
+		class: '103-8.2',
+		meaning: 'to sell',
+		word: '팔다',
 	},
 	to_shop: {
 		class: '102-5.1',
@@ -280,6 +295,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to travel',
 		noun: 'travel',
 		word: '여행하다',
+	},
+	to_turn: {
+		class: '103-8.2',
+		meaning: 'to turn',
+		word: '돌다',
 	},
 	// w
 	to_walk: {
