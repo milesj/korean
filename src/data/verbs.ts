@@ -81,6 +81,18 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to get along',
 		word: '지내다',
 	},
+	to_get_off: {
+		class: '103-8.1',
+		meaning: 'to get off, out of',
+		word: '내리다',
+		opposite: 'to_get_on',
+	},
+	to_get_on: {
+		class: '103-8.1',
+		meaning: ['to get on, in', 'to ride'],
+		word: '타다',
+		opposite: 'to_get_off',
+	},
 	to_get_up: {
 		class: '102-6.2',
 		meaning: 'to get up',

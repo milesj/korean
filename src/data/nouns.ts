@@ -203,6 +203,12 @@ export const NOUNS = {
 		meaning: 'car',
 		word: '차',
 	},
+	center: {
+		class: '103-8.1',
+		category: 'direction',
+		meaning: ['center', 'middle'],
+		word: '가운데',
+	},
 	chapter: 'lesson',
 	chair: {
 		class: '101-3.1',
@@ -216,6 +222,12 @@ export const NOUNS = {
 		category: 'country',
 		meaning: 'China',
 		word: '중국',
+	},
+	church: {
+		class: '103-8.1',
+		category: 'place',
+		meaning: 'church',
+		word: '교회',
 	},
 	class: {
 		class: '101-2.1',
@@ -333,6 +345,12 @@ export const NOUNS = {
 		meaning: ['dinner', 'evening'],
 		word: '저녁',
 	},
+	direction: {
+		class: '103-8.1',
+		category: 'direction',
+		meaning: ['direction', 'side'],
+		word: '쪽',
+	},
 	dishwashing: {
 		class: '102-7.2',
 		category: 'activity',
@@ -357,12 +375,24 @@ export const NOUNS = {
 		meaning: 'dormitory',
 		word: '기숙사',
 	},
+	drugstore: {
+		class: '103-8.1',
+		category: 'place',
+		meaning: ['drugstore', 'pharmacy'],
+		word: '약국',
+	},
 	// e
 	economics: {
 		class: '101-3.2',
 		category: 'education',
 		meaning: 'economics',
 		word: '경제학',
+	},
+	elementary_school: {
+		class: '103-8.1',
+		category: 'place',
+		meaning: 'elementary school',
+		word: '초등학교',
 	},
 	end_of_semester: {
 		class: '102-7.2',
@@ -403,6 +433,12 @@ export const NOUNS = {
 		category: 'nature',
 		meaning: 'flower',
 		word: '꽃',
+	},
+	flower_shop: {
+		class: '103-8.1',
+		category: 'place',
+		meaning: 'flower shop',
+		word: '꽃집',
 	},
 	following: 'next',
 	food: {
@@ -635,6 +671,13 @@ export const NOUNS = {
 		meaning: ['man', 'male'],
 		word: '남자',
 	},
+	map: {
+		class: '103-8.1',
+		category: 'object',
+		meaning: 'map',
+		word: '지도',
+	},
+	middle: 'center',
 	middle_school: {
 		class: '102-6.2',
 		category: ['education', 'place'],
@@ -703,6 +746,12 @@ export const NOUNS = {
 		meaning: 'name',
 		word: '이름',
 	},
+	neighborhood: {
+		class: '103-8.1',
+		category: 'place',
+		meaning: 'neighborhood',
+		word: '동네',
+	},
 	next: {
 		class: '102-5.1',
 		category: 'direction',
@@ -739,6 +788,12 @@ export const NOUNS = {
 		meaning: 'noon',
 		word: '낮',
 	},
+	number: {
+		class: '103-8.1',
+		category: ['counter', 'classification'],
+		meaning: 'number',
+		word: '번',
+	},
 	// o
 	older_brother_boy: {
 		class: '101-4.1',
@@ -769,6 +824,12 @@ export const NOUNS = {
 		category: 'datetime',
 		meaning: '(one) day',
 		word: '하루',
+	},
+	other_side: {
+		class: '103-8.1',
+		category: 'direction',
+		meaning: 'other side',
+		word: '건너편',
 	},
 	// p
 	parents: {
@@ -814,11 +875,18 @@ export const NOUNS = {
 		meaning: ['person', 'people'],
 		word: '사람',
 	},
+	pharmacy: 'drugstore',
 	phone_call: {
 		class: '102-5.1',
 		category: 'activity',
 		meaning: 'phone call',
 		word: '전화',
+	},
+	place: {
+		class: '103-8.1',
+		category: ['place', 'counter'],
+		meaning: ['place', 'spot'],
+		word: '군데',
 	},
 	pm: {
 		class: '102-5.2',
@@ -933,6 +1001,12 @@ export const NOUNS = {
 		word: '사학년',
 		wordPronounced: '사한년',
 	},
+	seoul: {
+		class: '103-8.1',
+		category: 'place',
+		meaning: 'Seoul',
+		word: '서울',
+	},
 	shopping: {
 		class: '102-5.1',
 		category: 'activity',
@@ -959,6 +1033,7 @@ export const NOUNS = {
 		meaning: ['speech', 'words'],
 		word: '말',
 	},
+	spot: 'place',
 	spring: {
 		class: '102-7.2',
 		category: ['weather', 'datetime'],
@@ -1014,10 +1089,10 @@ export const NOUNS = {
 		word: '일요일',
 	},
 	supermarket: {
-		class: '102-7.2',
+		class: ['102-7.2', '103-8.1'],
 		category: 'place',
 		meaning: 'supermarket',
-		word: ['슈퍼마켓', '마트'],
+		word: ['슈퍼마켓', '슈퍼', '마트'],
 	},
 	swimming: {
 		class: '102-6.2',
@@ -1092,6 +1167,27 @@ export const NOUNS = {
 		category: 'classification',
 		meaning: 'thing',
 		word: ['것', '거'],
+	},
+	that: {
+		class: '103-8.1',
+		category: 'classification',
+		meaning: 'that',
+		word: '그',
+		prenoun: true,
+	},
+	that_over_there: {
+		class: '103-8.1',
+		category: 'classification',
+		meaning: 'that (over there)',
+		word: '저',
+		prenoun: true,
+	},
+	this: {
+		class: '103-8.1',
+		category: 'classification',
+		meaning: 'this',
+		word: '이',
+		prenoun: true,
 	},
 	this_time: {
 		class: '102-5.2',

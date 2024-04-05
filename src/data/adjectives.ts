@@ -40,6 +40,11 @@ export const ADJECTIVES = {
 		meaning: 'to be cheap',
 		word: '싸다',
 	},
+	to_be_clean: {
+		class: '103-8.1',
+		meaning: 'to be clean',
+		word: '깨끗하다',
+	},
 	to_be_close: {
 		class: '102-6.1',
 		meaning: 'to be close, near',
@@ -165,7 +170,7 @@ export const ADJECTIVES = {
 	},
 	// q
 	to_be_quiet: {
-		class: '102-7.2',
+		class: ['102-7.2', '103-8.1'],
 		meaning: 'to be quiet',
 		word: '조용하다',
 	},
@@ -193,6 +198,11 @@ export const ADJECTIVES = {
 		word: '고맙다',
 	},
 	// w
+	to_be_warm: {
+		class: '103-8.1',
+		meaning: 'to be warm',
+		word: '따뜻하다',
+	},
 	to_be_well: {
 		class: '101-1.1',
 		meaning: 'to be well',
