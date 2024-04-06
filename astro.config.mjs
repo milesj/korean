@@ -41,6 +41,10 @@ export default defineConfig({
 					autogenerate: { directory: 'nouns' },
 				},
 				{
+					label: 'Numbers',
+					link: 'numbers',
+				},
+				{
 					label: 'Particles',
 					collapsed: true,
 					autogenerate: { directory: 'particles' },

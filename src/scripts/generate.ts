@@ -3,6 +3,7 @@ import './generateAdverbs';
 import './generateConjunctions';
 import './generateInterjections';
 import './generateNouns';
+import './generateNumbers';
 import './generateParticles';
 import './generatePronouns';
 import './generateVerbs';

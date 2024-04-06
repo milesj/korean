@@ -22,6 +22,8 @@ const CATEGORIES: Record<NounCategory, string> = {
 	leisure: 'Leisure',
 	nature: 'Nature',
 	place: 'Places',
+	sport: 'Sports',
+	vehicle: 'Vehicles',
 	weather: 'Weather',
 };
 
