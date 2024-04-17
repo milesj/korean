@@ -145,6 +145,12 @@ export const ADJECTIVES = {
 		opposite: 'to_be_interesting',
 		word: '재미없다',
 	},
+	// l
+	to_be_long: {
+		class: '103-9.1',
+		meaning: 'to be long',
+		word: '길다',
+	},
 	// m
 	to_be_many: {
 		class: '101-2.1',
@@ -175,6 +181,11 @@ export const ADJECTIVES = {
 		word: '조용하다',
 	},
 	// s
+	to_be_short: {
+		class: '103-9.1',
+		meaning: 'to be short',
+		word: '짧다',
+	},
 	to_be_small: {
 		class: '101-4.2',
 		meaning: 'to be small (in size)',

@@ -32,6 +32,7 @@ export interface Noun extends Word {
 
 export const NOUNS = {
 	// a
+	a_few_days: 'what_date',
 	above: {
 		class: '101-3.1',
 		category: 'direction',
@@ -184,10 +185,10 @@ export const NOUNS = {
 		word: '아침',
 	},
 	building: {
-		class: '101-3.1',
+		class: ['101-3.1', '103-9.1'],
 		category: 'place',
 		meaning: 'building',
-		word: '빌딩',
+		word: ['빌딩', '건물'],
 	},
 	bus: {
 		class: '102-6.1',
@@ -203,11 +204,23 @@ export const NOUNS = {
 		meaning: 'campus',
 		word: '캠퍼스',
 	},
+	cap: {
+		class: '103-9.1',
+		category: 'object',
+		meaning: ['cap', 'hat'],
+		word: '모자',
+	},
 	car: {
 		class: '102-6.1',
 		category: 'vehicle',
 		meaning: 'car',
 		word: '차',
+	},
+	card: {
+		class: '103-9.1',
+		category: 'object',
+		meaning: 'card',
+		word: '카드',
 	},
 	center: {
 		class: '103-8.1',
@@ -412,6 +425,12 @@ export const NOUNS = {
 		meaning: 'elementary school',
 		word: '초등학교',
 	},
+	email: {
+		class: '103-9.1',
+		category: 'object',
+		meaning: 'email',
+		word: '이메일',
+	},
 	end_of_semester: {
 		class: '102-7.2',
 		category: 'datetime',
@@ -439,6 +458,18 @@ export const NOUNS = {
 		category: 'family',
 		meaning: 'father',
 		word: '아버지',
+	},
+	feast: {
+		class: '103-9.1',
+		category: ['leisure', 'entertainment'],
+		meaning: ['feast', 'party'],
+		word: '잔치',
+	},
+	first_birthday: {
+		class: '103-9.1',
+		category: ['human', 'datetime'],
+		meaning: 'the first birthday',
+		word: '돌',
 	},
 	first_time: {
 		class: '103-8.2',
@@ -535,6 +566,7 @@ export const NOUNS = {
 		meaning: 'hamburger',
 		word: '햄버거',
 	},
+	hat: 'cap',
 	hawaii: {
 		class: '101-4.2',
 		category: 'place',
@@ -676,6 +708,12 @@ export const NOUNS = {
 		meaning: 'lesson',
 		word: '과',
 	},
+	letter: {
+		class: '103-9.1',
+		category: 'object',
+		meaning: 'letter',
+		word: '편지',
+	},
 	library: {
 		class: '101-2.1',
 		category: ['education', 'place'],
@@ -737,6 +775,12 @@ export const NOUNS = {
 		category: 'datetime',
 		meaning: 'Monday',
 		word: '월요일',
+	},
+	money: {
+		class: '103-9.1',
+		category: 'finance',
+		meaning: 'money',
+		word: '돈',
 	},
 	month: {
 		class: '101-4.1',
@@ -834,7 +878,7 @@ export const NOUNS = {
 		class: '103-8.1',
 		category: ['counter', 'classification'],
 		meaning: 'number',
-		word: '번',
+		word: ['번', '번호'],
 	},
 	// o
 	older_brother_boy: {
@@ -1234,12 +1278,6 @@ export const NOUNS = {
 		meaning: 'theater',
 		word: '극장',
 	},
-	thing: {
-		class: '101-4.2',
-		category: 'classification',
-		meaning: 'thing',
-		word: ['것', '거'],
-	},
 	that: {
 		class: '103-8.1',
 		category: 'classification',
@@ -1254,6 +1292,12 @@ export const NOUNS = {
 		word: '저',
 		prenoun: true,
 	},
+	thing: {
+		class: '101-4.2',
+		category: 'classification',
+		meaning: 'thing',
+		word: ['것', '거'],
+	},
 	this: {
 		class: '103-8.1',
 		category: 'classification',
@@ -1266,6 +1310,12 @@ export const NOUNS = {
 		category: 'datetime',
 		meaning: 'this (time)',
 		word: '이번',
+	},
+	this_year: {
+		class: '103-9.1',
+		category: 'datetime',
+		meaning: 'this (year)',
+		word: '올해',
 	},
 	thursday: {
 		class: '102-5.2',
@@ -1363,6 +1413,12 @@ export const NOUNS = {
 		category: 'datetime',
 		meaning: 'weekend',
 		word: '주말',
+	},
+	what_date: {
+		class: '103-9.1',
+		category: 'datetime',
+		meaning: ['what date', 'a few days'],
+		word: '몇일',
 	},
 	what_kind: {
 		class: '102-7.1',

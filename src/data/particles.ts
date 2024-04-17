@@ -34,10 +34,15 @@ export const PARTICLES = {
 		meaning: 'and (clausal connective)',
 		word: '고',
 	},
+	and_join: {
+		class: '103-9.1',
+		meaning: 'and (joins nouns)',
+		word: ['와', '과'],
+	},
 	around: 'about',
 	as_for: {
 		class: '101-1.1',
-		meaning: 'as for',
+		meaning: ['(topic marker)', 'as for'],
 		word: ['은', '는'],
 		type: 'topic',
 	},
@@ -47,15 +52,26 @@ export const PARTICLES = {
 		meaning: ['(by means of)', 'toward to'],
 		word: ['으로', '로'],
 	},
-	from: {
+	from_location: {
 		class: '102-6.1',
 		meaning: 'from (location)',
 		word: '에서',
+	},
+	from_person: {
+		class: '103-9.1',
+		meaning: 'from (person)',
+		word: ['한테서', '께'],
 	},
 	from_time: {
 		class: '102-6.1',
 		meaning: 'from (time)',
 		word: '부터',
+	},
+	in: 'location',
+	in_order_to: {
+		class: '102-5.2',
+		meaning: '(in order to)',
+		word: ['으러', '러'],
 	},
 	location: {
 		class: '101-3.1',
@@ -71,11 +87,10 @@ export const PARTICLES = {
 		type: 'dynamic-location',
 		related: ['location'],
 	},
-	in: 'location',
-	in_order_to: {
-		class: '102-5.2',
-		meaning: '(in order to)',
-		word: ['으러', '러'],
+	noun_modifier: {
+		class: '103-9.1',
+		meaning: '(noun modifier)',
+		word: ['으ㄴ', 'ㄴ'],
 	},
 	object: {
 		class: '101-2.2',
@@ -107,7 +122,12 @@ export const PARTICLES = {
 		word: ['이', '가'],
 		type: 'subject',
 	},
-	to: 'location',
+	to_location: 'location',
+	to_person: {
+		class: '103-9.1',
+		meaning: 'to (person)',
+		word: ['한테', '께'],
+	},
 	too: 'also',
 	toward_to: 'by_means_of',
 	up_to: {

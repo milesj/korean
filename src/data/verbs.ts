@@ -227,6 +227,7 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to sell',
 		word: '팔다',
 	},
+	to_send: 'to_spend_time',
 	to_shop: {
 		class: '102-5.1',
 		meaning: 'to shop',
@@ -250,8 +251,8 @@ export const VERBS: Record<string, Verb | string> = {
 		noun: 'speech',
 	},
 	to_spend_time: {
-		class: '102-7.2',
-		meaning: 'to spend time',
+		class: ['102-7.2', '103-9.1'],
+		meaning: ['to spend time', 'to send'],
 		word: '보내다',
 	},
 	to_stay: 'to_exist',
