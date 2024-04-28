@@ -1,6 +1,6 @@
 import { expandMap, type Word } from './common';
 
-export type PronounForm = 'humble' | 'plain' | 'subject' | 'topic' | 'object';
+export type PronounForm = 'subject' | 'topic' | 'object';
 
 export interface Pronoun extends Word {
 	forms?: Partial<Record<PronounForm, string | string[]>>;
@@ -16,21 +16,13 @@ export const PRONOUNS = {
 	i: {
 		class: '101-1.1',
 		meaning: 'I',
-		word: '저',
-		forms: {
-			humble: '저',
-			plain: '나',
-		},
+		word: ['나', { word: '저', humble: true }],
 		related: ['my'],
 	},
 	my: {
 		class: '101-4.2',
 		meaning: 'my',
-		word: '제',
-		forms: {
-			humble: '제',
-			plain: '내',
-		},
+		word: ['내', { word: '제', humble: true }],
 		related: ['i'],
 	},
 	our: 'we',
@@ -80,11 +72,7 @@ export const PRONOUNS = {
 	we: {
 		class: '101-4.2',
 		meaning: ['we', 'us', 'our'],
-		word: '저희',
-		forms: {
-			humble: '저희',
-			plain: '우리',
-		},
+		word: ['우리', { word: '저희', humble: true }],
 	},
 	what: {
 		class: '101-1.2',

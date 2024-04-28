@@ -4,9 +4,11 @@ import { Word } from '@hangeul';
 
 interface Props {
 	word: string;
+	honorific?: boolean;
+	humble?: boolean;
 }
 
-const { word } = Astro.props;
+const { word, honorific, humble } = Astro.props;
 const inst = new Word(word);
 ---
 
@@ -21,6 +23,8 @@ const inst = new Word(word);
 <div class="word not-content">
 	<div class="word-ko">
 		<code id="ko-word">{word}</code>
+		{honorific && <small class="word-ko-sm">honorific</small>}
+		{humble && <small class="word-ko-sm">humble</small>}
 	</div>
 
 	<div class="word-en">
@@ -61,6 +65,12 @@ const inst = new Word(word);
 		border-right: 0 !important;
 		flex: 0;
 		white-space: nowrap;
+	}
+
+	.word-ko-sm {
+		font-size: var(--sl-text-h5);
+		font-weight: normal;
+		margin-top: 5px;
 	}
 
 	.word-en {

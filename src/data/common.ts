@@ -16,7 +16,14 @@ export type ClassChapter =
 	| '103-8.1'
 	| '103-8.2'
 	| '103-9.1'
+	| '103-9.2'
 	| 'other';
+
+export interface NativeWord {
+	honorific?: boolean;
+	humble?: boolean;
+	word: string;
+}
 
 export interface Word {
 	class: ClassChapter | ClassChapter[];
@@ -24,7 +31,7 @@ export interface Word {
 	guidelines?: string[];
 	meaning: string | string[];
 	related?: string[];
-	word: string | string[];
+	word: string | NativeWord | (string | NativeWord)[];
 	wordPronounced?: string;
 
 	// internal

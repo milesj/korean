@@ -16,6 +16,11 @@ export const ADVERBS = {
 		meaning: 'again',
 		word: '또',
 	},
+	all: {
+		class: '103-9.2',
+		meaning: 'all',
+		word: '다',
+	},
 	// c
 	cannot: {
 		class: '102-6.2',

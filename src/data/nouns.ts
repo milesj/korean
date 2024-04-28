@@ -54,6 +54,12 @@ export const NOUNS = {
 		phrases: ['Long time no see', "It's been a while"],
 	},
 	afternoon: 'pm',
+	age: {
+		class: '103-9.2',
+		category: 'human',
+		meaning: 'age',
+		word: ['나이', { word: '연세', honorific: true }],
+	},
 	airplane: {
 		class: '102-6.1',
 		category: 'vehicle',
@@ -149,10 +155,10 @@ export const NOUNS = {
 		word: '생물학',
 	},
 	birthday: {
-		class: '102-5.1',
+		class: ['102-5.1', '103-9.2'],
 		category: ['human', 'datetime'],
 		meaning: 'birthday',
-		word: '생일',
+		word: ['생일', { word: '생신', honorific: true }],
 	},
 	book: {
 		class: '101-3.1',
@@ -340,6 +346,12 @@ export const NOUNS = {
 		meaning: 'father',
 		word: '아빠',
 	},
+	daughter: {
+		class: '103-9.2',
+		category: 'family',
+		meaning: 'daughter',
+		word: '딸',
+	},
 	day: {
 		class: '101-4.1',
 		category: ['datetime', 'counter'],
@@ -453,6 +465,12 @@ export const NOUNS = {
 	},
 	// f
 	fall: 'autumn',
+	family: {
+		class: '103-9.2',
+		category: 'family',
+		meaning: 'family',
+		word: '가족',
+	},
 	father: {
 		class: '101-4.1',
 		category: 'family',
@@ -529,6 +547,12 @@ export const NOUNS = {
 	},
 	// g
 	gift: 'present',
+	gloves: {
+		class: '103-9.2',
+		category: 'object',
+		meaning: 'gloves',
+		word: '장갑',
+	},
 	grade: {
 		class: '101-1.1',
 		category: 'education',
@@ -546,6 +570,18 @@ export const NOUNS = {
 		category: 'education',
 		meaning: 'graduate student',
 		word: '대학원생',
+	},
+	grandfather: {
+		class: '103-9.2',
+		category: 'family',
+		meaning: 'grandfather',
+		word: '할아버지',
+	},
+	grandmother: {
+		class: '103-9.2',
+		category: 'family',
+		meaning: 'grandmother',
+		word: '할머니',
 	},
 	greeting: {
 		class: '101-1.1',
@@ -586,10 +622,10 @@ export const NOUNS = {
 		word: '역사',
 	},
 	home: {
-		class: '101-3.2',
+		class: ['101-3.2', '103-9.2'],
 		category: 'place',
 		meaning: ['home', 'house'],
-		word: '집',
+		word: ['집', { word: '댁', honorific: true }],
 	},
 	homework: {
 		class: '101-2.1',
@@ -688,6 +724,12 @@ export const NOUNS = {
 		meaning: ['last', 'past'],
 		word: '지난',
 		prenoun: true,
+	},
+	last_year: {
+		class: '103-9.2',
+		category: 'datetime',
+		meaning: 'last year',
+		word: '작년',
 	},
 	layer: 'floor',
 	left: {
@@ -821,10 +863,10 @@ export const NOUNS = {
 	},
 	// n
 	name: {
-		class: '101-1.2',
+		class: ['101-1.2', '103-9.2'],
 		category: 'classification',
 		meaning: 'name',
-		word: '이름',
+		word: ['이름', { word: '성함', honorific: true }],
 	},
 	nearby: {
 		class: '103-8.2',
@@ -950,10 +992,10 @@ export const NOUNS = {
 	},
 	people: 'person',
 	people_counter: {
-		class: '101-4.1',
+		class: ['101-4.1', '103-9.2'],
 		category: ['human', 'counter'],
 		meaning: 'people',
-		word: '명',
+		word: ['명', { word: '분', honorific: true }],
 	},
 	person: {
 		class: '101-1.1',
@@ -968,6 +1010,13 @@ export const NOUNS = {
 		meaning: 'phone call',
 		word: '전화',
 	},
+	photo: {
+		class: '103-9.2',
+		category: 'object',
+		meaning: ['photo', 'picture'],
+		word: '사진',
+	},
+	picture: 'photo',
 	place: {
 		class: '103-8.1',
 		category: ['place', 'counter'],
@@ -1124,6 +1173,12 @@ export const NOUNS = {
 		meaning: 'soccer',
 		word: '축구',
 	},
+	son: {
+		class: '103-9.2',
+		category: 'family',
+		meaning: 'son',
+		word: '아들',
+	},
 	sophomore: {
 		class: '101-1.1',
 		category: 'education',
@@ -1209,6 +1264,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: 'supermarket',
 		word: ['슈퍼마켓', '슈퍼', '마트'],
+	},
+	sweater: {
+		class: '103-9.2',
+		category: 'object',
+		meaning: 'sweater',
+		word: '스웨터',
 	},
 	swimming: {
 		class: '102-6.2',
@@ -1471,6 +1532,12 @@ export const NOUNS = {
 		category: ['datetime', 'counter'],
 		meaning: 'year',
 		word: '년',
+	},
+	years_old: {
+		class: '103-9.2',
+		category: ['human', 'counter'],
+		meaning: 'years old',
+		word: '살',
 	},
 	yesterday: {
 		class: '102-6.2',

@@ -1,9 +1,17 @@
 import upperFirst from 'lodash/upperFirst';
-import type { Word } from '../data/common';
+import type { NativeWord, Word } from '../data/common';
 import kebabCase from 'lodash/kebabCase';
 
 export function createFileName(key: string) {
 	return kebabCase(key);
+}
+
+export function extractWord(word: string | NativeWord): string {
+	return typeof word === 'string' ? word : word.word;
+}
+
+export function extractWordProps(word: NativeWord): string {
+	return `word="${word.word}" honorific={${!!word.honorific}} humble={${!!word.humble}}`;
 }
 
 export function genPage(entry: Word) {
@@ -18,7 +26,12 @@ import KoreanWord from '@components/KoreanWord.astro';`;
 
 	words.forEach((word) => {
 		content += '\n\n';
-		content += `<KoreanWord word="${word}" />`;
+
+		if (typeof word === 'string') {
+			content += `<KoreanWord word="${word}" />`;
+		} else {
+			content += `<KoreanWord ${extractWordProps(word)} />`;
+		}
 	});
 
 	if (entry.description) {

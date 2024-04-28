@@ -53,6 +53,12 @@ export const VERBS: Record<string, Verb | string> = {
 		word: '축하하다',
 	},
 	// d
+	to_die: {
+		class: '103-9.2',
+		meaning: 'to die',
+		word: '죽다',
+		related: ['to_pass_away'],
+	},
 	to_do: {
 		class: '101-2.2',
 		meaning: 'to do',
@@ -65,9 +71,9 @@ export const VERBS: Record<string, Verb | string> = {
 	},
 	// e
 	to_eat: {
-		class: '101-2.1',
+		class: ['101-2.1', '103-9.2'],
 		meaning: 'to eat',
-		word: '먹다',
+		word: ['먹다', { word: '드시다', honorific: true }],
 	},
 	to_exist: {
 		class: '101-4.1',
@@ -110,9 +116,9 @@ export const VERBS: Record<string, Verb | string> = {
 		noun: 'present',
 	},
 	to_give: {
-		class: '101-4.2',
+		class: ['101-4.2', '103-9.2'],
 		meaning: 'to give',
-		word: '주다',
+		word: ['주다', { word: '드리다', humble: true }],
 	},
 	to_go: {
 		class: '101-3.2',
@@ -171,6 +177,12 @@ export const VERBS: Record<string, Verb | string> = {
 		word: '만나다',
 	},
 	// p
+	to_pass_away: {
+		class: '103-9.2',
+		meaning: 'to pass away',
+		word: { word: '돌아가시다', honorific: true },
+		related: ['to_die'],
+	},
 	to_play: {
 		class: '102-5.1',
 		meaning: 'to play (a sport)',
@@ -235,9 +247,9 @@ export const VERBS: Record<string, Verb | string> = {
 		noun: 'shopping',
 	},
 	to_sleep: {
-		class: '101-4.2',
+		class: ['101-4.2', '103-9.2'],
 		meaning: 'to sleep',
-		word: '자다',
+		word: ['자다', { word: '주무시다', honorific: true }],
 	},
 	to_sit: {
 		class: '101-2.1',
@@ -274,6 +286,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to take a major',
 		word: '전공하다',
 		noun: 'major',
+	},
+	to_take_a_photo: {
+		class: '103-9.2',
+		meaning: 'to take a photo',
+		word: '찍다',
 	},
 	to_take_time: {
 		class: '102-6.1',

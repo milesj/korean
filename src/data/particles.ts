@@ -47,6 +47,11 @@ export const PARTICLES = {
 		type: 'topic',
 	},
 	at: 'location',
+	but_connective: {
+		class: '103-9.2',
+		meaning: 'but (clausal connective)',
+		word: '지만',
+	},
 	by_means_of: {
 		class: ['102-6.1', '103-8.2'],
 		meaning: ['(by means of)', 'toward to'],
@@ -60,7 +65,7 @@ export const PARTICLES = {
 	from_person: {
 		class: '103-9.1',
 		meaning: 'from (person)',
-		word: ['한테서', '께'],
+		word: ['한테서', { word: '께', honorific: true }],
 	},
 	from_time: {
 		class: '102-6.1',
@@ -117,16 +122,21 @@ export const PARTICLES = {
 		type: 'plural',
 	},
 	subject: {
-		class: '101-1.2',
+		class: ['101-1.2', '103-9.2'],
 		meaning: '(subject marker)',
-		word: ['이', '가'],
+		word: ['이', '가', { word: '께서', honorific: true }],
 		type: 'subject',
+	},
+	suffix_honorifc: {
+		class: '103-9.2',
+		meaning: '(honorific suffix)',
+		word: ['으시', '시'],
 	},
 	to_location: 'location',
 	to_person: {
 		class: '103-9.1',
 		meaning: 'to (person)',
-		word: ['한테', '께'],
+		word: ['한테', { word: '께', honorific: true }],
 	},
 	too: 'also',
 	toward_to: 'by_means_of',

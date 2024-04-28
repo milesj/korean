@@ -122,6 +122,11 @@ export const ADJECTIVES = {
 	// h
 	to_have: 'to_exist',
 	to_not_have: 'to_not_exist',
+	to_be_healthy: {
+		class: '103-9.2',
+		meaning: 'to be healthy',
+		word: '건강하다',
+	},
 	to_be_hot: {
 		class: '102-6.1',
 		meaning: 'to be hot',
@@ -144,6 +149,12 @@ export const ADJECTIVES = {
 		meaning: 'to not be interesting / uninteresting',
 		opposite: 'to_be_interesting',
 		word: '재미없다',
+	},
+	// j
+	to_be_joyful: {
+		class: '103-9.2',
+		meaning: 'to be joyful',
+		word: '즐겁다',
 	},
 	// l
 	to_be_long: {

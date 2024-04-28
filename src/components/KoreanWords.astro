@@ -1,6 +1,7 @@
 ---
 import { Word } from '@hangeul';
 import type { Word as WordShape } from '../data/common';
+import { extractWord } from 'src/scripts/helpers';
 
 interface Props {
 	sort?: boolean;
@@ -34,16 +35,16 @@ if (sort) {
 				const meaning = Array.isArray(word.meaning) ? word.meaning.join(', ') : word.meaning;
 
 				if (Array.isArray(word.word)) {
-					const insts = word.word.map((w) => new Word(w));
+					const insts = word.word.map((w) => new Word(extractWord(w)));
 
 					return (
 						<tr>
 							<td>{meaning}</td>
 							<td>
-								{word.word.map((w, index) => (
+								{insts.map((w, index) => (
 									<>
 										{index != 0 ? ' / ' : ''}
-										<code>{w}</code>
+										<code>{w.text}</code>
 									</>
 								))}
 							</td>
@@ -53,13 +54,13 @@ if (sort) {
 					);
 				}
 
-				const inst = new Word(word.word);
+				const inst = new Word(extractWord(word.word));
 
 				return (
 					<tr>
 						<td>{meaning}</td>
 						<td>
-							<code>{word.word}</code>
+							<code>{inst.text}</code>
 						</td>
 						<td>{inst.translate()}</td>
 						<td>{inst.pronounce()}</td>
