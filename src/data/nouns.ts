@@ -96,6 +96,12 @@ export const NOUNS = {
 		meaning: 'apartment',
 		word: '아파트',
 	},
+	australia: {
+		class: '103-10.1',
+		category: 'country',
+		meaning: 'Australia',
+		word: '호주',
+	},
 	autumn: {
 		class: '102-7.2',
 		category: ['datetime', 'weather'],
@@ -339,6 +345,12 @@ export const NOUNS = {
 		word: '나라',
 	},
 	course: 'subject',
+	culture: {
+		class: '103-10.1',
+		category: 'human',
+		meaning: 'culture',
+		word: '문화',
+	},
 	// d
 	dad: {
 		class: '101-4.1',
@@ -423,6 +435,12 @@ export const NOUNS = {
 		category: 'place',
 		meaning: ['drugstore', 'pharmacy'],
 		word: '약국',
+	},
+	during: {
+		class: '103-10.1',
+		category: 'datetime',
+		meaning: ['during', 'for'],
+		word: '동안',
 	},
 	// e
 	economics: {
@@ -959,6 +977,12 @@ export const NOUNS = {
 		meaning: 'other side',
 		word: '건너편',
 	},
+	outside: {
+		class: '103-10.1',
+		category: 'direction',
+		meaning: 'outside',
+		word: '밖',
+	},
 	// p
 	parents: {
 		class: '101-4.1',
@@ -1064,6 +1088,18 @@ export const NOUNS = {
 		category: 'object',
 		meaning: ['present', 'gift'],
 		word: '선물',
+	},
+	professor: {
+		class: '103-10.1',
+		category: ['education', 'human'],
+		meaning: 'professor',
+		word: '교수님',
+	},
+	professors_office: {
+		class: '103-10.1',
+		category: 'place',
+		meaning: "professor's office",
+		word: '교수실',
 	},
 	psychology: {
 		class: '102-7.2',
@@ -1283,6 +1319,12 @@ export const NOUNS = {
 		meaning: 'swimming pool',
 		word: '수영장',
 	},
+	sydney: {
+		class: '103-10.1',
+		category: 'place',
+		meaning: 'Sydney',
+		word: '시드니',
+	},
 	// t
 	taekwondo: {
 		class: '102-6.2',
@@ -1295,6 +1337,12 @@ export const NOUNS = {
 		category: 'activity',
 		meaning: ['talk', 'chat'],
 		word: ['이야기', '얘기'],
+	},
+	taxi: {
+		class: '103-10.1',
+		category: 'vehicle',
+		meaning: 'taxi',
+		word: '택시',
 	},
 	teacher: {
 		class: '101-1.2',

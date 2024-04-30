@@ -57,6 +57,16 @@ export const PARTICLES = {
 		meaning: ['(by means of)', 'toward to'],
 		word: ['으로', '로'],
 	},
+	clause_connective: {
+		class: '103-10.1',
+		meaning: ['(explicit background info)', '(contrasts clauses)', '(justifies requests)'],
+		word: ['은데', '는데'],
+	},
+	clause_connective_ending: {
+		class: '103-10.1',
+		meaning: ['(implicit background info)'],
+		word: ['은데요', '는데요'],
+	},
 	from_location: {
 		class: '102-6.1',
 		meaning: 'from (location)',

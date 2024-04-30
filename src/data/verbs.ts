@@ -19,6 +19,11 @@ export const VERBS: Record<string, Verb | string> = {
 		word: '묻다',
 	},
 	// b
+	to_begin: {
+		class: '103-10.1',
+		meaning: 'to begin',
+		word: '시작하다',
+	},
 	to_buy: {
 		class: '102-5.1',
 		meaning: 'to buy',
@@ -184,6 +189,11 @@ export const VERBS: Record<string, Verb | string> = {
 		related: ['to_die'],
 	},
 	to_play: {
+		class: '103-10.1',
+		meaning: ['to play (with friends)', 'to not work'],
+		word: '놀다',
+	},
+	to_play_a_sport: {
 		class: '102-5.1',
 		meaning: 'to play (a sport)',
 		word: '치다',

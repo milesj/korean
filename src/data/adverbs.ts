@@ -44,6 +44,11 @@ export const ADVERBS = {
 		meaning: 'each other',
 		word: '서로',
 	},
+	early: {
+		class: '103-10.1',
+		meaning: 'early',
+		word: '일찍',
+	},
 	every_day: {
 		class: '101-3.2',
 		meaning: 'every day',
@@ -64,6 +69,12 @@ export const ADVERBS = {
 		word: ['얼마나', '얼마'],
 	},
 	how_much: 'how_long',
+	// j
+	just: {
+		class: '103-10.1',
+		meaning: ['just because', 'without any reason'],
+		word: '그냥',
+	},
 	// m
 	many: {
 		class: '102-7.2',
@@ -156,6 +167,11 @@ export const ADVERBS = {
 		meaning: 'very',
 		word: '아주',
 		related: ['really', 'truly'],
+	},
+	very_much: {
+		class: '103-10.1',
+		meaning: 'very much',
+		word: '굉장히',
 	},
 	// w
 	when: {
