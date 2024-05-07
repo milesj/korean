@@ -33,6 +33,11 @@ export const ADVERBS = {
 		meaning: 'diligently',
 		word: '열심히',
 	},
+	directly: {
+		class: '103-10.2',
+		meaning: 'directly',
+		word: '직접',
+	},
 	do_not: {
 		class: '102-6.2',
 		meaning: 'do not',
@@ -56,6 +61,11 @@ export const ADVERBS = {
 	},
 	// f
 	frequently: 'often',
+	from_next_time: {
+		class: '103-10.2',
+		meaning: 'from next time',
+		word: '다음부터',
+	},
 	// h
 	how: {
 		class: '101-2.2',
@@ -169,9 +179,9 @@ export const ADVERBS = {
 		related: ['really', 'truly'],
 	},
 	very_much: {
-		class: '103-10.1',
+		class: ['103-10.1', '103-10.2'],
 		meaning: 'very much',
-		word: '굉장히',
+		word: ['굉장히', '무척'],
 	},
 	// w
 	when: {

@@ -52,6 +52,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to come',
 		word: '오다',
 	},
+	to_come_in: {
+		class: '103-10.2',
+		meaning: 'to come in',
+		word: '들어오다',
+	},
 	to_congratulate: {
 		class: '102-7.1',
 		meaning: 'to congratulate',
@@ -150,6 +155,11 @@ export const VERBS: Record<string, Verb | string> = {
 		opposite: 'to_know',
 	},
 	// l
+	to_be_late: {
+		class: '103-10.2',
+		meaning: 'to be late',
+		word: '늦다',
+	},
 	to_learn: {
 		class: '101-4.2',
 		meaning: 'to learn',
@@ -180,6 +190,11 @@ export const VERBS: Record<string, Verb | string> = {
 		class: '101-2.2',
 		meaning: 'to meet',
 		word: '만나다',
+	},
+	to_move: {
+		class: '103-10.2',
+		meaning: 'to move',
+		word: '이사하다',
 	},
 	// p
 	to_pass_away: {

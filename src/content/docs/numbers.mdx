@@ -5,292 +5,210 @@ title: Numbers
 import KoreanWord from '@components/KoreanWord.astro';
 
 <table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th colspan="3">Sino</th>
-      <th colspan="3">Native</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>one</td>
-      <td>
-        <code>일</code>
-      </td>
-      <td>il</td>
-      <td>eehl</td>
-      <td>
-        <code>하나</code> / <code>한</code>
-      </td>
-      <td>hana / han</td>
-      <td>hah-nah / hahn</td>
-    </tr>
-    <tr>
-      <td>two</td>
-      <td>
-        <code>이</code>
-      </td>
-      <td>i</td>
-      <td>ee</td>
-      <td>
-        <code>둘</code> / <code>두</code>
-      </td>
-      <td>dul / du</td>
-      <td>toohl / too</td>
-    </tr>
-    <tr>
-      <td>three</td>
-      <td>
-        <code>삼</code>
-      </td>
-      <td>sam</td>
-      <td>sahm</td>
-      <td>
-        <code>셋</code> / <code>세</code>
-      </td>
-      <td>set / se</td>
-      <td>seyt / sey</td>
-    </tr>
-    <tr>
-      <td>four</td>
-      <td>
-        <code>사</code>
-      </td>
-      <td>sa</td>
-      <td>sah</td>
-      <td>
-        <code>넷</code> / <code>네</code>
-      </td>
-      <td>net / ne</td>
-      <td>neyt / ney</td>
-    </tr>
-    <tr>
-      <td>five</td>
-      <td>
-        <code>오</code>
-      </td>
-      <td>o</td>
-      <td>oh</td>
-      <td>
-        <code>다섯</code>
-      </td>
-      <td>daseot</td>
-      <td>tah-suht</td>
-    </tr>
-    <tr>
-      <td>six</td>
-      <td>
-        <code>육</code>
-      </td>
-      <td>yuk</td>
-      <td>yook</td>
-      <td>
-        <code>여섯</code>
-      </td>
-      <td>yeoseot</td>
-      <td>yuh-suht</td>
-    </tr>
-    <tr>
-      <td>seven</td>
-      <td>
-        <code>칠</code>
-      </td>
-      <td>chil</td>
-      <td>cheehl</td>
-      <td>
-        <code>일곱</code>
-      </td>
-      <td>ilgob</td>
-      <td>eehl-gohb</td>
-    </tr>
-    <tr>
-      <td>eight</td>
-      <td>
-        <code>팔</code>
-      </td>
-      <td>pal</td>
-      <td>Pahhl</td>
-      <td>
-        <code>여덟</code> / <code>여덜</code>
-      </td>
-      <td>yeodeoᆲ / yeodeol</td>
-      <td>yuh-duhᆲ / yuh-duhhl</td>
-    </tr>
-    <tr>
-      <td>nine</td>
-      <td>
-        <code>구</code>
-      </td>
-      <td>gu</td>
-      <td>koo</td>
-      <td>
-        <code>아홉</code>
-      </td>
-      <td>ahob</td>
-      <td>ah-hohb</td>
-    </tr>
-    <tr>
-      <td>ten</td>
-      <td>
-        <code>십</code>
-      </td>
-      <td>sib</td>
-      <td>sheeb</td>
-      <td>
-        <code>열</code>
-      </td>
-      <td>yeol</td>
-      <td>yuhhl</td>
-    </tr>
-    <tr>
-      <td>twenty</td>
-      <td>
-        <code>이십</code>
-      </td>
-      <td>isib</td>
-      <td>ee-sheeb</td>
-      <td>
-        <code>스물</code> / <code>스무</code>
-      </td>
-      <td>seumul / seumu</td>
-      <td>seu-moohl / seu-moo</td>
-    </tr>
-    <tr>
-      <td>thirty</td>
-      <td>
-        <code>삼십</code>
-      </td>
-      <td>samsib</td>
-      <td>sahm-sheeb</td>
-      <td>
-        <code>서른</code>
-      </td>
-      <td>seoleun</td>
-      <td>suh-hleun</td>
-    </tr>
-    <tr>
-      <td>fourty</td>
-      <td>
-        <code>사십</code>
-      </td>
-      <td>sasib</td>
-      <td>sah-sheeb</td>
-      <td>
-        <code>마흔</code>
-      </td>
-      <td>maheun</td>
-      <td>mah-heun</td>
-    </tr>
-    <tr>
-      <td>fifty</td>
-      <td>
-        <code>오십</code>
-      </td>
-      <td>osib</td>
-      <td>oh-sheeb</td>
-      <td>
-        <code>쉰</code>
-      </td>
-      <td>swin</td>
-      <td>sween</td>
-    </tr>
-    <tr>
-      <td>sixty</td>
-      <td>
-        <code>육십</code>
-      </td>
-      <td>yuksib</td>
-      <td>yook-sheeb</td>
-      <td>
-        <code>예순</code>
-      </td>
-      <td>yesun</td>
-      <td>yey-soon</td>
-    </tr>
-    <tr>
-      <td>seventy</td>
-      <td>
-        <code>칠십</code>
-      </td>
-      <td>chilsib</td>
-      <td>cheehl-sheeb</td>
-      <td>
-        <code>일흔</code>
-      </td>
-      <td>ilheun</td>
-      <td>eehl-heun</td>
-    </tr>
-    <tr>
-      <td>eighty</td>
-      <td>
-        <code>팔십</code>
-      </td>
-      <td>palsib</td>
-      <td>Pahhl-sheeb</td>
-      <td>
-        <code>여든</code>
-      </td>
-      <td>yeodeun</td>
-      <td>yuh-deun</td>
-    </tr>
-    <tr>
-      <td>ninety</td>
-      <td>
-        <code>구십</code>
-      </td>
-      <td>gusib</td>
-      <td>koo-sheeb</td>
-      <td>
-        <code>아흔</code>
-      </td>
-      <td>aheun</td>
-      <td>ah-heun</td>
-    </tr>
-    <tr>
-      <td>hundred</td>
-      <td>
-        <code>백</code>
-      </td>
-      <td>baek</td>
-      <td>payk</td>
-      <td colspan="3"></td>
-    </tr>
-    <tr>
-      <td>thousand</td>
-      <td>
-        <code>천</code>
-      </td>
-      <td>cheon</td>
-      <td>chuhn</td>
-      <td colspan="3"></td>
-    </tr>
-    <tr>
-      <td>ten thousand</td>
-      <td>
-        <code>만</code>
-      </td>
-      <td>man</td>
-      <td>mahn</td>
-      <td colspan="3"></td>
-    </tr>
-    <tr>
-      <td>million</td>
-      <td>
-        <code>백만</code>
-      </td>
-      <td>baekman</td>
-      <td>payk-mahn</td>
-      <td colspan="3"></td>
-    </tr>
-    <tr>
-      <td>billion</td>
-      <td>
-        <code>십억</code>
-      </td>
-      <td>sibeok</td>
-      <td>shee-buhk</td>
-      <td colspan="3"></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th>Number</th>
+			<th colspan="3">Sino</th>
+			<th colspan="3">Native</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>one</td>
+		<td><code>일</code></td>
+		<td>il</td>
+		<td>eehl</td>
+		<td><code>하나</code> / <code>한</code></td>
+		<td>hana / han</td>
+		<td>hah-nah / hahn</td>
+	</tr>
+	<tr>
+		<td>two</td>
+		<td><code>이</code></td>
+		<td>i</td>
+		<td>ee</td>
+		<td><code>둘</code> / <code>두</code></td>
+		<td>dul / du</td>
+		<td>toohl / too</td>
+	</tr>
+	<tr>
+		<td>three</td>
+		<td><code>삼</code></td>
+		<td>sam</td>
+		<td>sahm</td>
+		<td><code>셋</code> / <code>세</code></td>
+		<td>set / se</td>
+		<td>seyt / sey</td>
+	</tr>
+	<tr>
+		<td>four</td>
+		<td><code>사</code></td>
+		<td>sa</td>
+		<td>sah</td>
+		<td><code>넷</code> / <code>네</code></td>
+		<td>net / ne</td>
+		<td>neyt / ney</td>
+	</tr>
+	<tr>
+		<td>five</td>
+		<td><code>오</code></td>
+		<td>o</td>
+		<td>oh</td>
+		<td><code>다섯</code></td>
+		<td>daseot</td>
+		<td>tah-suht</td>
+	</tr>
+	<tr>
+		<td>six</td>
+		<td><code>육</code></td>
+		<td>yuk</td>
+		<td>yook</td>
+		<td><code>여섯</code></td>
+		<td>yeoseot</td>
+		<td>yuh-suht</td>
+	</tr>
+	<tr>
+		<td>seven</td>
+		<td><code>칠</code></td>
+		<td>chil</td>
+		<td>cheehl</td>
+		<td><code>일곱</code></td>
+		<td>ilgob</td>
+		<td>eehl-gohb</td>
+	</tr>
+	<tr>
+		<td>eight</td>
+		<td><code>팔</code></td>
+		<td>pal</td>
+		<td>Pahhl</td>
+		<td><code>여덟</code> / <code>여덜</code></td>
+		<td>yeodeoᆲ / yeodeol</td>
+		<td>yuh-duhᆲ / yuh-duhhl</td>
+	</tr>
+	<tr>
+		<td>nine</td>
+		<td><code>구</code></td>
+		<td>gu</td>
+		<td>koo</td>
+		<td><code>아홉</code></td>
+		<td>ahob</td>
+		<td>ah-hohb</td>
+	</tr>
+	<tr>
+		<td>ten</td>
+		<td><code>십</code></td>
+		<td>sib</td>
+		<td>sheeb</td>
+		<td><code>열</code></td>
+		<td>yeol</td>
+		<td>yuhhl</td>
+	</tr>
+	<tr>
+		<td>twenty</td>
+		<td><code>이십</code></td>
+		<td>isib</td>
+		<td>ee-sheeb</td>
+		<td><code>스물</code> / <code>스무</code></td>
+		<td>seumul / seumu</td>
+		<td>seu-moohl / seu-moo</td>
+	</tr>
+	<tr>
+		<td>thirty</td>
+		<td><code>삼십</code></td>
+		<td>samsib</td>
+		<td>sahm-sheeb</td>
+		<td><code>서른</code></td>
+		<td>seoleun</td>
+		<td>suh-hleun</td>
+	</tr>
+	<tr>
+		<td>fourty</td>
+		<td><code>사십</code></td>
+		<td>sasib</td>
+		<td>sah-sheeb</td>
+		<td><code>마흔</code></td>
+		<td>maheun</td>
+		<td>mah-heun</td>
+	</tr>
+	<tr>
+		<td>fifty</td>
+		<td><code>오십</code></td>
+		<td>osib</td>
+		<td>oh-sheeb</td>
+		<td><code>쉰</code></td>
+		<td>swin</td>
+		<td>sween</td>
+	</tr>
+	<tr>
+		<td>sixty</td>
+		<td><code>육십</code></td>
+		<td>yuksib</td>
+		<td>yook-sheeb</td>
+		<td><code>예순</code></td>
+		<td>yesun</td>
+		<td>yey-soon</td>
+	</tr>
+	<tr>
+		<td>seventy</td>
+		<td><code>칠십</code></td>
+		<td>chilsib</td>
+		<td>cheehl-sheeb</td>
+		<td><code>일흔</code></td>
+		<td>ilheun</td>
+		<td>eehl-heun</td>
+	</tr>
+	<tr>
+		<td>eighty</td>
+		<td><code>팔십</code></td>
+		<td>palsib</td>
+		<td>Pahhl-sheeb</td>
+		<td><code>여든</code></td>
+		<td>yeodeun</td>
+		<td>yuh-deun</td>
+	</tr>
+	<tr>
+		<td>ninety</td>
+		<td><code>구십</code></td>
+		<td>gusib</td>
+		<td>koo-sheeb</td>
+		<td><code>아흔</code></td>
+		<td>aheun</td>
+		<td>ah-heun</td>
+	</tr>
+	<tr>
+		<td>hundred</td>
+		<td><code>백</code></td>
+		<td>baek</td>
+		<td>payk</td>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td>thousand</td>
+		<td><code>천</code></td>
+		<td>cheon</td>
+		<td>chuhn</td>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td>ten thousand</td>
+		<td><code>만</code></td>
+		<td>man</td>
+		<td>mahn</td>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td>million</td>
+		<td><code>백만</code></td>
+		<td>baekman</td>
+		<td>payk-mahn</td>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td>billion</td>
+		<td><code>십억</code></td>
+		<td>sibeok</td>
+		<td>shee-buhk</td>
+		<td colspan="3"></td>
+	</tr>
+	</tbody>
 </table>

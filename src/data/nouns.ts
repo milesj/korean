@@ -370,6 +370,12 @@ export const NOUNS = {
 		meaning: 'day',
 		word: '일',
 	},
+	day_alt: {
+		class: '103-10.2',
+		category: 'datetime',
+		meaning: 'day',
+		word: '날',
+	},
 	department_store: {
 		class: '102-5.1',
 		category: ['entertainment', 'place'],
@@ -474,6 +480,12 @@ export const NOUNS = {
 		word: '영어',
 	},
 	evening: 'dinner',
+	event: {
+		class: '103-10.2',
+		category: 'datetime',
+		meaning: 'event',
+		word: '일',
+	},
 	exam: 'test',
 	exercise: {
 		class: '102-5.1',
@@ -608,6 +620,12 @@ export const NOUNS = {
 		word: '인사',
 	},
 	// h
+	hair: {
+		class: '103-10.2',
+		category: 'human',
+		meaning: ['hair', 'head'],
+		word: '머리',
+	},
 	hall: {
 		class: '101-3.2',
 		category: 'place',
@@ -627,6 +645,7 @@ export const NOUNS = {
 		meaning: 'Hawaii',
 		word: '하와이',
 	},
+	head: 'hair',
 	high_school_student: {
 		class: '101-4.1',
 		category: 'education',
@@ -1203,6 +1222,12 @@ export const NOUNS = {
 		word: '쇼핑',
 	},
 	side: 'beside',
+	singer: {
+		class: '103-10.2',
+		category: 'entertainment',
+		meaning: 'singer',
+		word: '가수',
+	},
 	soccer: {
 		class: '102-6.2',
 		category: 'sport',
@@ -1455,6 +1480,13 @@ export const NOUNS = {
 		category: 'datetime',
 		meaning: 'tomorrow',
 		word: '내일',
+	},
+	traffic: 'transportation',
+	transportation: {
+		class: '103-10.2',
+		category: 'vehicle',
+		meaning: ['traffic', 'transportation'],
+		word: '교통',
 	},
 	travel: {
 		class: '102-7.1',

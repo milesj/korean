@@ -29,6 +29,11 @@ export const ADJECTIVES = {
 		meaning: 'to be big',
 		word: '크다',
 	},
+	to_be_blocked: {
+		class: '103-10.2',
+		meaning: ['to be blocked', 'congested'],
+		word: '막히다',
+	},
 	to_be_busy: {
 		class: '102-6.2',
 		meaning: 'to be busy',
@@ -59,6 +64,17 @@ export const ADJECTIVES = {
 		class: '102-6.1',
 		meaning: 'to be cold',
 		word: '춥다',
+	},
+	to_be_comfortable: {
+		class: '103-10.2',
+		meaning: ['to be comfortable', 'convenient'],
+		word: '편하다',
+	},
+	to_be_congested: 'to_be_blocked',
+	to_be_crowded: {
+		class: '103-10.2',
+		meaning: 'to be crowded',
+		word: '복잡하다',
 	},
 	// d
 	to_be_delicious: {
@@ -106,6 +122,11 @@ export const ADJECTIVES = {
 		class: '102-6.1',
 		meaning: 'to be far',
 		word: '멀다',
+	},
+	to_be_fast: {
+		class: '103-10.2',
+		meaning: 'to be fast',
+		word: '빠르다',
 	},
 	// g
 	to_be_glad: {
@@ -202,6 +223,11 @@ export const ADJECTIVES = {
 		meaning: 'to be small (in size)',
 		word: '작다',
 	},
+	to_be_sick: {
+		class: '103-10.2',
+		meaning: 'to be sick',
+		word: '아프다',
+	},
 	to_be_so: {
 		class: '101-1.2',
 		meaning: 'to be so',
@@ -223,6 +249,12 @@ export const ADJECTIVES = {
 		class: ['101-4.2', '103-8.2'],
 		meaning: 'to be thankful',
 		word: ['고맙다', { word: '감사하다', honorific: true }],
+	},
+	// u
+	to_be_uncomfortable: {
+		class: '103-10.2',
+		meaning: ['to be uncomfortable', 'inconvenient'],
+		word: '불편하다',
 	},
 	// w
 	to_want_to: {

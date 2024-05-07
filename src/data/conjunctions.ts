@@ -11,7 +11,7 @@ export const CONJUNCTIONS = {
 	but: {
 		class: ['101-3.2', '102-5.1'],
 		meaning: ['but', 'by the way', 'however'],
-		word: ['그런데', '하지만'],
+		word: ['그런데', '하지만', '그렇지만'],
 	},
 	by_the_way: 'but',
 	however: 'but',

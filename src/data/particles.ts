@@ -62,6 +62,11 @@ export const PARTICLES = {
 		meaning: ['(explicit background info)', '(contrasts clauses)', '(justifies requests)'],
 		word: ['은데', '는데'],
 	},
+	clause_connective_clause: {
+		class: '103-10.2',
+		meaning: ['(cause)'],
+		word: ['어서', '아서'],
+	},
 	clause_connective_ending: {
 		class: '103-10.1',
 		meaning: ['(implicit background info)'],
@@ -102,10 +107,15 @@ export const PARTICLES = {
 		type: 'dynamic-location',
 		related: ['location'],
 	},
-	noun_modifier: {
+	noun_modifier_adj: {
 		class: '103-9.1',
-		meaning: '(noun modifier)',
+		meaning: '(adj noun modifier)',
 		word: ['으ㄴ', 'ㄴ'],
+	},
+	noun_modifier_verb: {
+		class: '103-10.1',
+		meaning: '(verb noun modifier)',
+		word: '는',
 	},
 	object: {
 		class: '101-2.2',
