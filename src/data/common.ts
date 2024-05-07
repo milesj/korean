@@ -23,6 +23,7 @@ export type ClassChapter =
 export interface NativeWord {
 	honorific?: boolean;
 	humble?: boolean;
+	note?: string;
 	word: string;
 }
 

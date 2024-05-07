@@ -228,7 +228,11 @@ export const ADJECTIVES = {
 	to_want_to: {
 		class: '103-10.1',
 		meaning: 'to want to',
-		word: '싶다',
+		word: [
+			'싶다',
+			{ word: '고 싶다', note: 'speaker/listener desire' },
+			{ word: '고 싶어 하다', note: 'third person desire' },
+		],
 	},
 	to_be_warm: {
 		class: '103-8.1',

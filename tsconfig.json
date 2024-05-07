@@ -3,8 +3,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@hangeul": ["./src/hangeul/index.ts"]
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@hangeul": [
+        "./src/hangeul/index.ts"
+      ]
     }
   }
 }
