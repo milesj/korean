@@ -72,6 +72,11 @@ export const PARTICLES = {
 		meaning: ['(implicit background info)'],
 		word: ['은데요', '는데요'],
 	},
+	continue_action: {
+		class: '103-11.1',
+		meaning: ['am...', 'are...', 'is...'],
+		word: '고 있다',
+	},
 	from_location: {
 		class: '102-6.1',
 		meaning: 'from (location)',
@@ -166,6 +171,11 @@ export const PARTICLES = {
 		word: '까지',
 	},
 	with: 'and',
+	would_like_to: {
+		class: '103-11.1',
+		meaning: ['would you like to ...', 'I would like to ...'],
+		word: ['을래요', 'ㄹ래요'],
+	},
 } satisfies Record<string, Particle | string>;
 
 export type ParticleKey = keyof typeof PARTICLES;

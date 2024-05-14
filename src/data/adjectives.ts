@@ -140,6 +140,11 @@ export const ADJECTIVES = {
 		meaning: 'to be good, nice',
 		word: '좋다',
 	},
+	to_be_good_natured: {
+		class: '103-11.1',
+		meaning: 'to be good-natured / kind-hearted',
+		word: '착하다',
+	},
 	// h
 	to_have: 'to_exist',
 	to_not_have: 'to_not_exist',
@@ -176,6 +181,12 @@ export const ADJECTIVES = {
 		class: '103-9.2',
 		meaning: 'to be joyful',
 		word: '즐겁다',
+	},
+	// k
+	to_be_kind: {
+		class: '103-11.1',
+		meaning: 'to be kind / considerate',
+		word: '친절하다',
 	},
 	// l
 	to_be_long: {

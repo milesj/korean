@@ -133,6 +133,18 @@ export const NOUNS = {
 		meaning: 'bank',
 		word: '은행',
 	},
+	bbq_spareribs: {
+		class: '103-11.1',
+		category: 'food-drink',
+		meaning: 'BBQ spareribs',
+		word: '갈비',
+	},
+	beach: {
+		class: '103-11.1',
+		category: 'place',
+		meaning: 'beach',
+		word: '바닷가',
+	},
 	beforenoon: 'am',
 	behind: 'back',
 	below: 'bottom',
@@ -165,6 +177,12 @@ export const NOUNS = {
 		category: ['human', 'datetime'],
 		meaning: 'birthday',
 		word: ['생일', { word: '생신', honorific: true }],
+	},
+	blue_jeans: {
+		class: '103-11.1',
+		category: 'object',
+		meaning: 'blue jeans',
+		word: '청바지',
 	},
 	book: {
 		class: '101-3.1',
@@ -221,6 +239,12 @@ export const NOUNS = {
 		category: 'object',
 		meaning: ['cap', 'hat'],
 		word: '모자',
+	},
+	canada: {
+		class: '103-11.1',
+		category: 'country',
+		meaning: 'Canada',
+		word: '캐나다',
 	},
 	car: {
 		class: '102-6.1',
@@ -351,12 +375,24 @@ export const NOUNS = {
 		meaning: 'culture',
 		word: '문화',
 	},
+	cup: {
+		class: '103-11.1',
+		category: ['object', 'counter'],
+		meaning: ['cup', 'glass'],
+		word: '잔',
+	},
 	// d
 	dad: {
 		class: '101-4.1',
 		category: 'family',
 		meaning: 'father',
 		word: '아빠',
+	},
+	daily_life: {
+		class: '103-11.1',
+		category: 'human',
+		meaning: ['daily life', 'living'],
+		word: '생활',
 	},
 	daughter: {
 		class: '103-9.2',
@@ -762,6 +798,12 @@ export const NOUNS = {
 		word: '지난',
 		prenoun: true,
 	},
+	last_night: {
+		class: '103-11.1',
+		category: 'datetime',
+		meaning: 'last night',
+		word: '어젯밤',
+	},
 	last_year: {
 		class: '103-9.2',
 		category: 'datetime',
@@ -799,6 +841,7 @@ export const NOUNS = {
 		meaning: 'library',
 		word: '도서관',
 	},
+	living: 'daily_life',
 	los_angeles: {
 		class: '101-4.2',
 		category: 'place',
@@ -1153,6 +1196,12 @@ export const NOUNS = {
 		meaning: 'right side',
 		word: '오른쪽',
 	},
+	roast_meat: {
+		class: '103-11.1',
+		category: 'food-drink',
+		meaning: 'roast meat',
+		word: '불고기',
+	},
 	room: {
 		class: '101-4.2',
 		category: 'place',
@@ -1227,6 +1276,12 @@ export const NOUNS = {
 		category: 'entertainment',
 		meaning: 'singer',
 		word: '가수',
+	},
+	snow: {
+		class: '103-11.1',
+		category: 'weather',
+		meaning: 'snow',
+		word: '눈',
 	},
 	soccer: {
 		class: '102-6.2',
@@ -1368,6 +1423,12 @@ export const NOUNS = {
 		category: 'vehicle',
 		meaning: 'taxi',
 		word: '택시',
+	},
+	tea: {
+		class: '103-11.1',
+		category: 'food-drink',
+		meaning: 'tea',
+		word: '차',
 	},
 	teacher: {
 		class: '101-1.2',
@@ -1522,6 +1583,12 @@ export const NOUNS = {
 	},
 	united_states: 'america',
 	// v
+	vancouver: {
+		class: '103-11.1',
+		category: 'place',
+		meaning: 'Vancouver',
+		word: '밴쿠버',
+	},
 	vicinity: 'nearby',
 	volume: {
 		class: '101-4.1',
@@ -1531,6 +1598,12 @@ export const NOUNS = {
 	},
 	// w
 	watch: 'clock',
+	water: {
+		class: '103-11.1',
+		category: 'food-drink',
+		meaning: 'water',
+		word: '물',
+	},
 	weather: {
 		class: '102-6.1',
 		category: 'weather',
@@ -1562,10 +1635,10 @@ export const NOUNS = {
 		word: '몇일',
 	},
 	what_kind: {
-		class: '102-7.1',
+		class: ['102-7.1', '103-11.1'],
 		category: 'language',
 		meaning: 'what kind',
-		word: '무슨',
+		word: ['무슨', '어떤'],
 		prenoun: true,
 	},
 	where: {
@@ -1575,10 +1648,10 @@ export const NOUNS = {
 		word: '어디',
 	},
 	which: {
-		class: '102-7.1',
+		class: ['102-7.1', '103-11.1'],
 		category: 'language',
 		meaning: 'which',
-		word: '어느',
+		word: ['어느', '어떤'],
 		prenoun: true,
 	},
 	winter: {
