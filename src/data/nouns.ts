@@ -21,6 +21,7 @@ export type NounCategory =
 	| 'object'
 	| 'place'
 	| 'sport'
+	| 'technology'
 	| 'vehicle'
 	| 'weather';
 
@@ -394,6 +395,12 @@ export const NOUNS = {
 		meaning: ['daily life', 'living'],
 		word: '생활',
 	},
+	dance: {
+		class: '103-11.2',
+		category: 'activity',
+		meaning: 'dance',
+		word: '춤',
+	},
 	daughter: {
 		class: '103-9.2',
 		category: 'family',
@@ -515,6 +522,12 @@ export const NOUNS = {
 		meaning: 'English',
 		word: '영어',
 	},
+	entrance: {
+		class: '103-11.2',
+		category: 'place',
+		meaning: 'entrance',
+		word: '입구',
+	},
 	evening: 'dinner',
 	event: {
 		class: '103-10.2',
@@ -618,6 +631,12 @@ export const NOUNS = {
 		category: 'object',
 		meaning: 'gloves',
 		word: '장갑',
+	},
+	golf: {
+		class: '103-11.2',
+		category: 'sport',
+		meaning: 'golf',
+		word: '골프',
 	},
 	grade: {
 		class: '101-1.1',
@@ -738,6 +757,12 @@ export const NOUNS = {
 		category: 'direction',
 		meaning: 'inside',
 		word: '안',
+	},
+	internet: {
+		class: '103-11.2',
+		category: 'technology',
+		meaning: 'internet',
+		word: '인터넷',
 	},
 	item: {
 		class: '101-4.1',
@@ -1108,6 +1133,12 @@ export const NOUNS = {
 		category: ['place', 'counter'],
 		meaning: ['place', 'spot'],
 		word: '군데',
+	},
+	play: {
+		class: '103-11.2',
+		category: 'entertainment',
+		meaning: 'play',
+		word: '연극',
 	},
 	pm: {
 		class: '102-5.2',
@@ -1543,6 +1574,12 @@ export const NOUNS = {
 		word: '내일',
 	},
 	traffic: 'transportation',
+	train: {
+		class: '103-11.2',
+		category: 'vehicle',
+		meaning: 'train',
+		word: '기차',
+	},
 	transportation: {
 		class: '103-10.2',
 		category: 'vehicle',

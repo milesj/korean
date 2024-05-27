@@ -46,6 +46,11 @@ export const PARTICLES = {
 		word: ['은', '는'],
 		type: 'topic',
 	},
+	as_much: {
+		class: '103-11.2',
+		meaning: ['as much', 'many as'],
+		word: ['이나', '나'],
+	},
 	at: 'location',
 	but_connective: {
 		class: '103-9.2',
@@ -88,7 +93,7 @@ export const PARTICLES = {
 		word: ['한테서', { word: '께', honorific: true }],
 	},
 	from_time: {
-		class: '102-6.1',
+		class: ['102-6.1', '103-11.2'],
 		meaning: 'from (time)',
 		word: '부터',
 	},
@@ -140,6 +145,16 @@ export const PARTICLES = {
 		meaning: 'only',
 		word: '만',
 	},
+	only_nothing: {
+		class: '103-11.2',
+		meaning: ['only', 'nothing but'],
+		word: '밖에',
+	},
+	opinion: {
+		class: '103-11.2',
+		meaning: ['shall we...', 'do you think...?'],
+		word: ['을까요', 'ㄹ까요'],
+	},
 	plural: {
 		class: '101-2.1',
 		meaning: '(plural marker)',
@@ -163,12 +178,22 @@ export const PARTICLES = {
 		meaning: 'to (person)',
 		word: ['한테', { word: '께', honorific: true }],
 	},
+	to_time: {
+		class: '103-11.2',
+		meaning: ['to (time)', 'until', 'through'],
+		word: '까지',
+	},
 	too: 'also',
 	toward_to: 'by_means_of',
 	up_to: {
 		class: '102-6.1',
 		meaning: 'to (location)',
 		word: '까지',
+	},
+	well: {
+		class: '103-11.2',
+		meaning: ['well', "it's hard to say"],
+		word: '글쎄요',
 	},
 	with: 'and',
 	would_like_to: {

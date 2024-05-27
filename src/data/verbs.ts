@@ -68,6 +68,12 @@ export const VERBS: Record<string, Verb | string> = {
 		word: '축하하다',
 	},
 	// d
+	to_dance: {
+		class: '103-11.2',
+		meaning: 'to dance',
+		word: ['춤을 추다', '춤추다'],
+		noun: 'dance',
+	},
 	to_die: {
 		class: '103-9.2',
 		meaning: 'to die',
@@ -101,6 +107,22 @@ export const VERBS: Record<string, Verb | string> = {
 		word: '운동하다',
 		noun: 'exercise',
 	},
+	// f
+	to_find: {
+		class: '103-11.2',
+		meaning: ['to find', 'to look for'],
+		word: '찾다',
+	},
+	to_find_out: {
+		class: '103-11.2',
+		meaning: ['to find out', 'to check for'],
+		word: '알아보다',
+	},
+	to_be_finished: {
+		class: '103-11.2',
+		meaning: 'to be finished / over',
+		word: '끝나다',
+	},
 	// g
 	to_get_along: {
 		class: '101-2.2',
@@ -109,13 +131,13 @@ export const VERBS: Record<string, Verb | string> = {
 	},
 	to_get_off: {
 		class: '103-8.1',
-		meaning: 'to get off, out of',
+		meaning: ['to get off / out of'],
 		word: '내리다',
 		opposite: 'to_get_on',
 	},
 	to_get_on: {
 		class: '103-8.1',
-		meaning: ['to get on, in', 'to ride'],
+		meaning: ['to get on / in', 'to ride'],
 		word: '타다',
 		opposite: 'to_get_off',
 	},
@@ -258,15 +280,20 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to receive',
 		word: '받다',
 	},
+	to_rest: {
+		class: '103-11.2',
+		meaning: 'to rest',
+		word: '쉬다',
+	},
 	// s
 	to_see: {
 		class: ['101-2.2', '103-8.2'],
-		meaning: 'to see, look, watch',
+		meaning: 'to see / look / watch',
 		word: ['보다', '뵙다'],
 	},
 	to_be_seen: {
 		class: '103-8.2',
-		meaning: 'to be seen, visible',
+		meaning: 'to be seen / visible',
 		word: '보이다',
 	},
 	to_sell: {

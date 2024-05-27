@@ -146,6 +146,11 @@ export const ADJECTIVES = {
 		word: '착하다',
 	},
 	// h
+	to_be_hard: {
+		class: '103-11.2',
+		meaning: 'to be hard / difficult',
+		word: ['힘이 들다', '힘들다'],
+	},
 	to_have: 'to_exist',
 	to_not_have: 'to_not_exist',
 	to_be_healthy: {
