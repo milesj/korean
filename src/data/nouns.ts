@@ -492,6 +492,12 @@ export const NOUNS = {
 		word: '동안',
 	},
 	// e
+	east_coast: {
+		class: '103-12.1',
+		category: ['direction', 'place'],
+		meaning: 'east coast',
+		word: '동부',
+	},
 	economics: {
 		class: '101-3.2',
 		category: 'education',
@@ -561,6 +567,13 @@ export const NOUNS = {
 		category: ['leisure', 'entertainment'],
 		meaning: ['feast', 'party'],
 		word: '잔치',
+	},
+	first: {
+		class: '103-12.1',
+		category: 'counter',
+		meaning: 'first',
+		word: '첫',
+		prenoun: true,
 	},
 	first_birthday: {
 		class: '103-9.1',
@@ -791,6 +804,12 @@ export const NOUNS = {
 		wordPronounced: '삼한년',
 	},
 	// k
+	kitchen: {
+		class: '103-12.1',
+		category: 'place',
+		meaning: 'kitchen',
+		word: '부엌',
+	},
 	korea: {
 		class: '101-1.1',
 		category: 'country',
@@ -1010,7 +1029,7 @@ export const NOUNS = {
 		word: '신문',
 	},
 	night: {
-		class: 'other',
+		class: '103-12.1',
 		category: 'datetime',
 		meaning: 'night',
 		word: '밤',
@@ -1026,6 +1045,12 @@ export const NOUNS = {
 		category: ['counter', 'classification'],
 		meaning: 'number',
 		word: ['번', '번호'],
+	},
+	number_ordinal: {
+		class: '103-12.1',
+		category: ['counter', 'classification'],
+		meaning: 'number (ordinal suffix)',
+		word: ['째', '번째'],
 	},
 	// o
 	older_brother_boy: {
@@ -1071,6 +1096,12 @@ export const NOUNS = {
 		word: '밖',
 	},
 	// p
+	pants: {
+		class: '103-12.1',
+		category: 'object',
+		meaning: 'pants',
+		word: '바지',
+	},
 	parents: {
 		class: '101-4.1',
 		category: 'family',
@@ -1129,10 +1160,10 @@ export const NOUNS = {
 	},
 	picture: 'photo',
 	place: {
-		class: '103-8.1',
+		class: ['103-8.1', '103-12.1'],
 		category: ['place', 'counter'],
 		meaning: ['place', 'spot'],
-		word: '군데',
+		word: ['군데', '데'],
 	},
 	play: {
 		class: '103-11.2',
@@ -1295,11 +1326,23 @@ export const NOUNS = {
 		meaning: 'Seoul',
 		word: '서울',
 	},
+	shirt: {
+		class: '103-12.1',
+		category: 'object',
+		meaning: 'shirt',
+		word: '셔츠',
+	},
 	shopping: {
 		class: '102-5.1',
 		category: 'activity',
 		meaning: 'shopping',
 		word: '쇼핑',
+	},
+	siblings: {
+		class: '103-12.1',
+		category: 'family',
+		meaning: 'siblings',
+		word: '형제',
 	},
 	side: 'beside',
 	singer: {
@@ -1752,6 +1795,12 @@ export const NOUNS = {
 		category: 'family',
 		meaning: 'younger sibling',
 		word: '동생',
+	},
+	youngest_child: {
+		class: '103-12.1',
+		category: 'family',
+		meaning: 'youngest child',
+		word: '만내',
 	},
 } satisfies Record<string, Noun | string>;
 

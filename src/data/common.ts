@@ -21,6 +21,7 @@ export type ClassChapter =
 	| '103-10.2'
 	| '103-11.1'
 	| '103-11.2'
+	| '103-12.1'
 	| 'other';
 
 export interface NativeWord {

@@ -29,6 +29,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to begin',
 		word: '시작하다',
 	},
+	to_be_born: {
+		class: '103-11.2',
+		meaning: 'to be born',
+		word: '태어나다',
+	},
 	to_buy: {
 		class: '102-5.1',
 		meaning: 'to buy',
@@ -129,6 +134,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to get along',
 		word: '지내다',
 	},
+	to_get_married: {
+		class: '103-11.2',
+		meaning: 'to get married',
+		word: '결혼하다',
+	},
 	to_get_off: {
 		class: '103-8.1',
 		meaning: ['to get off / out of'],
@@ -167,6 +177,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to greet',
 		noun: 'greeting',
 		word: '인사하다',
+	},
+	to_grow_up: {
+		class: '103-11.2',
+		meaning: 'to grow up',
+		word: '자라다',
 	},
 	// k
 	to_know: {
@@ -395,6 +410,11 @@ export const VERBS: Record<string, Verb | string> = {
 		word: '쓰다',
 	},
 	// w
+	to_wait: {
+		class: '103-11.2',
+		meaning: 'to wait',
+		word: '기다리다',
+	},
 	to_walk: {
 		class: '102-5.2',
 		meaning: 'to walk',

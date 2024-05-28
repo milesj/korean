@@ -140,6 +140,11 @@ export const ADVERBS = {
 	},
 	// s
 	sometimes: 'occasionally',
+	still: {
+		class: '103-12.1',
+		meaning: ['still', 'yet'],
+		word: '아직',
+	},
 	straight: {
 		class: '103-8.2',
 		meaning: 'straight',
@@ -210,6 +215,7 @@ export const ADVERBS = {
 		meaning: 'yes',
 		word: ['네', '예'],
 	},
+	yet: 'still',
 } satisfies Record<string, Adverb | string>;
 
 export type AdverbKey = keyof typeof ADVERBS;

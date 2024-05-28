@@ -89,6 +89,11 @@ export const ADJECTIVES = {
 		opposite: 'to_be_delicious',
 		word: '맛없다',
 	},
+	to_be_different: {
+		class: '103-12.1',
+		meaning: 'to be different',
+		word: '다르다',
+	},
 	to_be_difficult: {
 		class: '102-6.1',
 		meaning: 'to be difficult',
@@ -261,6 +266,11 @@ export const ADJECTIVES = {
 		word: '넓다',
 	},
 	// t
+	to_be_tired: {
+		class: '103-12.1',
+		meaning: 'to be tired',
+		word: '피공하다',
+	},
 	to_be_thankful: {
 		class: ['101-4.2', '103-8.2'],
 		meaning: 'to be thankful',

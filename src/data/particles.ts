@@ -68,8 +68,8 @@ export const PARTICLES = {
 		word: ['은데', '는데'],
 	},
 	clause_connective_clause: {
-		class: '103-10.2',
-		meaning: ['(cause)'],
+		class: ['103-10.2', '103-12.1'],
+		meaning: ['(cause)', '(sequential)'],
 		word: ['어서', '아서'],
 	},
 	clause_connective_ending: {
@@ -116,6 +116,11 @@ export const PARTICLES = {
 		word: '에서',
 		type: 'dynamic-location',
 		related: ['location'],
+	},
+	may: {
+		class: '103-12.1',
+		meaning: ['may', 'will (conjecture)'],
+		word: '겠',
 	},
 	noun_modifier_adj: {
 		class: '103-9.1',
@@ -180,7 +185,7 @@ export const PARTICLES = {
 	},
 	to_time: {
 		class: '103-11.2',
-		meaning: ['to (time)', 'until', 'through'],
+		meaning: ['to (time)', 'until', 'through', 'including'],
 		word: '까지',
 	},
 	too: 'also',
@@ -195,6 +200,7 @@ export const PARTICLES = {
 		meaning: ['well', "it's hard to say"],
 		word: '글쎄요',
 	},
+	will: 'may',
 	with: 'and',
 	would_like_to: {
 		class: '103-11.1',
