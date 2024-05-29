@@ -6,7 +6,7 @@ export default defineConfig({
 	// site: '',
 	integrations: [
 		starlight({
-			title: 'Korean 101',
+			title: 'Korean',
 			defaultLocale: 'root',
 			locales: {
 				root: {
