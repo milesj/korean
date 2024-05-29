@@ -12,15 +12,15 @@
     "gen": "tsx ./src/scripts/generate.ts"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/starlight": "^0.15.3",
-    "@types/lodash": "^4.14.202",
-    "astro": "^4.0.1",
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/starlight": "^0.23.2",
+    "@types/lodash": "^4.17.4",
+    "astro": "^4.9.2",
     "lodash": "^4.17.21",
-    "prettier": "^3.2.2",
+    "prettier": "^3.2.5",
     "prettier-config-moon": "^1.1.2",
-    "sharp": "^0.32.5",
-    "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
+    "sharp": "^0.33.4",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
   }
 }
