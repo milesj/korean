@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
 	// site: '',
 	integrations: [
+		react(),
 		starlight({
 			title: 'Korean',
 			defaultLocale: 'root',
@@ -14,6 +16,7 @@ export default defineConfig({
 					lang: 'en',
 				},
 			},
+			customCss: ['./src/styles/flash.css'],
 			sidebar: [
 				{
 					label: 'Adjectives',

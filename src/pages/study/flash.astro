@@ -1,0 +1,8 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Flash as FlashInner } from '@components/study/Flash';
+---
+
+<StarlightPage frontmatter={{ title: 'Flash cards' }}>
+	<FlashInner client:only />
+</StarlightPage>
