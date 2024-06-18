@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { NUMBERS_MAP } from '../data/numbers';
+import { extractWord } from './helpers';
 import { Word } from '@hangeul';
 
 let content = `---
@@ -32,14 +33,14 @@ numbers.forEach((entry) => {
 		<td>${entry.meaning}</td>`;
 
 	if (Array.isArray(entry.word)) {
-		const insts = entry.word.map((w) => new Word(w));
+		const insts = entry.word.map((w) => new Word(extractWord(w)));
 
 		content += `
 		<td>${entry.word.map((w) => `<code>${w}</code>`).join(' / ')}</td>
 		<td>${insts.map((i) => i.translate()).join(' / ')}</td>
 		<td>${insts.map((i) => i.pronounce()).join(' / ')}</td>`;
 	} else {
-		const inst = new Word(entry.word);
+		const inst = new Word(extractWord(entry.word));
 
 		content += `
 		<td><code>${entry.word}</code></td>

@@ -4,7 +4,6 @@ import {
 	isVowel,
 	createDipthong,
 	type TranslateOptions,
-	HANGEUL,
 	NORMALIZE,
 } from './letters';
 import { type Punctuation, PUNCTUATION } from './punctuation';

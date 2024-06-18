@@ -23,6 +23,7 @@ const CATEGORIES: Record<NounCategory, string> = {
 	nature: 'Nature',
 	place: 'Places',
 	sport: 'Sports',
+	technology: 'Technology',
 	vehicle: 'Vehicles',
 	weather: 'Weather',
 };

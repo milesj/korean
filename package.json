@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
+    "type": "astro check",
     "gen": "tsx ./src/scripts/generate.ts"
   },
   "dependencies": {
