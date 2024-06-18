@@ -18,9 +18,50 @@
 
 .flash-cols ul > li {
 	width: 50%;
+	margin: 0 !important;
 }
 
 .flash-cols ul label {
 	display: block;
 	margin: 0 !important;
+}
+
+.flash-all {
+	float: right;
+}
+
+.flash-section {
+	margin-bottom: 2rem !important;
+}
+
+.flash-actions {
+	margin-top: 3rem !important;
+	text-align: center;
+}
+
+.flash-actions button {
+	font-size: 1.5rem;
+	padding: .5rem 1rem;
+	cursor: pointer;
+}
+
+.flash-card {
+	text-align: center;
+}
+
+.flash-card h1 {
+	margin: 0 !important;
+}
+
+.flash-word h1 {
+	font-size: 8rem !important;
+}
+
+.flash-word h4 {
+	margin: 0 !important;
+	opacity: 0.5;
+}
+
+.flash-card-header {
+	font-weight: bold;
 }
