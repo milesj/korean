@@ -4,7 +4,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-	// site: '',
+	site: 'https://milesj.github.io',
+	base: '/korean',
 	integrations: [
 		react(),
 		starlight({
