@@ -261,7 +261,7 @@ export function Flash() {
 
 						<div className="flash-cols">
 							<div>
-								<h5>101</h5>
+								<h5>K101</h5>
 								<FlashCheckboxes
 									values={TERM_101}
 									isChecked={isChapterChecked}
@@ -270,7 +270,7 @@ export function Flash() {
 							</div>
 
 							<div>
-								<h5>102</h5>
+								<h5>K102</h5>
 								<FlashCheckboxes
 									values={TERM_102}
 									isChecked={isChapterChecked}
@@ -279,7 +279,7 @@ export function Flash() {
 							</div>
 
 							<div>
-								<h5>103</h5>
+								<h5>K103</h5>
 								<FlashCheckboxes
 									values={TERM_103}
 									isChecked={isChapterChecked}
@@ -361,8 +361,10 @@ export function Flash() {
 					<div className="flash-actions">
 						<header className="flash-card-header">Guessed</header>
 						<div style={{ margin: 0 }}>
-							<button onClick={guessedCorrect}>Correct</button>{' '}
-							<button onClick={guessedIncorrect}>Incorrect</button>
+							<button onClick={guessedCorrect}>Correct</button>
+							<button onClick={guessedIncorrect} style={{ marginLeft: '1rem' }}>
+								Incorrect
+							</button>
 						</div>
 					</div>
 

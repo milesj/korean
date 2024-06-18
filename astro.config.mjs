@@ -63,6 +63,11 @@ export default defineConfig({
 					collapsed: true,
 					autogenerate: { directory: 'verbs' },
 				},
+				{
+					label: 'Study',
+					collapsed: true,
+					items: [{ label: 'Flash cards', link: '/study/flash' }],
+				},
 			],
 		}),
 	],
