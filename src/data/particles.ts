@@ -1,6 +1,6 @@
 import { expandMap, type Word } from './common';
 
-export type ParticleType =
+export type ParticleMarker =
 	| 'topic'
 	| 'object'
 	| 'subject'
@@ -9,8 +9,8 @@ export type ParticleType =
 	| 'dynamic-location';
 
 export interface Particle extends Word {
-	forms?: Partial<Record<ParticleType, string>>;
-	type?: ParticleType;
+	forms?: Partial<Record<ParticleMarker, string>>;
+	marker?: ParticleMarker;
 }
 
 export const PARTICLES = {
@@ -44,7 +44,7 @@ export const PARTICLES = {
 		class: '101-1.1',
 		meaning: ['(topic marker)', 'as for'],
 		word: ['은', '는'],
-		type: 'topic',
+		marker: 'topic',
 	},
 	as_much: {
 		class: '103-11.2',
@@ -107,14 +107,14 @@ export const PARTICLES = {
 		class: '101-3.1',
 		meaning: ['at', 'in', 'on', 'to'],
 		word: '에',
-		type: 'static-location',
+		marker: 'static-location',
 		related: ['location_dynamic'],
 	},
 	location_dynamic: {
 		class: '102-5.1',
 		meaning: ['at', 'in'],
 		word: '에서',
-		type: 'dynamic-location',
+		marker: 'dynamic-location',
 		related: ['location'],
 	},
 	may: {
@@ -136,7 +136,7 @@ export const PARTICLES = {
 		class: '101-2.2',
 		meaning: '(object marker)',
 		word: ['을', '를'],
-		type: 'object',
+		marker: 'object',
 	},
 	of: {
 		class: '101-4.2',
@@ -164,13 +164,13 @@ export const PARTICLES = {
 		class: '101-2.1',
 		meaning: '(plural marker)',
 		word: '들',
-		type: 'plural',
+		marker: 'plural',
 	},
 	subject: {
 		class: ['101-1.2', '103-9.2'],
 		meaning: '(subject marker)',
 		word: ['이', '가', { word: '께서', honorific: true }],
-		type: 'subject',
+		marker: 'subject',
 	},
 	suffix_honorifc: {
 		class: '103-9.2',

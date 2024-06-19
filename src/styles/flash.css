@@ -1,12 +1,19 @@
 .flash-cols {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .flash-cols > div {
-	width: 33.3%;
-	margin: 0 !important;
+	width: 50%;
+	margin: 0 0 1rem 0 !important;
 	padding: 0;
+}
+
+@media screen and (min-width: 1024px) {
+	.flash-cols > div {
+		width: 33.3%;
+	}
 }
 
 .flash-cols ul {

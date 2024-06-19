@@ -1,5 +1,4 @@
 import type { Word as WordShape } from '../../data/common';
-import { Word } from '@hangeul';
 
 export interface FlashWordProps {
 	word: WordShape['word'];
@@ -22,13 +21,10 @@ export function FlashWord({ word }: FlashWordProps) {
 	}
 
 	if (typeof word === 'object') {
-		const inst = new Word(word.word);
-
 		return (
 			<div className="flash-word">
 				<h1>{word.word}</h1>
 				<div>
-					{inst.translate()}
 					{word.honorific && <>(honorific)</>}
 					{word.humble && <>(humble)</>}
 				</div>
@@ -36,12 +32,9 @@ export function FlashWord({ word }: FlashWordProps) {
 		);
 	}
 
-	const inst = new Word(word);
-
 	return (
 		<div className="flash-word">
 			<h1>{word}</h1>
-			<h4>{inst.translate()}</h4>
 		</div>
 	);
 }

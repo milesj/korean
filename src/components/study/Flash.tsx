@@ -7,22 +7,11 @@ import { NUMBERS_MAP } from '../../data/numbers';
 import { PARTICLES_MAP } from '../../data/particles';
 import { PRONOUNS_MAP } from '../../data/pronouns';
 import { VERBS_MAP } from '../../data/verbs';
-import type { ClassChapter, Word } from '../../data/common';
+import type { ClassChapter, Word, GrammarType } from '../../data/common';
 import { useState, type ChangeEvent } from 'react';
 import shuffle from 'lodash/shuffle';
 import { FlashWord } from './FlashWord';
-
-type GrammarType =
-	| 'adjectives'
-	| 'adverbs'
-	| 'conjunctions'
-	| 'interjections'
-	| 'nouns'
-	| 'numbers'
-	| 'particles'
-	| 'pronouns'
-	| 'suffixes'
-	| 'verbs';
+import { FlashTips } from './FlashTips';
 
 type Step = 'config' | 'question' | 'answer';
 
@@ -52,12 +41,15 @@ const TERM_103: ClassChapter[] = [
 	// TODO 12.2
 ];
 
-function filterWords(words: Word[], chapters: Set<ClassChapter>): Word[] {
-	return words.filter((word) =>
-		Array.isArray(word.class)
+function filterWords(grammar: GrammarType, words: Word[], chapters: Set<ClassChapter>): Word[] {
+	return words.filter((word) => {
+		// Force the type for future use
+		word.type = grammar;
+
+		return Array.isArray(word.class)
 			? word.class.some((chapter) => chapters.has(chapter))
-			: chapters.has(word.class),
-	);
+			: chapters.has(word.class);
+	});
 }
 
 function FlashCheckboxes<T extends string>({
@@ -97,6 +89,8 @@ export function Flash() {
 	const [index, setIndex] = useState(0);
 	const [correctCount, setCorrentCount] = useState(0);
 	const [wrongCount, setWrongCount] = useState(0);
+	const [unknownCount, setUnknownCount] = useState(0);
+	const [showTips, setShowTips] = useState(false);
 
 	function isChapterChecked(value: ClassChapter) {
 		return chapters.has(value);
@@ -108,6 +102,36 @@ export function Flash() {
 		} else {
 			setChapters(new Set());
 		}
+	}
+
+	function handleK101ChaptersChange(event: ChangeEvent<HTMLInputElement>) {
+		setChapters((prev) => {
+			if (event.target.checked) {
+				return new Set([...prev, ...TERM_101]);
+			} else {
+				return new Set([...prev].filter((chapter) => !chapter.startsWith('101')));
+			}
+		});
+	}
+
+	function handleK102ChaptersChange(event: ChangeEvent<HTMLInputElement>) {
+		setChapters((prev) => {
+			if (event.target.checked) {
+				return new Set([...prev, ...TERM_102]);
+			} else {
+				return new Set([...prev].filter((chapter) => !chapter.startsWith('102')));
+			}
+		});
+	}
+
+	function handleK103ChaptersChange(event: ChangeEvent<HTMLInputElement>) {
+		setChapters((prev) => {
+			if (event.target.checked) {
+				return new Set([...prev, ...TERM_103]);
+			} else {
+				return new Set([...prev].filter((chapter) => !chapter.startsWith('103')));
+			}
+		});
 	}
 
 	function handleChapterChange(value: ClassChapter) {
@@ -161,48 +185,48 @@ export function Flash() {
 		const words: Word[] = [];
 
 		if (grammars.has('adjectives')) {
-			words.push(...filterWords(Object.values(ADJECTIVES_MAP), chapters));
+			words.push(...filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters));
 		}
 
 		if (grammars.has('adverbs')) {
-			words.push(...filterWords(Object.values(ADVERBS_MAP), chapters));
+			words.push(...filterWords('adverbs', Object.values(ADVERBS_MAP), chapters));
 		}
 
 		if (grammars.has('adjectives')) {
-			words.push(...filterWords(Object.values(ADJECTIVES_MAP), chapters));
+			words.push(...filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters));
 		}
 
 		if (grammars.has('conjunctions')) {
-			words.push(...filterWords(Object.values(CONJUNCTIONS_MAP), chapters));
+			words.push(...filterWords('conjunctions', Object.values(CONJUNCTIONS_MAP), chapters));
 		}
 
 		if (grammars.has('interjections')) {
-			words.push(...filterWords(Object.values(INTERJECTIONS_MAP), chapters));
+			words.push(...filterWords('interjections', Object.values(INTERJECTIONS_MAP), chapters));
 		}
 
 		if (grammars.has('nouns')) {
-			words.push(...filterWords(Object.values(NOUNS_MAP), chapters));
+			words.push(...filterWords('nouns', Object.values(NOUNS_MAP), chapters));
 		}
 
 		if (grammars.has('numbers')) {
-			words.push(...filterWords(Object.values(NUMBERS_MAP), chapters));
+			words.push(...filterWords('numbers', Object.values(NUMBERS_MAP), chapters));
 		}
 
 		if (grammars.has('particles')) {
-			words.push(...filterWords(Object.values(PARTICLES_MAP), chapters));
+			words.push(...filterWords('particles', Object.values(PARTICLES_MAP), chapters));
 		}
 
 		if (grammars.has('pronouns')) {
-			words.push(...filterWords(Object.values(PRONOUNS_MAP), chapters));
+			words.push(...filterWords('pronouns', Object.values(PRONOUNS_MAP), chapters));
 		}
 
 		if (grammars.has('verbs')) {
-			words.push(...filterWords(Object.values(VERBS_MAP), chapters));
+			words.push(...filterWords('verbs', Object.values(VERBS_MAP), chapters));
 		}
 
 		if (grammars.has('suffixes')) {
 			// TODO
-			// words.push(...filterWords(Object.values(VERBS_MAP), chapters));
+			// words.push(...filterWords('suffixes', Object.values(VERBS_MAP), chapters));
 		}
 
 		let shuffledWords = shuffle(words);
@@ -227,14 +251,20 @@ export function Flash() {
 		nextWord();
 	}
 
+	function didntGuess() {
+		setUnknownCount((count) => count + 1);
+		nextWord();
+	}
+
 	function nextWord() {
 		let nextIndex = index + 1;
 
-		if (nextIndex > words.length) {
+		if (nextIndex >= words.length) {
 			alert('Finished!');
 			return;
 		}
 
+		setShowTips(false);
 		setIndex(nextIndex);
 		setWord(words[nextIndex]);
 		setStep('question');
@@ -261,7 +291,21 @@ export function Flash() {
 
 						<div className="flash-cols">
 							<div>
-								<h5>K101</h5>
+								<h5>
+									<label htmlFor="all-k101">
+										<input
+											id="all-k101"
+											type="checkbox"
+											checked={
+												Array.from(chapters).filter((chapter) => chapter.startsWith('101'))
+													.length === TERM_101.length
+											}
+											onChange={handleK101ChaptersChange}
+										/>{' '}
+										K101
+									</label>
+								</h5>
+
 								<FlashCheckboxes
 									values={TERM_101}
 									isChecked={isChapterChecked}
@@ -270,7 +314,21 @@ export function Flash() {
 							</div>
 
 							<div>
-								<h5>K102</h5>
+								<h5>
+									<label htmlFor="all-k102">
+										<input
+											id="all-k102"
+											type="checkbox"
+											checked={
+												Array.from(chapters).filter((chapter) => chapter.startsWith('102'))
+													.length === TERM_102.length
+											}
+											onChange={handleK102ChaptersChange}
+										/>{' '}
+										K102
+									</label>
+								</h5>
+
 								<FlashCheckboxes
 									values={TERM_102}
 									isChecked={isChapterChecked}
@@ -279,7 +337,21 @@ export function Flash() {
 							</div>
 
 							<div>
-								<h5>K103</h5>
+								<h5>
+									<label htmlFor="all-k103">
+										<input
+											id="all-k103"
+											type="checkbox"
+											checked={
+												Array.from(chapters).filter((chapter) => chapter.startsWith('103'))
+													.length === TERM_103.length
+											}
+											onChange={handleK103ChaptersChange}
+										/>{' '}
+										K103
+									</label>
+								</h5>
+
 								<FlashCheckboxes
 									values={TERM_103}
 									isChecked={isChapterChecked}
@@ -305,29 +377,22 @@ export function Flash() {
 						<h3>Grammar types</h3>
 
 						<div className="flash-cols">
-							<div>
-								<FlashCheckboxes
-									values={['adjectives', 'adverbs', 'verbs']}
-									isChecked={isGrammarChecked}
-									onChange={handleGrammarChange}
-								/>
-							</div>
-
-							<div>
-								<FlashCheckboxes
-									values={['nouns', 'pronouns', 'numbers']}
-									isChecked={isGrammarChecked}
-									onChange={handleGrammarChange}
-								/>
-							</div>
-
-							<div>
-								<FlashCheckboxes
-									values={['conjunctions', 'interjections', 'particles', 'suffixes']}
-									isChecked={isGrammarChecked}
-									onChange={handleGrammarChange}
-								/>
-							</div>
+							<FlashCheckboxes
+								values={[
+									'adjectives',
+									'adverbs',
+									'conjunctions',
+									'interjections',
+									'nouns',
+									'numbers',
+									'particles',
+									'pronouns',
+									'suffixes',
+									'verbs',
+								]}
+								isChecked={isGrammarChecked}
+								onChange={handleGrammarChange}
+							/>
 						</div>
 					</div>
 
@@ -345,8 +410,23 @@ export function Flash() {
 						<FlashWord word={word!.word} />
 					</div>
 
+					{showTips && (
+						<div className="flash-actions">
+							<header className="flash-card-header">Tips</header>
+							<FlashTips word={word!} />
+						</div>
+					)}
+
 					<div className="flash-actions">
-						<button onClick={guessAnswer}>View meaning</button>
+						<button onClick={guessAnswer}>Guess meaning</button>
+
+						<button
+							onClick={() => setShowTips(true)}
+							style={{ marginLeft: '1rem' }}
+							disabled={showTips}
+						>
+							Show tips
+						</button>
 					</div>
 				</>
 			)}
@@ -362,20 +442,26 @@ export function Flash() {
 						<header className="flash-card-header">Guessed</header>
 						<div style={{ margin: 0 }}>
 							<button onClick={guessedCorrect}>Correct</button>
+
 							<button onClick={guessedIncorrect} style={{ marginLeft: '1rem' }}>
 								Incorrect
+							</button>
+
+							<button onClick={didntGuess} style={{ marginLeft: '1rem' }}>
+								Didn't guess
 							</button>
 						</div>
 					</div>
 
 					<div className="flash-actions">
 						<header className="flash-card-header">Stats</header>
+						<div>
+							Card {index + 1} of {words.length}
+						</div>
 						<div className="flash-cols">
-							<div>
-								Card {index + 1} of {words.length}
-							</div>
 							<div>Correct guesses: {correctCount}</div>
 							<div>Incorrect guesses: {wrongCount}</div>
+							<div>Didn't guess: {unknownCount}</div>
 						</div>
 					</div>
 				</>

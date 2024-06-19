@@ -24,6 +24,18 @@ export type ClassChapter =
 	| '103-12.1'
 	| 'other';
 
+export type GrammarType =
+	| 'adjectives'
+	| 'adverbs'
+	| 'conjunctions'
+	| 'interjections'
+	| 'nouns'
+	| 'numbers'
+	| 'particles'
+	| 'pronouns'
+	| 'suffixes'
+	| 'verbs';
+
 export interface NativeWord {
 	honorific?: boolean;
 	humble?: boolean;
@@ -39,6 +51,7 @@ export interface Word {
 	related?: string[];
 	word: string | NativeWord | (string | NativeWord)[];
 	wordPronounced?: string;
+	type?: GrammarType;
 
 	// internal
 	duplicate?: boolean;
