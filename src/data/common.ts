@@ -22,6 +22,7 @@ export type ClassChapter =
 	| '103-11.1'
 	| '103-11.2'
 	| '103-12.1'
+	| '103-12.2'
 	| 'other';
 
 export type GrammarType =

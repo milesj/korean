@@ -8,6 +8,11 @@ export const INTERJECTIONS = {
 		meaning: 'oh',
 		word: '어',
 	},
+	oh_my: {
+		class: '103-12.2',
+		meaning: ['oh my', 'dear me'],
+		word: '어머',
+	},
 	uh: {
 		class: '101-3.1',
 		meaning: 'uh',

@@ -8,12 +8,12 @@ import { PARTICLES_MAP } from '../../data/particles';
 import { PRONOUNS_MAP } from '../../data/pronouns';
 import { VERBS_MAP } from '../../data/verbs';
 import type { ClassChapter, Word, GrammarType } from '../../data/common';
-import { useState, type ChangeEvent } from 'react';
+import { useCallback, useState, type ChangeEvent } from 'react';
 import shuffle from 'lodash/shuffle';
 import { FlashWord } from './FlashWord';
 import { FlashTips } from './FlashTips';
 
-type Step = 'config' | 'question' | 'answer';
+type Step = 'config' | 'question' | 'answer' | 'results';
 
 const TERM_101: ClassChapter[] = [
 	'101-1.1',
@@ -38,7 +38,7 @@ const TERM_103: ClassChapter[] = [
 	'103-11.1',
 	'103-11.2',
 	'103-12.1',
-	// TODO 12.2
+	'103-12.2',
 ];
 
 function filterWords(grammar: GrammarType, words: Word[], chapters: Set<ClassChapter>): Word[] {
@@ -256,7 +256,7 @@ export function Flash() {
 		nextWord();
 	}
 
-	function nextWord() {
+	const nextWord = useCallback(() => {
 		let nextIndex = index + 1;
 
 		if (nextIndex >= words.length) {
@@ -268,7 +268,7 @@ export function Flash() {
 		setIndex(nextIndex);
 		setWord(words[nextIndex]);
 		setStep('question');
-	}
+	}, [index, words]);
 
 	return (
 		<div>

@@ -3,6 +3,7 @@ import { expandMap, type Word } from './common';
 export interface Adjective extends Word {
 	opposite?: string;
 	phrases?: string[];
+	noun?: string;
 }
 
 export const ADJECTIVES = {
@@ -29,10 +30,22 @@ export const ADJECTIVES = {
 		meaning: 'to be big',
 		word: '크다',
 	},
+	to_be_black: {
+		class: '103-12.2',
+		meaning: 'to be black',
+		word: '까맣다',
+		noun: 'black',
+	},
 	to_be_blocked: {
 		class: '103-10.2',
 		meaning: ['to be blocked', 'congested'],
 		word: '막히다',
+	},
+	to_be_blue: {
+		class: '103-12.2',
+		meaning: 'to be blue',
+		word: '피랗다',
+		noun: 'blue',
 	},
 	to_be_busy: {
 		class: '102-6.2',
@@ -233,11 +246,23 @@ export const ADJECTIVES = {
 		meaning: 'to be quiet',
 		word: '조용하다',
 	},
+	// r
+	to_be_red: {
+		class: '103-12.2',
+		meaning: 'to be red',
+		word: '빨갛다',
+		noun: 'red',
+	},
 	// s
 	to_be_short: {
 		class: '103-9.1',
 		meaning: 'to be short',
 		word: '짧다',
+	},
+	to_be_short_height: {
+		class: '103-12.2',
+		meaning: 'to be short (height)',
+		word: '키가 작다',
 	},
 	to_be_small: {
 		class: '101-4.2',
@@ -266,6 +291,11 @@ export const ADJECTIVES = {
 		word: '넓다',
 	},
 	// t
+	to_be_tall: {
+		class: '103-12.2',
+		meaning: 'to be tall (height)',
+		word: '키가 크다',
+	},
 	to_be_tired: {
 		class: '103-12.1',
 		meaning: 'to be tired',
@@ -302,6 +332,19 @@ export const ADJECTIVES = {
 		meaning: 'to be well',
 		word: '안녱하다',
 		phrases: ['Hi', 'Hello', 'How are you?'],
+	},
+	to_be_white: {
+		class: '103-12.2',
+		meaning: 'to be white',
+		word: '하얗다',
+		noun: 'white',
+	},
+	// y
+	to_be_yellow: {
+		class: '103-12.2',
+		meaning: 'to be yellow',
+		word: '노랗다',
+		noun: 'yellow',
 	},
 } satisfies Record<string, Adjective | string>;
 

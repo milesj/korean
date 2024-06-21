@@ -132,6 +132,11 @@ export const PARTICLES = {
 		meaning: '(verb noun modifier)',
 		word: '는',
 	},
+	noun_modifier_past: {
+		class: '103-12.2',
+		meaning: '(noun modifier - past)',
+		word: ['으ㄴ', 'ㄴ'],
+	},
 	object: {
 		class: '101-2.2',
 		meaning: '(object marker)',
@@ -165,6 +170,11 @@ export const PARTICLES = {
 		meaning: '(plural marker)',
 		word: '들',
 		marker: 'plural',
+	},
+	reaction: {
+		class: '103-12.2',
+		meaning: '(surprise reaction)',
+		word: '네요',
 	},
 	subject: {
 		class: ['101-1.2', '103-9.2'],
@@ -202,6 +212,11 @@ export const PARTICLES = {
 	},
 	will: 'may',
 	with: 'and',
+	with2: {
+		class: '103-12.2',
+		meaning: ['with', 'and'],
+		word: ['이랑', '랑'],
+	},
 	would_like_to: {
 		class: '103-11.1',
 		meaning: ['would you like to ...', 'I would like to ...'],

@@ -18,6 +18,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to ask',
 		word: '묻다',
 	},
+	to_attend: {
+		class: '103-12.2',
+		meaning: 'to attend',
+		word: '다니다',
+	},
 	// b
 	to_become: {
 		class: '103-11.1',
@@ -66,6 +71,11 @@ export const VERBS: Record<string, Verb | string> = {
 		class: '103-10.2',
 		meaning: 'to come in',
 		word: '들어오다',
+	},
+	to_come_out: {
+		class: '103-12.2',
+		meaning: 'to come out',
+		word: '나오다',
 	},
 	to_congratulate: {
 		class: '102-7.1',
@@ -295,6 +305,11 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to receive',
 		word: '받다',
 	},
+	to_resemble: {
+		class: '103-12.2',
+		meaning: 'to resemble',
+		word: '닮다',
+	},
 	to_rest: {
 		class: '103-11.2',
 		meaning: 'to rest',
@@ -425,6 +440,21 @@ export const VERBS: Record<string, Verb | string> = {
 		meaning: 'to wash dishes',
 		word: '설거지하다',
 		noun: 'dishwashing',
+	},
+	to_wear: {
+		class: '103-12.2',
+		meaning: ['to wear', 'to put on (clothes)'],
+		word: '입다',
+	},
+	to_wear_accessories: {
+		class: '103-12.2',
+		meaning: 'to wear (glasses, gloves, rings)',
+		word: '끼다',
+	},
+	to_wear_headgear: {
+		class: '103-12.2',
+		meaning: 'to wear (headgear)',
+		word: '쓰다',
 	},
 	to_work: {
 		class: '102-5.1',

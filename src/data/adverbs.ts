@@ -26,6 +26,11 @@ export const ADVERBS = {
 		meaning: 'already',
 		word: '벌써',
 	},
+	also: {
+		class: '103-12.2',
+		meaning: ['also', 'too'],
+		word: '또',
+	},
 	// c
 	cannot: {
 		class: '102-6.2',
@@ -89,6 +94,12 @@ export const ADVERBS = {
 		class: '103-10.1',
 		meaning: ['just because', 'without any reason'],
 		word: '그냥',
+	},
+	// l
+	long_time: {
+		class: '103-12.2',
+		meaning: 'long time',
+		word: '오래',
 	},
 	// m
 	many: {
@@ -164,6 +175,7 @@ export const ADVERBS = {
 		description:
 			'The adverd `같이` means "together" or "with". It is used to describe an action that is done with someone else, or some thing.',
 	},
+	too: 'also',
 	too_much: {
 		class: '102-6.2',
 		meaning: 'too much',

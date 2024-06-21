@@ -351,6 +351,12 @@ export const NOUNS = {
 		meaning: 'college student',
 		word: '대학생',
 	},
+	color: {
+		class: '103-12.2',
+		category: 'classification',
+		meaning: 'color',
+		word: ['색', '색깔'],
+	},
 	comedy: {
 		class: '102-7.1',
 		category: ['activity', 'entertainment'],
@@ -547,6 +553,18 @@ export const NOUNS = {
 		category: 'activity',
 		meaning: 'exercise',
 		word: '운동',
+	},
+	eyes: {
+		class: '103-12.2',
+		category: 'human',
+		meaning: 'eyes',
+		word: '눈',
+	},
+	eye_glasses: {
+		class: '103-12.2',
+		category: 'object',
+		meaning: 'eye glasses',
+		word: '안경',
 	},
 	// f
 	fall: 'autumn',
@@ -822,6 +840,12 @@ export const NOUNS = {
 		meaning: 'Korean',
 		word: ['한국어', '한국말'],
 	},
+	korean_dress: {
+		class: '103-12.2',
+		category: 'object',
+		meaning: 'traditional Korean dress',
+		word: '한복',
+	},
 	koreatown: {
 		class: '102-6.1',
 		category: 'place',
@@ -1057,7 +1081,7 @@ export const NOUNS = {
 		class: '101-4.1',
 		category: 'family',
 		meaning: 'older brother (for boy)',
-		word: '형',
+		word: ['형', '형님'],
 	},
 	older_brother_girl: {
 		class: '101-4.1',
