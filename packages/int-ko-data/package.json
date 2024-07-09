@@ -1,0 +1,6 @@
+{
+  "name": "int-ko-data",
+  "dependencies": {
+    "hangeul": "file:../hangeul"
+  }
+}

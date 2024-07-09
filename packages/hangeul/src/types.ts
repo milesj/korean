@@ -49,7 +49,7 @@ export type WordClass =
 	| 'verb';
 
 export interface WordSource {
-	chapter: CourseChapter;
+	chapter?: CourseChapter;
 	form?: SpeechForm;
 	korean: string;
 	note?: string;
@@ -69,6 +69,16 @@ export interface Word<
 	chapter?: CourseChapter;
 	class?: WordClass;
 	examples?: string[];
-	meanings: string | T | Record<string, string | T>;
+	meaning: string | T | (string | T)[];
 	word: string | S | (string | S)[];
 }
+
+// NOUNS
+
+export type NounCategory = 'country' | 'datetime' | 'education';
+
+export interface NounTranslation extends WordTranslation {
+	category?: NounCategory | NounCategory[];
+}
+
+export interface Noun extends Word<WordSource, NounTranslation> {}
