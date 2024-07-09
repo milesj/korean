@@ -12,7 +12,7 @@ export function FlashWord({ word }: FlashWordProps) {
 			<>
 				{word.map((inner, i) => (
 					<>
-						<FlashWord word={inner} />
+						<FlashWord key={String(inner)} word={inner} />
 						{i != total && <hr />}
 					</>
 				))}

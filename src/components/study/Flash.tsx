@@ -41,15 +41,30 @@ const TERM_103: ClassChapter[] = [
 	'103-12.2',
 ];
 
-function filterWords(grammar: GrammarType, words: Word[], chapters: Set<ClassChapter>): Word[] {
-	return words.filter((word) => {
-		// Force the type for future use
-		word.type = grammar;
+function filterWords(
+	grammar: GrammarType,
+	words: Word[],
+	chapters: Set<ClassChapter>,
+	result: Record<string, Word>,
+) {
+	words
+		.filter((word) => {
+			if (word.duplicate) {
+				return false;
+			}
 
-		return Array.isArray(word.class)
-			? word.class.some((chapter) => chapters.has(chapter))
-			: chapters.has(word.class);
-	});
+			// Force the type for future use
+			word.type = grammar;
+
+			return Array.isArray(word.class)
+				? word.class.some((chapter) => chapters.has(chapter))
+				: chapters.has(word.class);
+		})
+		.forEach((word) => {
+			let key = (Array.isArray(word.meaning) ? word.meaning : [word.meaning]).join('|');
+
+			result[key] = word;
+		});
 }
 
 function FlashCheckboxes<T extends string>({
@@ -88,8 +103,8 @@ export function Flash() {
 	const [word, setWord] = useState<Word>();
 	const [index, setIndex] = useState(0);
 	const [correctCount, setCorrentCount] = useState(0);
-	const [wrongCount, setWrongCount] = useState(0);
-	const [unknownCount, setUnknownCount] = useState(0);
+	const [wrongGuess, setWrongGuess] = useState<Word[]>([]);
+	const [didntGuess, setDidntGuess] = useState<Word[]>([]);
 	const [showTips, setShowTips] = useState(false);
 
 	function isChapterChecked(value: ClassChapter) {
@@ -181,61 +196,60 @@ export function Flash() {
 		});
 	}
 
-	function beginStudying() {
-		const words: Word[] = [];
+	const beginStudying = useCallback(() => {
+		const wordsMap: Record<string, Word> = {};
 
 		if (grammars.has('adjectives')) {
-			words.push(...filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters));
+			filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('adverbs')) {
-			words.push(...filterWords('adverbs', Object.values(ADVERBS_MAP), chapters));
+			filterWords('adverbs', Object.values(ADVERBS_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('adjectives')) {
-			words.push(...filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters));
+			filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('conjunctions')) {
-			words.push(...filterWords('conjunctions', Object.values(CONJUNCTIONS_MAP), chapters));
+			filterWords('conjunctions', Object.values(CONJUNCTIONS_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('interjections')) {
-			words.push(...filterWords('interjections', Object.values(INTERJECTIONS_MAP), chapters));
+			filterWords('interjections', Object.values(INTERJECTIONS_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('nouns')) {
-			words.push(...filterWords('nouns', Object.values(NOUNS_MAP), chapters));
+			filterWords('nouns', Object.values(NOUNS_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('numbers')) {
-			words.push(...filterWords('numbers', Object.values(NUMBERS_MAP), chapters));
+			filterWords('numbers', Object.values(NUMBERS_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('particles')) {
-			words.push(...filterWords('particles', Object.values(PARTICLES_MAP), chapters));
+			filterWords('particles', Object.values(PARTICLES_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('pronouns')) {
-			words.push(...filterWords('pronouns', Object.values(PRONOUNS_MAP), chapters));
+			filterWords('pronouns', Object.values(PRONOUNS_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('verbs')) {
-			words.push(...filterWords('verbs', Object.values(VERBS_MAP), chapters));
+			filterWords('verbs', Object.values(VERBS_MAP), chapters, wordsMap);
 		}
 
 		if (grammars.has('suffixes')) {
 			// TODO
-			// words.push(...filterWords('suffixes', Object.values(VERBS_MAP), chapters));
 		}
 
-		let shuffledWords = shuffle(words);
+		let shuffledWords = shuffle(Object.values(wordsMap));
 
 		setIndex(0);
 		setWord(shuffledWords[0]);
 		setWords(shuffledWords);
 		setStep('question');
-	}
+	}, [chapters, grammars]);
 
 	function guessAnswer() {
 		setStep('answer');
@@ -246,21 +260,21 @@ export function Flash() {
 		nextWord();
 	}
 
-	function guessedIncorrect() {
-		setWrongCount((count) => count + 1);
+	const guessedIncorrect = useCallback(() => {
+		setWrongGuess((prev) => [...prev, word!]);
 		nextWord();
-	}
+	}, [word]);
 
-	function didntGuess() {
-		setUnknownCount((count) => count + 1);
+	const guessedDidNot = useCallback(() => {
+		setDidntGuess((prev) => [...prev, word!]);
 		nextWord();
-	}
+	}, [word]);
 
 	const nextWord = useCallback(() => {
 		let nextIndex = index + 1;
 
 		if (nextIndex >= words.length) {
-			alert('Finished!');
+			setStep('results');
 			return;
 		}
 
@@ -269,6 +283,17 @@ export function Flash() {
 		setWord(words[nextIndex]);
 		setStep('question');
 	}, [index, words]);
+
+	function retryCards() {
+		setCorrentCount(0);
+		setWrongGuess([]);
+		setDidntGuess([]);
+		beginStudying();
+	}
+
+	function resetStep() {
+		location.reload();
+	}
 
 	return (
 		<div>
@@ -447,7 +472,7 @@ export function Flash() {
 								Incorrect
 							</button>
 
-							<button onClick={didntGuess} style={{ marginLeft: '1rem' }}>
+							<button onClick={guessedDidNot} style={{ marginLeft: '1rem' }}>
 								Didn't guess
 							</button>
 						</div>
@@ -460,12 +485,65 @@ export function Flash() {
 						</div>
 						<div className="flash-cols">
 							<div>Correct guesses: {correctCount}</div>
-							<div>Incorrect guesses: {wrongCount}</div>
-							<div>Didn't guess: {unknownCount}</div>
+							<div>Incorrect guesses: {wrongGuess.length}</div>
+							<div>Didn't guess: {didntGuess.length}</div>
+						</div>
+					</div>
+				</>
+			)}
+
+			{step === 'results' && (
+				<>
+					<div className="flash-card">
+						<h3>Correct guesses</h3>
+						<h1>{correctCount}</h1>
+					</div>
+
+					<hr />
+
+					<div className="flash-card">
+						<h3>Incorrect guesses</h3>
+						<h1>{wrongGuess.length}</h1>
+
+						{wrongGuess.length > 0 && (
+							<div>{wrongGuess.map((word) => getSourceWords(word.word)).join(', ')}</div>
+						)}
+					</div>
+
+					<hr />
+
+					<div className="flash-card">
+						<h3>Didn't guess</h3>
+						<h1>{didntGuess.length}</h1>
+
+						{didntGuess.length > 0 && (
+							<div>{didntGuess.map((word) => getSourceWords(word.word)).join(', ')}</div>
+						)}
+					</div>
+
+					<div className="flash-actions">
+						<div style={{ margin: 0 }}>
+							<button onClick={retryCards}>Retry</button>
+
+							<button onClick={resetStep} style={{ marginLeft: '1rem' }}>
+								Reset
+							</button>
 						</div>
 					</div>
 				</>
 			)}
 		</div>
 	);
+}
+
+function getSourceWords(source: Word['word']): string {
+	if (Array.isArray(source)) {
+		return source.map(getSourceWords).join(', ');
+	}
+
+	if (typeof source === 'object') {
+		return source.word;
+	}
+
+	return source;
 }

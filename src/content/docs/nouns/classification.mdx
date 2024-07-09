@@ -4,4 +4,58 @@ title: Classification
 
 import KoreanWords from '@components/KoreanWords.astro';
 
-<KoreanWords sort words={[{"class":"101-4.2","category":"classification","meaning":["between","relationship"],"word":"사이"},{"class":"102-6.2","category":"classification","meaning":"classical","word":"클래식"},{"class":"103-12.2","category":"classification","meaning":"color","word":["색","색깔"]},{"class":"102-7.1","category":["place","classification"],"meaning":"country","word":"나라"},{"class":"103-8.2","category":["classification","human"],"meaning":"doctor (medical)","word":"의사"},{"class":"101-2.2","category":["human","classification"],"meaning":["man","male"],"word":"남자"},{"class":["101-1.2","103-9.2"],"category":"classification","meaning":"name","word":["이름",{"word":"성함","honorific":true}]},{"class":"103-8.1","category":["counter","classification"],"meaning":"number","word":["번","번호"]},{"class":"103-12.1","category":["counter","classification"],"meaning":"number (ordinal suffix)","word":["째","번째"]},{"class":"103-8.1","category":"classification","meaning":"that","word":"그","prenoun":true},{"class":"103-8.1","category":"classification","meaning":"that (over there)","word":"저","prenoun":true},{"class":"101-4.2","category":"classification","meaning":"thing","word":["것","거"]},{"class":"103-8.1","category":"classification","meaning":"this","word":"이","prenoun":true},{"class":"101-3.2","category":["human","classification"],"meaning":"woman","word":"여자"}]} />
+<KoreanWords
+  sort
+  words={[
+    {
+      class: '101-4.2',
+      category: 'classification',
+      meaning: ['between', 'relationship'],
+      word: '사이',
+    },
+    { class: '102-6.2', category: 'classification', meaning: 'classical', word: '클래식' },
+    { class: '103-12.2', category: 'classification', meaning: 'color', word: ['색', '색깔'] },
+    { class: '102-7.1', category: ['place', 'classification'], meaning: 'country', word: '나라' },
+    {
+      class: '103-8.2',
+      category: ['classification', 'human'],
+      meaning: 'doctor (medical)',
+      word: '의사',
+    },
+    {
+      class: '101-2.2',
+      category: ['human', 'classification'],
+      meaning: ['man', 'male'],
+      word: '남자',
+    },
+    {
+      class: ['101-1.2', '103-9.2'],
+      category: 'classification',
+      meaning: 'name',
+      word: ['이름', { word: '성함', honorific: true }],
+    },
+    {
+      class: '103-8.1',
+      category: ['counter', 'classification'],
+      meaning: 'number',
+      word: ['번', '번호'],
+    },
+    {
+      class: '103-12.1',
+      category: ['counter', 'classification'],
+      meaning: 'number (ordinal suffix)',
+      word: ['째', '번째'],
+    },
+    { class: '103-8.1', category: 'classification', meaning: 'that', word: '그', prenoun: true },
+    {
+      class: '103-8.1',
+      category: 'classification',
+      meaning: 'that (over there)',
+      word: '저',
+      prenoun: true,
+    },
+    { class: '101-4.2', category: 'classification', meaning: 'thing', word: ['것', '거'] },
+    { class: '103-8.1', category: 'classification', meaning: 'this', word: '이', prenoun: true },
+    { class: '101-3.2', category: ['human', 'classification'], meaning: 'woman', word: '여자' },
+  ]}
+/>

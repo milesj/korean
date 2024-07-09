@@ -40,8 +40,8 @@ export function FlashTips({ word }: FlashTipsProps) {
 
 	return (
 		<>
-			{tips.map((tip) => (
-				<div>{tip}</div>
+			{tips.map((tip, i) => (
+				<div key={i}>{tip}</div>
 			))}
 		</>
 	);

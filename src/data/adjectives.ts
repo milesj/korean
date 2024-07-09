@@ -330,7 +330,7 @@ export const ADJECTIVES = {
 	to_be_well: {
 		class: '101-1.1',
 		meaning: 'to be well',
-		word: '안녱하다',
+		word: '안녕하다',
 		phrases: ['Hi', 'Hello', 'How are you?'],
 	},
 	to_be_white: {
