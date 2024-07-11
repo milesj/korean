@@ -47,38 +47,3 @@ export type WordClass =
 	| 'pronoun'
 	| 'suffix'
 	| 'verb';
-
-export interface WordSource {
-	chapter?: CourseChapter;
-	form?: SpeechForm;
-	korean: string;
-	note?: string;
-	speech?: SpeechLevel;
-}
-
-export interface WordTranslation {
-	chapter?: CourseChapter;
-	english: string;
-	note?: string;
-}
-
-export interface Word<
-	S extends WordSource = WordSource,
-	T extends WordTranslation = WordTranslation,
-> {
-	chapter?: CourseChapter;
-	class?: WordClass;
-	examples?: string[];
-	meaning: string | T | (string | T)[];
-	word: string | S | (string | S)[];
-}
-
-// NOUNS
-
-export type NounCategory = 'country' | 'datetime' | 'education';
-
-export interface NounTranslation extends WordTranslation {
-	category?: NounCategory | NounCategory[];
-}
-
-export interface Noun extends Word<WordSource, NounTranslation> {}

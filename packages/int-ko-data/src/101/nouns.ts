@@ -1,6 +1,6 @@
-import type { Noun } from 'hangeul';
+import type { NounDefinition } from 'hangeul';
 
-const data: Noun[] = [
+const data: NounDefinition[] = [
 	{
 		chapter: '101-1.1',
 		word: ['일학년', '1학년'],
@@ -55,6 +55,19 @@ const data: Noun[] = [
 		chapter: '101-1.1',
 		word: '한국',
 		meaning: 'Korea',
+	},
+	{
+		chapter: '101-1.1',
+		word: '쌍',
+		meaning: 'pair',
+	},
+	{
+		chapter: '101-1.1',
+		word: {
+			korean: '과',
+			counter: true,
+		},
+		meaning: ['chapter', 'lesson'],
 	},
 ];
 
