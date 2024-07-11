@@ -13,5 +13,9 @@ Object.entries(ADVERBS_MAP).forEach(([key, entry]) => {
 		return;
 	}
 
-	fs.writeFileSync(`src/content/docs/adverbs/${createFileName(key)}.mdx`, genPage(entry), 'utf8');
+	fs.writeFileSync(
+		`src/content/docs/adverbs/${createFileName(key)}.mdx`,
+		genPage(entry),
+		'utf8',
+	);
 });

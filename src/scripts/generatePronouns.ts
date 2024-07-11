@@ -13,5 +13,9 @@ Object.entries(PRONOUNS_MAP).forEach(([key, entry]) => {
 		return;
 	}
 
-	fs.writeFileSync(`src/content/docs/pronouns/${createFileName(key)}.mdx`, genPage(entry), 'utf8');
+	fs.writeFileSync(
+		`src/content/docs/pronouns/${createFileName(key)}.mdx`,
+		genPage(entry),
+		'utf8',
+	);
 });

@@ -13,5 +13,9 @@ Object.entries(PARTICLES_MAP).forEach(([key, entry]) => {
 		return;
 	}
 
-	fs.writeFileSync(`src/content/docs/particles/${createFileName(key)}.mdx`, genPage(entry), 'utf8');
+	fs.writeFileSync(
+		`src/content/docs/particles/${createFileName(key)}.mdx`,
+		genPage(entry),
+		'utf8',
+	);
 });

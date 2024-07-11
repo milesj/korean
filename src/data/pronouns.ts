@@ -1,4 +1,4 @@
-import { expandMap, type Word } from './common';
+import { type Word, expandMap } from './common';
 
 export type PronounForm = 'subject' | 'topic' | 'object';
 

@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write .",
+    "check": "biome check --write",
     "type": "astro check",
     "gen": "tsx ./src/scripts/generate.ts"
   },
@@ -28,10 +28,7 @@
     "tsx": "^4.11.0",
     "typescript": "^5.4.5"
   },
-  "workspaces": [
-    "packages/*",
-    "."
-  ],
+  "workspaces": ["packages/*", "."],
   "devDependencies": {
     "@biomejs/biome": "^1.8.3"
   }

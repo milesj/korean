@@ -1,12 +1,12 @@
 import {
-	type Letter,
 	LETTERS,
-	isVowel,
-	createDipthong,
-	type TranslateOptions,
+	type Letter,
 	NORMALIZE,
+	type TranslateOptions,
+	createDipthong,
+	isVowel,
 } from './letters';
-import { type Punctuation, PUNCTUATION } from './punctuation';
+import { PUNCTUATION, type Punctuation } from './punctuation';
 
 export class Character {
 	letter?: Letter;
@@ -14,7 +14,7 @@ export class Character {
 	text: string;
 
 	// Position within the syllable
-	index: number = 0;
+	index = 0;
 
 	constructor(text: string, index: number) {
 		this.letter = LETTERS[text];
@@ -81,8 +81,8 @@ export class Syllable {
 	text: string;
 
 	// Positions in the word
-	first: boolean = false;
-	last: boolean = false;
+	first = false;
+	last = false;
 
 	// Links to other syllables
 	previous?: Syllable;
@@ -92,18 +92,26 @@ export class Syllable {
 		this.text = text;
 
 		// if (HANGEUL.test(text)) {
-		const parts = Array.from(text.normalize('NFD')).map((char) => NORMALIZE[char] || char);
+		const parts = Array.from(text.normalize('NFD')).map(
+			(char) => NORMALIZE[char] || char,
+		);
 
 		// 1 is always a vowel, so if 2 is also a vowel,
 		// then we need to create a dipthong
 		if (isVowel(parts[1]) && isVowel(parts[2])) {
-			this.parts = [parts[0], createDipthong(parts[1], parts[2]), ...parts.slice(3)];
+			this.parts = [
+				parts[0],
+				createDipthong(parts[1], parts[2]),
+				...parts.slice(3),
+			];
 		} else {
 			this.parts = parts;
 		}
 
 		this.rawParts = parts;
-		this.characters = this.parts.map((part, index) => new Character(part, index));
+		this.characters = this.parts.map(
+			(part, index) => new Character(part, index),
+		);
 		// }
 	}
 
@@ -112,10 +120,13 @@ export class Syllable {
 		const endOfSyllable = index === this.characters!.length - 1;
 
 		return {
-			nextLetter: this.characters?.[index + 1]?.letter ?? this.next?.characters?.[0]?.letter,
+			nextLetter:
+				this.characters?.[index + 1]?.letter ??
+				this.next?.characters?.[0]?.letter,
 			prevLetter:
 				this.characters?.[index - 1]?.letter ??
-				this.previous?.characters?.[this.previous?.characters.length - 1]?.letter,
+				this.previous?.characters?.[this.previous?.characters.length - 1]
+					?.letter,
 			startOfSyllable,
 			startOfWord: startOfSyllable && this.first && !this.previous,
 			endOfSyllable,
@@ -128,7 +139,9 @@ export class Syllable {
 			return this.text;
 		}
 
-		return this.characters.map((character, index) => character.pronounce(this.options(index)));
+		return this.characters.map((character, index) =>
+			character.pronounce(this.options(index)),
+		);
 	}
 
 	translate(): string {

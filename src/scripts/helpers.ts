@@ -1,6 +1,6 @@
+import kebabCase from 'lodash/kebabCase';
 import upperFirst from 'lodash/upperFirst';
 import type { NativeWord, Word } from '../data/common';
-import kebabCase from 'lodash/kebabCase';
 
 export function createFileName(key: string) {
 	return kebabCase(key);
@@ -15,7 +15,9 @@ export function extractWordProps(word: NativeWord): string {
 }
 
 export function genPage(entry: Word) {
-	const meanings = Array.isArray(entry.meaning) ? entry.meaning : [entry.meaning];
+	const meanings = Array.isArray(entry.meaning)
+		? entry.meaning
+		: [entry.meaning];
 	const words = Array.isArray(entry.word) ? entry.word : [entry.word];
 
 	let content = `---

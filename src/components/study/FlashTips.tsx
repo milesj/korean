@@ -1,7 +1,7 @@
-import type { Word as WordShape } from '../../data/common';
 import { Word } from '@hangeul';
-import { extractWord } from '../../scripts/helpers';
+import type { Word as WordShape } from '../../data/common';
 import type { Noun } from '../../data/nouns';
+import { extractWord } from '../../scripts/helpers';
 
 export interface FlashTipsProps {
 	word: WordShape;
@@ -33,7 +33,9 @@ export function FlashTips({ word }: FlashTipsProps) {
 		tips.push(
 			<>
 				Noun categories:{' '}
-				{(Array.isArray(noun.category) ? noun.category : [noun.category]).join(' / ')}
+				{(Array.isArray(noun.category) ? noun.category : [noun.category]).join(
+					' / ',
+				)}
 			</>,
 		);
 	}

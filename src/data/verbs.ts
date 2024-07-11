@@ -1,4 +1,4 @@
-import { expandMap, type Word } from './common';
+import { type Word, expandMap } from './common';
 import type { NounKey } from './nouns';
 
 export interface Verb extends Word {

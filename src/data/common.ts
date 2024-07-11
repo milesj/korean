@@ -61,7 +61,9 @@ export interface Word {
 
 export function generateMap<T extends Word>(data: T[], map: Record<string, T>) {
 	data.forEach((item) => {
-		const meanings = Array.isArray(item.meaning) ? item.meaning : [item.meaning];
+		const meanings = Array.isArray(item.meaning)
+			? item.meaning
+			: [item.meaning];
 
 		meanings.forEach((meaning) => {
 			const key = meaning.toLowerCase().replace(' ', '-');
@@ -97,7 +99,9 @@ export function expandMap<T extends Word>(
 			if (!data[item]) {
 				throw new Error(`Base word "${item}" does not exist for key "${key}"`);
 			} else if (typeof data[item] === 'string') {
-				throw new Error(`Key "${key}" cannot reference "${item}" because it is a string`);
+				throw new Error(
+					`Key "${key}" cannot reference "${item}" because it is a string`,
+				);
 			}
 
 			map[key] = {
@@ -116,7 +120,9 @@ export function expandMap<T extends Word>(
 		if (item.related) {
 			item.related.forEach((rel) => {
 				if (!map[rel]) {
-					throw new Error(`Related word "${rel}" does not exist for key "${key}"`);
+					throw new Error(
+						`Related word "${rel}" does not exist for key "${key}"`,
+					);
 				}
 			});
 		}

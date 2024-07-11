@@ -51,10 +51,12 @@ Object.entries(NOUNS_MAP).forEach(([key, entry]) => {
 		return;
 	}
 
-	(Array.isArray(entry.category) ? entry.category : [entry.category]).forEach((category) => {
-		categories[category] ||= {};
-		categories[category]![key] = entry;
-	});
+	(Array.isArray(entry.category) ? entry.category : [entry.category]).forEach(
+		(category) => {
+			categories[category] ||= {};
+			categories[category]![key] = entry;
+		},
+	);
 });
 
 Object.entries(categories).forEach(([category, entries]) => {

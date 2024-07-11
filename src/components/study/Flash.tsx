@@ -1,5 +1,8 @@
+import shuffle from 'lodash/shuffle';
+import { type ChangeEvent, useCallback, useState } from 'react';
 import { ADJECTIVES_MAP } from '../../data/adjectives';
 import { ADVERBS_MAP } from '../../data/adverbs';
+import type { ClassChapter, GrammarType, Word } from '../../data/common';
 import { CONJUNCTIONS_MAP } from '../../data/conjunctions';
 import { INTERJECTIONS_MAP } from '../../data/interjections';
 import { NOUNS_MAP } from '../../data/nouns';
@@ -7,11 +10,8 @@ import { NUMBERS_MAP } from '../../data/numbers';
 import { PARTICLES_MAP } from '../../data/particles';
 import { PRONOUNS_MAP } from '../../data/pronouns';
 import { VERBS_MAP } from '../../data/verbs';
-import type { ClassChapter, Word, GrammarType } from '../../data/common';
-import { useCallback, useState, type ChangeEvent } from 'react';
-import shuffle from 'lodash/shuffle';
-import { FlashWord } from './FlashWord';
 import { FlashTips } from './FlashTips';
+import { FlashWord } from './FlashWord';
 
 type Step = 'config' | 'question' | 'answer' | 'results';
 
@@ -26,7 +26,14 @@ const TERM_101: ClassChapter[] = [
 	'101-4.2',
 ];
 
-const TERM_102: ClassChapter[] = ['102-5.1', '102-5.2', '102-6.1', '102-6.2', '102-7.1', '102-7.2'];
+const TERM_102: ClassChapter[] = [
+	'102-5.1',
+	'102-5.2',
+	'102-6.1',
+	'102-6.2',
+	'102-7.1',
+	'102-7.2',
+];
 
 const TERM_103: ClassChapter[] = [
 	'103-8.1',
@@ -61,7 +68,9 @@ function filterWords(
 				: chapters.has(word.class);
 		})
 		.forEach((word) => {
-			let key = (Array.isArray(word.meaning) ? word.meaning : [word.meaning]).join('|');
+			const key = (
+				Array.isArray(word.meaning) ? word.meaning : [word.meaning]
+			).join('|');
 
 			result[key] = word;
 		});
@@ -124,7 +133,9 @@ export function Flash() {
 			if (event.target.checked) {
 				return new Set([...prev, ...TERM_101]);
 			} else {
-				return new Set([...prev].filter((chapter) => !chapter.startsWith('101')));
+				return new Set(
+					[...prev].filter((chapter) => !chapter.startsWith('101')),
+				);
 			}
 		});
 	}
@@ -134,7 +145,9 @@ export function Flash() {
 			if (event.target.checked) {
 				return new Set([...prev, ...TERM_102]);
 			} else {
-				return new Set([...prev].filter((chapter) => !chapter.startsWith('102')));
+				return new Set(
+					[...prev].filter((chapter) => !chapter.startsWith('102')),
+				);
 			}
 		});
 	}
@@ -144,7 +157,9 @@ export function Flash() {
 			if (event.target.checked) {
 				return new Set([...prev, ...TERM_103]);
 			} else {
-				return new Set([...prev].filter((chapter) => !chapter.startsWith('103')));
+				return new Set(
+					[...prev].filter((chapter) => !chapter.startsWith('103')),
+				);
 			}
 		});
 	}
@@ -200,7 +215,12 @@ export function Flash() {
 		const wordsMap: Record<string, Word> = {};
 
 		if (grammars.has('adjectives')) {
-			filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters, wordsMap);
+			filterWords(
+				'adjectives',
+				Object.values(ADJECTIVES_MAP),
+				chapters,
+				wordsMap,
+			);
 		}
 
 		if (grammars.has('adverbs')) {
@@ -208,15 +228,30 @@ export function Flash() {
 		}
 
 		if (grammars.has('adjectives')) {
-			filterWords('adjectives', Object.values(ADJECTIVES_MAP), chapters, wordsMap);
+			filterWords(
+				'adjectives',
+				Object.values(ADJECTIVES_MAP),
+				chapters,
+				wordsMap,
+			);
 		}
 
 		if (grammars.has('conjunctions')) {
-			filterWords('conjunctions', Object.values(CONJUNCTIONS_MAP), chapters, wordsMap);
+			filterWords(
+				'conjunctions',
+				Object.values(CONJUNCTIONS_MAP),
+				chapters,
+				wordsMap,
+			);
 		}
 
 		if (grammars.has('interjections')) {
-			filterWords('interjections', Object.values(INTERJECTIONS_MAP), chapters, wordsMap);
+			filterWords(
+				'interjections',
+				Object.values(INTERJECTIONS_MAP),
+				chapters,
+				wordsMap,
+			);
 		}
 
 		if (grammars.has('nouns')) {
@@ -228,7 +263,12 @@ export function Flash() {
 		}
 
 		if (grammars.has('particles')) {
-			filterWords('particles', Object.values(PARTICLES_MAP), chapters, wordsMap);
+			filterWords(
+				'particles',
+				Object.values(PARTICLES_MAP),
+				chapters,
+				wordsMap,
+			);
 		}
 
 		if (grammars.has('pronouns')) {
@@ -243,7 +283,7 @@ export function Flash() {
 			// TODO
 		}
 
-		let shuffledWords = shuffle(Object.values(wordsMap));
+		const shuffledWords = shuffle(Object.values(wordsMap));
 
 		setIndex(0);
 		setWord(shuffledWords[0]);
@@ -271,7 +311,7 @@ export function Flash() {
 	}, [word]);
 
 	const nextWord = useCallback(() => {
-		let nextIndex = index + 1;
+		const nextIndex = index + 1;
 
 		if (nextIndex >= words.length) {
 			setStep('results');
@@ -305,7 +345,10 @@ export function Flash() {
 								<input
 									id="all-chapters"
 									type="checkbox"
-									checked={chapters.size === TERM_101.length + TERM_102.length + TERM_103.length}
+									checked={
+										chapters.size ===
+										TERM_101.length + TERM_102.length + TERM_103.length
+									}
 									onChange={handleAllChaptersChange}
 								/>{' '}
 								Select all
@@ -322,8 +365,9 @@ export function Flash() {
 											id="all-k101"
 											type="checkbox"
 											checked={
-												Array.from(chapters).filter((chapter) => chapter.startsWith('101'))
-													.length === TERM_101.length
+												Array.from(chapters).filter((chapter) =>
+													chapter.startsWith('101'),
+												).length === TERM_101.length
 											}
 											onChange={handleK101ChaptersChange}
 										/>{' '}
@@ -345,8 +389,9 @@ export function Flash() {
 											id="all-k102"
 											type="checkbox"
 											checked={
-												Array.from(chapters).filter((chapter) => chapter.startsWith('102'))
-													.length === TERM_102.length
+												Array.from(chapters).filter((chapter) =>
+													chapter.startsWith('102'),
+												).length === TERM_102.length
 											}
 											onChange={handleK102ChaptersChange}
 										/>{' '}
@@ -368,8 +413,9 @@ export function Flash() {
 											id="all-k103"
 											type="checkbox"
 											checked={
-												Array.from(chapters).filter((chapter) => chapter.startsWith('103'))
-													.length === TERM_103.length
+												Array.from(chapters).filter((chapter) =>
+													chapter.startsWith('103'),
+												).length === TERM_103.length
 											}
 											onChange={handleK103ChaptersChange}
 										/>{' '}
@@ -422,7 +468,10 @@ export function Flash() {
 					</div>
 
 					<div className="flash-actions">
-						<button disabled={grammars.size === 0 || chapters.size === 0} onClick={beginStudying}>
+						<button
+							disabled={grammars.size === 0 || chapters.size === 0}
+							onClick={beginStudying}
+						>
 							Begin studying
 						</button>
 					</div>
@@ -460,7 +509,11 @@ export function Flash() {
 				<>
 					<div className="flash-card">
 						<header className="flash-card-header">Meaning</header>
-						<h1>{Array.isArray(word?.meaning) ? word.meaning.join(' / ') : word?.meaning}</h1>
+						<h1>
+							{Array.isArray(word?.meaning)
+								? word.meaning.join(' / ')
+								: word?.meaning}
+						</h1>
 					</div>
 
 					<div className="flash-actions">
@@ -506,7 +559,9 @@ export function Flash() {
 						<h1>{wrongGuess.length}</h1>
 
 						{wrongGuess.length > 0 && (
-							<div>{wrongGuess.map((word) => getSourceWords(word.word)).join(', ')}</div>
+							<div>
+								{wrongGuess.map((word) => getSourceWords(word.word)).join(', ')}
+							</div>
 						)}
 					</div>
 
@@ -517,7 +572,9 @@ export function Flash() {
 						<h1>{didntGuess.length}</h1>
 
 						{didntGuess.length > 0 && (
-							<div>{didntGuess.map((word) => getSourceWords(word.word)).join(', ')}</div>
+							<div>
+								{didntGuess.map((word) => getSourceWords(word.word)).join(', ')}
+							</div>
 						)}
 					</div>
 

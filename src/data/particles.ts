@@ -1,4 +1,4 @@
-import { expandMap, type Word } from './common';
+import { type Word, expandMap } from './common';
 
 export type ParticleMarker =
 	| 'topic'
@@ -64,7 +64,11 @@ export const PARTICLES = {
 	},
 	clause_connective: {
 		class: '103-10.1',
-		meaning: ['(explicit background info)', '(contrasts clauses)', '(justifies requests)'],
+		meaning: [
+			'(explicit background info)',
+			'(contrasts clauses)',
+			'(justifies requests)',
+		],
 		word: ['은데', '는데'],
 	},
 	clause_connective_clause: {

@@ -1,4 +1,4 @@
-import { expandMap, type Word } from './common';
+import { type Word, expandMap } from './common';
 
 export interface Conjunction extends Word {}
 
@@ -32,4 +32,7 @@ export type ConjunctionKey = keyof typeof CONJUNCTIONS;
 
 export const CONJUNCTIONS_MAP: Record<string, Conjunction> = {};
 
-expandMap(CONJUNCTIONS as Record<string, Conjunction | string>, CONJUNCTIONS_MAP);
+expandMap(
+	CONJUNCTIONS as Record<string, Conjunction | string>,
+	CONJUNCTIONS_MAP,
+);

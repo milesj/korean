@@ -6,7 +6,7 @@ export interface FlashWordProps {
 
 export function FlashWord({ word }: FlashWordProps) {
 	if (Array.isArray(word)) {
-		let total = word.length - 1;
+		const total = word.length - 1;
 
 		return (
 			<>

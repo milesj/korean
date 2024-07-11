@@ -2,7 +2,8 @@
 
 import * as soundChange from './rule-changes';
 
-export const HANGEUL = /[\u1100-\u11FF\u3130-\u318F\uA960-\uA97F\uAC00-\uD7AF\uD7B0-\uD7FF]/g;
+export const HANGEUL =
+	/[\u1100-\u11FF\u3130-\u318F\uA960-\uA97F\uAC00-\uD7AF\uD7B0-\uD7FF]/g;
 
 export interface TranslateOptions {
 	nextLetter?: Letter;
@@ -15,7 +16,11 @@ export interface TranslateOptions {
 
 export type TranslateFunc = (options: TranslateOptions) => string;
 
-export type LetterType = 'vowel' | 'dipthong' | 'consonant' | 'double-consonant';
+export type LetterType =
+	| 'vowel'
+	| 'dipthong'
+	| 'consonant'
+	| 'double-consonant';
 
 export interface Letter {
 	char: string;

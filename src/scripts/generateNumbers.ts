@@ -1,7 +1,7 @@
 import fs from 'node:fs';
+import { Word } from '@hangeul';
 import { NUMBERS_MAP } from '../data/numbers';
 import { extractWord } from './helpers';
-import { Word } from '@hangeul';
 
 let content = `---
 title: Numbers
