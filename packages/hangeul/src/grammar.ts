@@ -5,9 +5,14 @@ import type {
 	WordClass,
 } from './types';
 
+export interface WordConjugate {
+	consonant?: string;
+	vowel?: string;
+}
+
 export interface WordSource {
 	chapter?: CourseChapter;
-	conjugations?: string[]; // Temporary!
+	conjugate?: WordConjugate;
 	form?: SpeechForm;
 	korean: string;
 	note?: string;
@@ -53,12 +58,3 @@ export interface NumberSource extends WordSource {
 }
 
 export interface NumberDefinition extends WordDefinition<NumberSource> {}
-
-// PARTICLES
-
-export interface ParticleSource extends WordSource {
-	consonant: string;
-	vowel: string;
-}
-
-export interface ParticleDefinition extends WordDefinition<ParticleSource> {}

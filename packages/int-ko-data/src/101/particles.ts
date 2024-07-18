@@ -1,6 +1,6 @@
-import type { ParticleDefinition } from 'hangeul';
+import type { WordDefinition } from 'hangeul';
 
-const data: ParticleDefinition[] = [
+const data: WordDefinition[] = [
 	{
 		chapter: '101-1.1',
 		word: '도',
@@ -10,8 +10,10 @@ const data: ParticleDefinition[] = [
 		chapter: '101-1.1',
 		word: {
 			korean: '은/는',
-			consonant: '은',
-			vowel: '는',
+			conjugate: {
+				consonant: '은',
+				vowel: '는',
+			},
 		},
 		meaning: {
 			english: 'as for me',
