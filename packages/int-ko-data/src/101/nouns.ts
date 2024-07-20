@@ -1,6 +1,7 @@
 import type { NounDefinition } from 'hangeul';
 
 const data: NounDefinition[] = [
+	// 1.1
 	{
 		chapter: '101-1.1',
 		word: ['일학년', '1학년'],
@@ -68,6 +69,58 @@ const data: NounDefinition[] = [
 			counter: true,
 		},
 		meaning: ['chapter', 'lesson'],
+	},
+	// 1.2
+	{
+		chapter: '101-1.2',
+		word: '선생님',
+		meaning: 'teacher',
+	},
+	{
+		chapter: '101-1.2',
+		word: {
+			korean: '씨',
+			form: 'honorific',
+		},
+		meaning: '(name suffix)',
+	},
+	{
+		chapter: '101-1.2',
+		word: '영국',
+		meaning: 'United Kingdom',
+	},
+	{
+		chapter: '101-1.2',
+		word: '영어',
+		meaning: 'English language',
+	},
+	{
+		chapter: '101-1.2',
+		word: '이름',
+		meaning: 'name',
+	},
+	{
+		chapter: '101-1.2',
+		word: '일본',
+		meaning: 'Japan',
+	},
+	{
+		chapter: '101-1.2',
+		word: '중국',
+		meaning: 'China',
+	},
+	{
+		chapter: '101-1.2',
+		word: {
+			korean: '클래스',
+			loan: true,
+		},
+		meaning: 'class',
+	},
+	{
+		chapter: '101-1.2',
+		word: ['한국어', '한국말'],
+		meaning: 'Korean language',
 	},
 ];
 

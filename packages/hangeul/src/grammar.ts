@@ -15,6 +15,7 @@ export interface WordSource {
 	conjugate?: WordConjugate;
 	form?: SpeechForm;
 	korean: string;
+	loan?: boolean;
 	note?: string;
 	speech?: SpeechLevel;
 }

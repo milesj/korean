@@ -1,6 +1,7 @@
 import type { WordDefinition } from 'hangeul';
 
 const data: WordDefinition[] = [
+	// 1.1
 	{
 		chapter: '101-1.1',
 		word: {
@@ -11,6 +12,12 @@ const data: WordDefinition[] = [
 			},
 		},
 		meaning: 'to be',
+	},
+	// 1.2
+	{
+		chapter: '101-1.2',
+		word: '아니다',
+		meaning: 'to not be',
 	},
 ];
 
