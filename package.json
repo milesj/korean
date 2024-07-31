@@ -10,7 +10,8 @@
     "astro": "astro",
     "check": "biome check --write",
     "type": "astro check",
-    "gen": "tsx ./src/scripts/generate.ts"
+    "gen": "tsx ./src/scripts/generate.ts",
+    "test": "cd packages/hangeul && vitest"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
@@ -28,8 +29,12 @@
     "tsx": "^4.11.0",
     "typescript": "^5.4.5"
   },
-  "workspaces": ["packages/*", "."],
+  "workspaces": [
+    "packages/*",
+    "."
+  ],
   "devDependencies": {
-    "@biomejs/biome": "^1.8.3"
+    "@biomejs/biome": "^1.8.3",
+    "vitest": "^2.0.4"
   }
 }

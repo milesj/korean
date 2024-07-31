@@ -122,6 +122,21 @@ const data: NounDefinition[] = [
 		word: ['한국어', '한국말'],
 		meaning: 'Korean language',
 	},
+	{
+		chapter: '101-1.2',
+		word: '프랑스',
+		meaning: 'France',
+	},
+	{
+		chapter: '101-1.2',
+		word: '스페인',
+		meaning: 'Spain',
+	},
+	{
+		chapter: '101-1.2',
+		word: '러시아',
+		meaning: 'Russia',
+	},
 ];
 
 export default data;

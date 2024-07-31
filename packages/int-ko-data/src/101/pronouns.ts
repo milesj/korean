@@ -28,6 +28,16 @@ const data: WordDefinition[] = [
 		],
 		meaning: 'what',
 	},
+	{
+		chapter: '101-1.1',
+		word: [
+			{
+				korean: '너',
+				form: 'plain',
+			},
+		],
+		meaning: 'you',
+	},
 ];
 
 export default data;
