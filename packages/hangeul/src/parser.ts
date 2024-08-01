@@ -1,5 +1,13 @@
 // https://github.com/e-/Hangul.js/blob/master/hangul.js
 
+import {
+	CONSONANTS,
+	DIPTHONGS,
+	DIPTHONG_PAIRS,
+	DOUBLE_CONSONANTS,
+	VOWELS,
+} from './letter';
+
 type CharacterSpecification = string | { char: string; parts: string[] };
 
 function getSpecParts(spec: CharacterSpecification): string[] {
@@ -31,27 +39,7 @@ function searchAndBuildCache(
 }
 
 // 초성 - Initial consonants (onset)
-const CHO: CharacterSpecification[] = [
-	'ㄱ',
-	'ㄲ',
-	'ㄴ',
-	'ㄷ',
-	'ㄸ',
-	'ㄹ',
-	'ㅁ',
-	'ㅂ',
-	'ㅃ',
-	'ㅅ',
-	'ㅆ',
-	'ㅇ',
-	'ㅈ',
-	'ㅉ',
-	'ㅊ',
-	'ㅋ',
-	'ㅌ',
-	'ㅍ',
-	'ㅎ',
-];
+const CHO: CharacterSpecification[] = [...CONSONANTS, ...DOUBLE_CONSONANTS];
 const CHO_CACHE: Record<number, number> = {};
 
 function isCho(code: number): boolean {
@@ -60,27 +48,11 @@ function isCho(code: number): boolean {
 
 // 중성 - Inner vowels (nucleus)
 const JUNG: CharacterSpecification[] = [
-	'ㅏ',
-	'ㅐ',
-	'ㅑ',
-	'ㅒ',
-	'ㅓ',
-	'ㅔ',
-	'ㅕ',
-	'ㅖ',
-	'ㅗ',
-	{ char: 'ㅘ', parts: ['ㅗ', 'ㅏ'] },
-	{ char: 'ㅙ', parts: ['ㅗ', 'ㅐ'] },
-	{ char: 'ㅚ', parts: ['ㅗ', 'ㅣ'] },
-	'ㅛ',
-	'ㅜ',
-	{ char: 'ㅝ', parts: ['ㅜ', 'ㅓ'] },
-	{ char: 'ㅞ', parts: ['ㅜ', 'ㅔ'] },
-	{ char: 'ㅟ', parts: ['ㅜ', 'ㅣ'] },
-	'ㅠ',
-	'ㅡ',
-	{ char: 'ㅢ', parts: ['ㅡ', 'ㅣ'] },
-	'ㅣ',
+	...VOWELS,
+	...DIPTHONGS.map((char, index) => ({
+		char,
+		parts: DIPTHONG_PAIRS[index],
+	})),
 ];
 const JUNG_CACHE: Record<number, number> = {};
 
