@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest';
-
 import { parse } from '../src/parser';
 
 describe('parse()', () => {

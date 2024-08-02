@@ -1,66 +1,83 @@
 // https://github.com/e-/Hangul.js/blob/master/hangul.js
 
-import {
-	CONSONANTS,
-	DIPTHONGS,
-	DIPTHONG_PAIRS,
-	DOUBLE_CONSONANTS,
-	VOWELS,
-} from './letter';
+type CharSpec = string | { char: string; parts: string[] };
 
-type CharacterSpecification = string | { char: string; parts: string[] };
-
-function getSpecParts(spec: CharacterSpecification): string[] {
+function getSpecParts(spec: CharSpec): string[] {
 	return typeof spec === 'object' ? spec.parts : [spec];
 }
 
-function searchAndBuildCache(
-	specs: CharacterSpecification[],
-	cache: Record<number, number>,
-	code: number,
-): boolean {
-	if (typeof cache[code] === 'undefined') {
-		specs.some((spec, index) => {
-			const specCode = (typeof spec === 'object' ? spec.char : spec).charCodeAt(
-				0,
-			);
-
-			if (specCode === code) {
-				cache[code] = index;
-				return true;
-			}
-
-			cache[code] = -1;
-			return false;
-		});
-	}
-
-	return cache[code] !== -1;
+function buildCache(specs: CharSpec[], cache: Record<number, number>) {
+	specs.forEach((spec, index) => {
+		cache[(typeof spec === 'object' ? spec.char : spec).charCodeAt(0)] = index;
+	});
 }
 
 // 초성 - Initial consonants (onset)
-const CHO: CharacterSpecification[] = [...CONSONANTS, ...DOUBLE_CONSONANTS];
+// Order is important!!!
+const CHO: CharSpec[] = [
+	'ㄱ',
+	'ㄲ',
+	'ㄴ',
+	'ㄷ',
+	'ㄸ',
+	'ㄹ',
+	'ㅁ',
+	'ㅂ',
+	'ㅃ',
+	'ㅅ',
+	'ㅆ',
+	'ㅇ',
+	'ㅈ',
+	'ㅉ',
+	'ㅊ',
+	'ㅋ',
+	'ㅌ',
+	'ㅍ',
+	'ㅎ',
+];
 const CHO_CACHE: Record<number, number> = {};
 
+buildCache(CHO, CHO_CACHE);
+
 function isCho(code: number): boolean {
-	return searchAndBuildCache(CHO, CHO_CACHE, code);
+	return CHO_CACHE[code] !== undefined;
 }
 
 // 중성 - Inner vowels (nucleus)
-const JUNG: CharacterSpecification[] = [
-	...VOWELS,
-	...DIPTHONGS.map((char, index) => ({
-		char,
-		parts: DIPTHONG_PAIRS[index],
-	})),
+// Order is important!!!
+const JUNG: CharSpec[] = [
+	'ㅏ',
+	'ㅐ',
+	'ㅑ',
+	'ㅒ',
+	'ㅓ',
+	'ㅔ',
+	'ㅕ',
+	'ㅖ',
+	'ㅗ',
+	{ char: 'ㅘ', parts: ['ㅗ', 'ㅏ'] },
+	{ char: 'ㅙ', parts: ['ㅗ', 'ㅐ'] },
+	{ char: 'ㅚ', parts: ['ㅗ', 'ㅣ'] },
+	'ㅛ',
+	'ㅜ',
+	{ char: 'ㅝ', parts: ['ㅜ', 'ㅓ'] },
+	{ char: 'ㅞ', parts: ['ㅜ', 'ㅔ'] },
+	{ char: 'ㅟ', parts: ['ㅜ', 'ㅣ'] },
+	'ㅠ',
+	'ㅡ',
+	{ char: 'ㅢ', parts: ['ㅡ', 'ㅣ'] },
+	'ㅣ',
 ];
 const JUNG_CACHE: Record<number, number> = {};
 
+buildCache(JUNG, JUNG_CACHE);
+
 function isJung(code: number): boolean {
-	return searchAndBuildCache(JUNG, JUNG_CACHE, code);
+	return JUNG_CACHE[code] !== undefined;
 }
 
 // 종성 - Final consonants (coda)
+// Order is important!!!
 const JONG = [
 	'', // None
 	'ㄱ',
@@ -93,8 +110,10 @@ const JONG = [
 ];
 const JONG_CACHE: Record<number, number> = {};
 
+buildCache(JONG, JONG_CACHE);
+
 function isJong(code: number): boolean {
-	return searchAndBuildCache(JONG, JONG_CACHE, code);
+	return JONG_CACHE[code] !== undefined;
 }
 
 const UNICODE_OFFSET = 0xac00;
