@@ -6,8 +6,12 @@ import type {
 } from './types';
 
 export interface WordConjugate {
+	// Particles
 	consonant?: string;
 	vowel?: string;
+	// Suffixes
+	bright?: string;
+	dark?: string;
 }
 
 export interface WordSource {
@@ -22,7 +26,7 @@ export interface WordSource {
 
 export interface WordTranslation {
 	chapter?: CourseChapter;
-	english: string;
+	english?: string;
 	note?: string;
 }
 

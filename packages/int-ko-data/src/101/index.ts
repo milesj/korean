@@ -5,4 +5,5 @@ export { default as nouns } from './nouns';
 export { default as numbers } from './numbers';
 export { default as particles } from './particles';
 export { default as pronouns } from './pronouns';
+export { default as suffixes } from './suffixes';
 export { default as verbs } from './verbs';

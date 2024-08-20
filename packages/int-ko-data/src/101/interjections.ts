@@ -7,6 +7,12 @@ const data: WordDefinition[] = [
 		word: '아',
 		meaning: 'oh',
 	},
+	// 2.1
+	{
+		chapter: '101-2.1',
+		word: '어',
+		meaning: 'oh',
+	},
 ];
 
 export default data;

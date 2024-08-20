@@ -137,6 +137,52 @@ const data: NounDefinition[] = [
 		word: '러시아',
 		meaning: 'Russia',
 	},
+	// 2.1
+	{
+		chapter: '101-2.1',
+		word: '도서관',
+		meaning: 'library',
+	},
+	{
+		chapter: '101-2.1',
+		word: '수업',
+		meaning: ['course', 'class'],
+	},
+	{
+		chapter: '101-2.1',
+		word: '숙제',
+		meaning: 'homework',
+	},
+	{
+		chapter: '101-2.1',
+		word: '식당',
+		meaning: 'restaurant',
+	},
+	{
+		chapter: '101-2.1',
+		word: '학교 식당',
+		meaning: 'school cafeteria',
+	},
+	{
+		chapter: '101-2.1',
+		word: '아침',
+		meaning: ['breakfast', 'morning'],
+	},
+	{
+		chapter: '101-2.1',
+		word: '친구',
+		meaning: 'friend',
+	},
+	{
+		chapter: '101-2.1',
+		word: '커피',
+		meaning: 'coffee',
+	},
+	{
+		chapter: '101-2.1',
+		word: '학교',
+		meaning: 'school',
+	},
 ];
 
 export default data;

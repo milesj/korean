@@ -36,6 +36,15 @@ const data: WordDefinition[] = [
 			note: 'subject particle',
 		},
 	},
+	// 2.1
+	{
+		chapter: '101-2.1',
+		word: '들',
+		meaning: {
+			english: '(plural)',
+			note: 'plural particle',
+		},
+	},
 ];
 
 export default data;
